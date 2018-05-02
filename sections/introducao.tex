@@ -1,0 +1,64 @@
+A complexidade de sistemas computacionais cresce exponencialmente, visando aplicações em diferentes domínios, tais como: agricultura, automação residencial e robótica. Neste sentido, Sistemas Embarcados (SE) que são sistemas computacionais integrados a outros sistemas, usualmente são encontrados no nosso dia a dia. Geralmente, o principal propósito dos SE é o controle e provimento de informações para uma função específica \cite{RAMESH:2012} sedo estes extremamente iterativos com seu ambiente, operam geralmente em tempo real, e estão disponíveis continuamente. 
+
+
+Segundo \cite{SERGEY:2016}, robôs se tornam mais inteligentes com respostas em tempo real. Sistemas como o Controle Integrado de Forças processam as variações com sensitividade humana, melhorando a performance, e reduzindo assim o tempo de codificação. Isso torna os robôs mais inteligentes e capazes, como os humanos, de manusear itens com interações externas em tempo real. Robôs podem auxiliar pessoas com restrições motoras a realizar atividades cotidianas que muitas vezes envolvem o contato com o rosto de uma pessoa.
+
+
+Levando em consideração estes avanços no campo de sensores robóticos, desenvolver sistemas embarcados com características robóticas, por exemplo, a capacidade de interação com o ambiente, pode ser uma solução viável para que humanos possam interagir com dispositivos eletro-eletrônicos (splits de ar-condicionado, televisões, computadores e outros) ao seu redor sem a necessidade do toque presencial. Um modo de tornar esta solução viável seria a utilização de luvas inteligentes, as quais contam com utilização de: acelerômetros, sensores de força, um microcontrolador e transmissores \cite{WESTERFELD:2012} para reconhecimento de padrões e então comunicação com os dispositivos eletro-eletrônicos \cite{OFLYNN:2013} \cite{BERNIERI:2015} \cite{CHOUDHARY:2015}. Adicionalmente, tais características robóticas podem auxiliar na recuperação de doenças ou mesmo prover suporte complementar em casos de necessidades especiais dos humanos, exemplo, deficiência visual.
+
+
+No trabalho de \cite{CHOUDHARY:2015} é proposta uma nova abordagem para auxiliar a comunicação e a interação de indivíduos surdos-mudos, aumentando sua independência. Este inclui uma luva inteligente que traduz o alfabeto Braille, que é o mais universalmente utilizado pela população surdo-muda alfabetizada, em texto e vice-versa, e comunica mensagens via SMS para contato remoto. Isto permite ao usuário transmitir mensagens simples através de sensores de toque capacitivos como sensores de entrada colocados na palma da luva e convertidos para texto pelo computador/telefone móvel. O usuário pode entender e interpretar mensagens recebidas através de padrões de retornos táteis de pequenos motores de vibração no dorso da luva. A implementação bem-sucedida da tradução bidirecional em tempo real entre Inglês e Braille, e a comunicação entre o dispositivo vestível e o computador/telefone móvel abrem novas oportunidades para a troca de informação que até então estavam indisponíveis para indivíduos surdos-mudos, como a comunicação remota, assim como transmissões paralelas de um pra muitos.
+
+
+\cite{OFLYNN:2013} apresenta o desenvolvimento de uma luva inteligente para facilitar o processo de reabilitação de Artrite Reumatoide através da integração de sensores, processadores e tecnologia sem fio para medir empiricamente o alcance do movimento. A Artrite Reumatoide é uma doença que ataca o tecido sinovial lubrificando as juntas do esqueleto. Esta condição sistêmica afeta os sistemas esquelético e muscular, incluindo ossos, juntas, músculos e tendões o que contribui para a perda de função de alcance do movimento. Medições tradicionais de artrite precisam de exames pessoais intensamente trabalhosos realizados por uma equipe médica que através de suas medições objetivas podem dificultar a determinação e a análise da reabilitação da artrite. A luva proposta \cite{OFLYNN:2013} usa uma combinação de 20 sensores de dobras, 16 acelerômetros de três eixos, e 11 sensores de força para detectar o movimento de juntas. Todos os sensores são posicionados em um PCB flexível para permitir um alto nível de flexibilidade e estabilidade do sensor.
+
+
+Analisando o processo de desenvolvimento destes sistemas, verifica-se que existem diferentes graus de complexidades tanto no software quanto no hardware. Desta forma, é necessário que as aplicações sejam projetadas considerando os requisitos de previsibilidade e confiabilidade, principalmente em aplicações de sistemas embarcados críticos, onde diversas restrições (por exemplo, tempo de resposta e precisão dos dados) devem ser atendidas e mensuradas de acordo com os requisitos do usuário, caso contrário uma falha pode conduzir a situações catastróficas. Por exemplo, o erro de cálculo da dose de radiação no Instituto Nacional de Oncologia do Panamá que resultou na morte de 23 pacientes \cite{WONG:2010}. Contudo, erros durante o desenvolvimento de sistemas computacionais tornam-se mais comuns, principalmente quando se tem curto espaço de tempo de liberação do produto ao mercado, e estes sistemas precisam ser desenvolvidos rapidamente e atingir um alto nível de qualidade. 
+
+
+Visando contribuir com metodologias de desenvolvimento de sistemas embarcados, o contexto deste trabalho está situado em demonstrar métodos e técnicas no processo de codificação e prototipação de sistemas embarcados, tais como: Redes de Petri \cite{BENDERS:1992} \cite{VALK:2002}, UML \cite{ROCHA:2011}; e Autômatos \cite{LAMPKA:2009}. 
+
+
+O desenvolvimento de tal sistema integrado à vestimenta do usuário funcionará de forma ubíqua e pervasiva, o que permitirá uma melhor interação com ambientes inteligentes, que em um curto período de tempo se tornarão padrão nas áreas residenciais e ambientes de convívio público. Segundo \cite{Weiser:1999} as redes ubíquas já são capazes de realizar certas operações em um contexto onde diversos dispositivos inteligentes estão em constante comunicação.  
+\todo{adicionar sobre cidades inteligentes, internet das coisas computação pervasiva e ubiqua}
+
+
+Neste contexto, o desenvolvimento de uma luva inteligente de baixo custo para controle de dispositivos eletrônicos por meio de padrões de movimentos se mostra de grande utilidade para o usuário de um ambiente inteligente. Este trabalho está interessado especificamente na parte de: analisar componentes de hardware e software que tenha um consumo de energia reduzido e um custo de implementação (do inglês overhead) diminuído; e métodos para otimizar a codificação e verificação de sistemas embarcados.
+
+
+\section{Definição do Problema}
+
+O problema considerado neste trabalho é expresso na seguinte questão: Quais métodos e técnicas podem ser utilizados para o desenvolvimento de um sistema embarcado, em uma luva inteligente, visando garantir os requisitos de previsibilidade e confiabilidade do sistema?
+
+
+\section{Objetivos}
+
+O objetivo principal deste trabalho é demonstrar métodos e técnicas para projetar e desenvolver um sistema embarcado em uma luva inteligente que seja capaz de reconhecer padrões de movimentos/gestos para efetuar o controle de dispositivos eletro-eletrônicos, utilizando componentes de baixo custo afim de facilitar a interação homem-máquina de dispositivos conectados em um ambiente inteligente. 
+
+
+\subsection{Objetivos Específicos}
+\begin{enumerate}
+    \item Identificar métodos para a modelagem do software e hardware;
+    \item Definir um modelo formal para o fluxo do funcionamento da luva, visando analisar propriedades de segurança do fluxo de execução do sistema;
+    \item Demonstrar uma técnica para transformação de modelos de software em códigos para o projeto;
+    \item Projetar e desenvolver uma central de controle que será o meio de comunicação entre os dispositivos eletrotônicos disponíveis em um ambiente com e a luva para obtenção dos dados de movimentos;
+    \item Identificar e aplicar um protocolo de comunicação entre os dispositivos eletrotônicos disponíveis em um ambiente com a luva;
+    \item Realizar o levantamento de componentes eletrônicos com baixo consumo de energia e baixo custo necessários para o desenvolvimento de um protótipo;    
+    \item Propor um algoritmo para reconhecimento e classificação dos movimentos/sinais enviados pela luva na mão do usuário;
+    \item Desenvolver um protótipo da luva e da central de controle; e
+    \item Validar o método proposto pela análise da prototipação do sistema proposto, a fim de examinar a sua eficácia e aplicabilidade. 
+\end{enumerate}
+
+
+
+\section{Motivação}
+
+Este trabalho de conclusão de curso é motivado pela ideia da criação de uma interface única e intuitiva entre um usuário e um ambiente inteligente, visando facilitar o uso de dispositivos através de gestos, que são um meio natural de comunição.
+
+\todo{Terminar essa seção}
+
+%\section{Metodologia Proposta}
+
+\section{Contribuições Propostas}
+
+Este trabalho busca realizar contribuições nos campos de ambientes inteligentes, internet das coisas e dispositivos vestíveis, ao propor uma interface homem-máquina simplificada, intuitiva e de baixo custo. 

@@ -1,0 +1,93 @@
+Neste capítulo serão expostos trabalhos que contam com métodos de captura de movimentos de mão utilizando dispositivos com funções similares à luva Hand.io, para uma melhor comparação os trabalhos selecionados contam com sensores acelerômetros e giroscópios como principal método de captura de sinais, assim como a luva Hand.io. Os métodos dos estudos serão analisados de maneira critica afim de permitir uma comparação entre os pontos fortes e fracos de cada abordagem em relação a este trabalho.
+
+Os trabalhos demonstrados contam com diferentes abordagens no registro dos gestos sendo eles: \textit{Accelerometer-based gesture control for a design environment}~\cite{accelerometer:2006}, que propõe um pequeno dispositivo para controle de um estúdio de design inteligente,   \textit{I'm home}~\cite{imhome:2011}, que apresenta um método bem detalhado para a definição um dicionário de gestos eficientes utilizando a participação dos usuários durante o período de desenvolvimento do sistema, \textit{uWave}~\cite{uwave:2009}, que demonstra um algoritmo eficiente de reconhecimento de gestos com uma baixa necessidade de recursos computacionais, e por fim \textit{A survey of glove-based systems and their applications}~\cite{survey:2008} faz uma análise profunda no campo de dispositivos vestíveis, em específico luvas de controle, mostrando desde os dispositivos mais primitivos até os utilizados atualmente. 
+
+Estes trabalhos demonstram a viabilidade do desenvolvimento da Hand.io e sua aplicação em um ambiente real. As principais particularidades da Hand.io seguem listadas abaixo e servem de parâmetro de comparação com as demais aplicações:
+\begin{itemize}
+	\item Captura passiva de gestos;
+    \item Sensores presos à mão;
+    \item Aplicado em um ambiente residencial;
+    \item Presença de sensor acelerômetro;
+    \item Presença de sensor giroscópio;
+    \item Conexão sem fio;
+    \item Controle por infravermelho.
+    \item Personalização de gestos.
+\end{itemize}
+
+
+\section{Accelerometer-based gesture control for a design environment}
+
+O artigo escrito por \cite{accelerometer:2006} conta com dois estudos principais, sendo o primeiro a aplicação e o estudo da viabilidade da utilização de gestos em um estúdio de design inteligente, em específico em aplicações de Desenho Assistido por Computador (CAD) e o segundo uma avaliação e comparação da interface por gestos em relação a outras modalidades como: controle por voz, objetos físicos utilizando RFID, uma tela de toque através de um tablet, e um dispositivo conhecido como IntelliPen, que funciona com um lazer apontado para uma tela que realiza funções similares à um mouse. Foi utilizado um Modelo Oculto de Markov (HMM)~\cite{hmm:1989} a partir de sinais discretos para o reconhecimento dos padrões, o algoritmo conta com duas fases distintas de treino e de reconhecimento.
+
+
+O dispositivo utilizado para captura de movimentos foi uma \textit{SoapBox}~\cite{soapbox:2002}, que é uma placa miniaturizada do tamanho de uma caixa de fósforos que conta com um processador, um giroscópio, um acelerômetro, um compasso eletrônico, e comunicação com e sem fios. O protótipo em questão conta com dois botões que são pressionados no inicio e no fim da realização de um gesto, além do modo de reconhecimento de gestos o protótipo conta com um modo de leitura contínua de movimentos, que pode ser acionado pressionando ambos os botões. Este modo realiza medições diretas dos valores fornecidos pelos sensores e os utiliza para ações de zoom e rotação de objetos virtuais 3D, permitindo que o usuário sinta que está segurando o objeto em suas mãos.
+
+Os resultados do estudo apontam que existe um grande potencial para a utilização de controle por gestos em um ambiente de trabalho, em específico para o aumento da produtividade em determinadas atividades. De acordo com o grau de conhecimento dos participantes dos testes houveram diferentes preferências quanto a interface de utilização do estúdio inteligente, participantes com um grau maior de experiência com design se mostraram mais favoráveis a IntelliPen, devido a similaridade à um mouse, já os demais também demonstraram um interesse maior pela interface por gestos. 
+
+O estudo conclui que a utilização de gestos combinados com outros métodos de controle pode ser benéfica para o aumento da produtividade em um ambiente de design, por permitir um controle mais natural e intuitivo de objetos 3D e facilitar a realização de atalhos em programas CAD.
+
+Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io, sendo o mais perdominante o fato dos sensores da Hand.io estarem presos diretamente à mão do usuário, na tabela a baixo as diferenças entre os dois trabalhos são apontadas de forma sucinta.
+
+\begin{table}[h!]
+	\centering
+    \caption{Comparação entre Hand.io e SoapBox}
+    \label{tab:comp_soapbox}
+	\begin{tabular}{|l|c|c|}
+    	\hline
+        %\rowcolor{\color{gray}}
+		\textbf{Recursos} & \textbf{Hand.io} & \textbf{SoapBox} \\
+        \hline
+        \hline
+        Preso à mão & x &  \\
+        \hline
+        Utiliza botões &  & x \\
+        \hline
+        Captura contínua de sinais & x &  \\
+        \hline
+        \hline
+        \textbf{Sensores} & & \\
+        \hline
+        \hline
+        Acelerômetro & x & x \\
+        \hline
+	\end{tabular}
+
+\end{table}
+
+\todo{fazer tabela de comparação}
+
+
+
+\section{I'm home: Defining and evaluating a gesture set for smart-home control}
+
+O artigo \textit{I'm home} \cite{imhome:2011} apresenta uma metodologia extensa para definição e avaliação de gestos para controle de ambientes inteligentes, em específico casas inteligentes. 
+O dispositivo escolhido para a realização da captura dos gestos foi um \textit{Smartphone Iphone} , tal dispositivo foi escolhido devido a presença de um sensor acelerômetro e giroscópio e a sua grande disponibilidade. 
+
+Foi perguntado ao grupo qual a preferência quanto à gestos pré determinados, seis dos perguntados se mostraram favoráveis à ideia da existência de gestos pré determinados que seriam melhorados de acordo com a utilização do dispositivo, quatro preferiam apenas gestos pré determinados, três gostariam de criar os seus próprios gestos e quatro não responderam. Os testes foram realizados utilizando um grupo de 18 pessoas. 
+
+Os testes foram realizados em uma sala de estar funcional onde haveria interação direta dos participantes com os dispositivos eletrônicos que seriam controlados através de gestos.
+
+
+\section{uWave: Accelerometer-based personalized gesture recognition and its applications}
+
+O trabalho realizado por \cite{uwave:2009} propõe um algoritmo de reconhecimento de gestos chamado \textit{uWave}, que é baseado no algoritmo \textit{Dynamic Time Warping} (DTW) \todo{adicionar referência}, diferentemente de métodos estatísticos como o Modelo Oculto de Markov (HMM)~\cite{hmm:1989}, que requer um volume muito grande de amostras de referência, o \textit{uWave} necessita de apenas uma amostra para realizar o reconhecimento de um gesto, algo que é muito vantajoso para a criação de gestos personalizados especificamente para cada usuário. O algoritmo foi criado para ser aplicado em qualquer dispositivo que conte com um sensor acelerômetro de três eixos, tal sensor foi escolhido devido à sua grande disponibilidade em dispositivos eletrônicos de consumo, o que aumenta consideravelmente a aplicabilidade do algoritmo em um ambiente real.
+
+No artigo são realizadas duas aplicações distintas do algoritmo afim de demonstrar a sua versatilidade e usabilidade em cenários reais, a primeira tem como objetivo a identificação simples e precisa de um usuário através de gestos personalizados, analogamente à uma senha alfanumérica. Nesta esta aplicação foi utilizado um controle de um Nintendo Wii \todo{adicionar referência} como método de entrada de gestos. O estudo constata, através de uma pesquisa realizada com os usuários, que um gesto personalizado é um meio de identificação muito mais fácil de memorizar do que uma senha composta por vários caracteres. 
+
+A segunda aplicação é a utilização de gestos para navegação de um ambiente 3D, foi desenvolvida uma rede social baseada em compartilhamento de vídeos utilizando um \textit{smartphone} da Motorola, que conta com um acelerômetro integrado. A aplicação permite que o usuário realize um remapeamento dos gestos para qualquer função específica do aplicativo, o que reforça a natureza de personalização do algoritmo.
+
+Em sua conclusão \cite{uwave:2009}, discorre sobre os desafios encontrados em definir um vocabulário de gestos que possam ser intuitivos para a grande maioria dos usuários. Outro ponto frisado é o fato do algoritmo depender apenas de um acelerômetro, o que dificulta no registro de certos gestos devido à falta de dados sobre a inclinação e o ângulo das forças realizada sobre o sensor, gerando uma certa confusão nos dados dos movimentos.
+
+Diferentemente do uWave, a Hand.io utiliza um módulo MPU 6050 que conta com um acelerômetro e um giroscópio integrados, o que permite que seja realizada uma medição mais precisa da direção dos movimentos realizados com a luva. Na tabela abaixo estão resumidos os principais pontos de diferenciação deste trabalho em relação ao uWave.
+
+\todo{fazer tabela de comparação}
+
+
+\section{A survey of glove-based systems and their applications}
+
+\cite{survey:2008}
+
+
+
+
+

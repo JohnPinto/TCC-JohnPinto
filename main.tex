@@ -1,0 +1,322 @@
+\title{Monografia TCC}
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	%twoside,			% para impressão em verso e anverso. Oposto a oneside
+  oneside,
+	a4paper,			% tamanho do papel.
+	% -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	% french,				% idioma adicional para hifenização
+	% spanish,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+	]{abntex2}
+
+  %\renewcommand{\ABNTEXpartfontsize}{\normalsize}
+	%\renewcommand{\ABNTEXchapterfontsize}{ \large}
+	%\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+	%\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+
+
+% ---
+% Pacotes básicos
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{svg}
+\graphicspath{{resources/}}	% Caminho para as imagens
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{todonotes}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\usepackage{listings}
+\definecolor{algColor}{RGB}{255,206,206} % rgb(255, 206, 206)
+
+%
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+
+% ---
+% CONFIGURAÇÕES DE PACOTES
+% ---
+
+\usepackage{abntex_ufrr_dcc}
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{HAND.IO: UMA LUVA PARA CONTROLE DE DISPOSITOVOS ELETRO-ELETRÔNICOS UTILIZANDO CONHECIMENTO DE GESTOS}
+
+\autor{JOÃO PAULO VERÇOSA PINTO}
+\local{Boa Vista - RR}
+\data{2018}
+\orientador{Dr. Herbert Oliveira Rocha}
+
+\tipotrabalho{Monografia}
+
+\preambulo{Trabalho de conclusão de curso  na área de Controle e Automação desenvolvido na UFRR com o objetivo de facilitar o controle de dispositivos através de gestos}
+% ---
+
+%-- Informações de dado para a FOLHA DE APROVAÇÃO
+
+\renewcommand{\orientadorBanca}{Prof. DSc. Herbert Oliveira Rocha}
+\renewcommand{\primeiroMembroBanca}{Prof. DSc. Leandro Nelinho Balico}
+\renewcommand{\segundoMembroBanca}{Prof. MSc. Acauan Cardoso Ribeiro}
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title},
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      	% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% ---
+
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+\imprimirfolhadeaprovacao
+% ---
+% Dedicatória
+% ---
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{ Dedicatória }
+   \vspace*{\fill}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\begin{agradecimentos}
+
+
+\end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{A todos aqueles tops}
+	\end{flushright}
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+  \textbf{Palavras-chaves}: controle de dispositivos, acelerômetro, giroscópio, ambientes inteligentes, vestíveis, luva inteligente.
+\end{resumo}
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+	\item[SE] Sistema Embarcado
+    \item[HMM] Hidden Markov Model
+    \item[CAD] Computer Assisted Design
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+%\begin{simbolos}
+%  \item[$ \Gamma $] Letra grega Gama
+%  \item[$ \Lambda $] Lambda
+%  \item[$ \zeta $] Letra grega minúscula zeta
+%  \item[$ \in $] Pertence
+%\end{simbolos}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\chapter{INTRODUÇÃO}
+\input{sections/introducao.tex}
+
+% ----------------------------------------------------------
+% Revisão de Literatura
+% ----------------------------------------------------------
+\chapter{CONCEITOS E DEFINIÇÕES}
+\input{sections/conceitos_e_definicoes.tex}
+
+\chapter{TRABALHOS CORRELATOS}
+\input{sections/trabalhos_correlatos.tex}
+
+% ----------------------------------------------------------
+% Detalhes de Desenvolvimento do Projeto
+% ----------------------------------------------------------
+\chapter{MÉTODO PROPOSTO}
+\input{sections/metodo_proposto.tex}
+
+
+% ----------------------------------------------------------
+% Resultados -- Pode vir junto com discussão
+% ----------------------------------------------------------
+\chapter{RESULTADOS PARCIAIS}
+\input{sections/resultados_experimentais.tex}
+% ----------------------------------------------------------
+% Conclusão
+% ----------------------------------------------------------
+\chapter{CONSIDERAÇÕES PARCIAIS E PRÓXIMO PASSOS}
+\input{sections/consideracoes_parciais_e_trabalhos_futuros.tex}
+
+% ----------------------------------------------------------
+% Apêndice 1: Revisão Sistemática da Literatura
+% ----------------------------------------------------------
+\chapter{APÊNDICE 1: REVISÃO SISTEMÁTICA DA LITERATURA}
+\input{sections/apendice_1.tex}
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{main}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%\phantompart
+\printindex
+%---------------------------------------------------------------------
+
+\end{document}

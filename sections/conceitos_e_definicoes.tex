@@ -1,0 +1,85 @@
+\label{chapter:conceitos}
+Este capítulo tem como objetivo apresentar os principais conceitos e definições abordados neste trabalho, tais como:
+Sistemas Embarcados;
+
+
+%----------------------------------
+% Sistemas Embarcados
+%----------------------------------
+\section{Sistemas Embarcados}
+De acordo com~\cite{VAHID:2001} um Sistema Embarcado é um sistema computacional desenvolvido para um propósito específico, que em contraposição a sistemas de propósito geral, realizam apenas uma tarefa, estes sistemas geralmente fazem parte de sistemas maiores que muitas vezes funcionam sem o conhecimento do usuário. Sistemas maiores como por exemplo um smartphone ou um computador pessoal, são compostos por pequenos sistemas embarcados que realizam apenas uma função, mas que quando estão juntos passam a realizar diversas atividades, passando a ser classificado como um sistema de propósito geral. Um exemplo de um sistema embarcado que faz parte de um sistema maior seria a placa de rede de um smartphone~\cite{qualcomm_2017}, que por si só é um sistema que apenas recebe e envia dados através de uma rede sem fio, mas que quando contextualizado em um smartphone possibilita o acesso a internet, o que promove a realização de diversas atividades disponíveis online, como acesso à redes sociais ou a realização de streaming de vídeos.
+
+A pesar da definição do que é um sistema embarcado seja uma tarefa complexa o autor os define como qualquer sistema computacional que não seja um desktop, um laptop ou um computador mainframe.
+
+
+Sistemas embarcados tem em comum o fato de terem sido desenvolvidos para realizar apenas uma função e terem métricas de design mais restritas que as de um sistema comum, onde estas métricas abrangem: custo, tamanho, performance e gasto energético; precisando também reagir a mudanças no ambiente muitas vezes devendo realizar certas computações em tempo real.
+
+
+Este trabalho utilizará diversos sistemas embarcados para atingir o seu objetivo, seja nos sensores quanto nas placas que são utilizadas para realizar as computações necessárias para a detecção dos  movimentos.
+\todo{Ampliar esta seção e adicionar os conceitos de restrições e sistemas de tempo real}
+
+\subsubsection{Restrições de um Sistema Embarcado}
+
+
+Custo
+Tamanho
+Performance
+Gasto energético
+
+\subsubsection{Sistemas de Tempo Real} %OK
+
+Conforme~\cite{BUTTAZZO:2011}, um sistema em tempo real deve ter o tempo do sistema medido utilizando a mesma escala de tempo do mundo real, isto ocorre pelo fato de que o sistema deve ter ciência do ambiente no qual ele irá operar. Sistemas em tempo real geralmente contam com uma definição errônea do seu funcionamento, que diz que um sistema em tempo real deve reagir à estímulos externos com uma certa rapidez e que apenas tendo sido este requisito atendido é o suficiente para que o sistema receba tal classificação, no entanto a definição de tal sistema é mais complexa que apenas esta, o que demonstra que existe um consenso errado sobre o que realmente é um sistema em tempo real.
+
+O autor realiza uma comparação entre sistemas biológicos e a velocidade das suas reações em seus habitats, um gato e uma tartaruga, por exemplo, podem ter velocidades de reação diferentes, no entanto em seus respectivos ambientes esta velocidade se mostra suficiente para a sua sobrevivência. No entanto com mudanças ambientais nas quais não há tempo suficiente para a evolução de suas reações, como a introdução de novos predadores, podem colocar em risco a sobrevivência de organismos já bem estabelecidos em um determinado bioma. Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, sejam eles biológicos ou artificiais, mas que na verdade está relacionado com o ambiente no qual estes sistemas irão atuar como apresentado na figura~\ref{fig:rt}.
+
+\begin{figure}[h]
+	\includegraphics{sistemas_em_tempo_real}
+    \centering
+    \caption{Diagrama de um sistema em tempo real genérico. (Adaptado de~\cite{BUTTAZZO:2011})}
+    \label{fig:rt}
+\end{figure}
+
+Existe um certo consenso na comunidade de que a evolução rápida no processamento de dados irá tornar a utilização de sistemas em tempo real obsoleta, no entanto tal afirmação não poderia estar mais enganada, apesar da computação mais rápida reduza sim o tempo de resposta de um sistema, ela não necessariamente garante que o tempo de resposta de tarefas individuais será atingido de maneira correta, um sistema em tempo real não deve apenas ser rápido, ele deve ser previsível. Analisando os sistemas do ponto de vista de processos, os processos de um sistema em tempo real contam com um componente ausente em processos de sistemas normais, o chamado \textit{Deadline}, que é o prazo máximo para a finalização de uma determinada tarefa. Em aplicações criticas o retorno de operações fora deste deadline não é apenas atrasado, mas sim errado, o que pode ocasionar em perdas significativas dependendo da criticidade do sistema.
+
+A criticidade de uma aplicação depende das consequências ocasionadas devido ao atraso no tempo de resposta esperado do sistema, sendo este classificado em \textit{Hard}, \textit{Firm} e \textit{Soft}.
+\begin{itemize}
+\item Sistemas críticos \textit{Hard} são aqueles onde caso não haja resposta no tempo definido podem ocorrer eventos devastadores, muitas vezes com perda de vidas.
+\item Sistemas críticos \textit{Firm} são aqueles onde o atraso na resposta torna o sistema inútil, no entanto nenhum dano é gerado.
+\item Sistemas críticos \textit{Soft} são aqueles onde resultados após o tempo de resposta definido ainda tem alguma utilidade para o sistema, mesmo gerando perda de desempenho.
+\end{itemize}
+
+A grande maioria dos sistemas trabalham de maneira hibrida quanto a sua criticidade, onde certas atividades podem ser consideradas como \textit{Hard} e outras podem ser \textit{Soft} ou \textit{Firm}. Atividades com criticidade \textit{Hard} incluem: coleta de dados utilizando sensores, detecção de condições críticas, filtragem de dados, etc. Atividades que contam com com uma criticidade \textit{Firm} podem ser encontradas em aplicações de redes e multimídia, por exemplo: processamento de imagem on-line, execução de vídeos e decodificação de áudio e vídeo. Já atividades com criticidade \textit{Soft} geralmente estão relacionadas à interação com o usuário como: a exibição de mensagens em uma tela, o processamento de sinais de teclado e o armazenamento de dados de utilização.
+
+A luva Hand.io é um sistema de tempo real que trabalha com atividades com criticidade \textit{Firm}, pois a falha no reconhecimento de um gesto e a realização da ação correspondente a este, não gera perdas de vidas ou perdas financeiras significativos, apenas tornam o sistema inútil.
+
+
+%----------------------------------
+% MICROS
+%----------------------------------
+\subsection{Microcontroladores e Microprocessadores}
+
+
+
+%----------------------------------
+% VSS
+%----------------------------------
+\section{Verificação de Software e Hardware}
+\subsection{Modelos Formais}
+\subsection{Máquina de Estados}
+\subsection{Rede de Petri}
+~\cite{VALK:2002}
+
+%----------------------------------
+% IoT
+%----------------------------------
+\section{Internet das Coisas}
+
+Em~\cite{ATZORI:2010} é demonstrado que em sua ideia fundamental a internet das coisas é um ambiente de computadores pervasivos que interagem um com os outros de maneira cooperativa para atingir metas em comum, este conceito permite a idealização de ambientes inteligentes onde todos os objetos estão em constante comunicação: para auxiliar o usuário a atingir uma qualidade de vida maior.
+
+Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a vida muito mais confortável e eficiente com sensores e atuadores, coletando dados sobre a preferência dos usuários e sobre o clima é possível que a temperatura seja adequada automaticamente levando em consideração o gasto de energia elétrica para uma maior economia.
+
+%----------------------------------
+% IA
+%----------------------------------
+\section{Reconhecimento de Padrões}
+\subsection{Aprendizagem de Máquina}
