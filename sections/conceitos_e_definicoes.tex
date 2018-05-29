@@ -18,15 +18,18 @@ Sistemas embarcados tem em comum o fato de terem sido desenvolvidos para realiza
 Este trabalho utilizará diversos sistemas embarcados para atingir o seu objetivo, seja nos sensores quanto nas placas que são utilizadas para realizar as computações necessárias para a detecção dos  movimentos.
 \todo{Ampliar esta seção e adicionar os conceitos de restrições e sistemas de tempo real}
 
-\subsubsection{Restrições de um Sistema Embarcado}
+\subsection{Restrições de um Sistema Embarcado}
 
+Um sistema embarcado geralmente trabalha em condições restritas nas quais certas métricas devem ser cumpridas para que seu funcionamento se dê de maneira eficiente, em seu livro, \cite{marwedel:2011} define uma série de métricas utilizadas para medir a eficiência de um dado sistema, em alguns casos existem situações onde estas métricas entram em conflito, neste caso cabe ao projetista do sistema definir qual a melhor configuração abrindo mão de certas funcionalidades para melhor atender as necessidades da aplicação. 
+
+O consumo de energia de um 
 
 Custo
 Tamanho
 Performance
 Gasto energético
 
-\subsubsection{Sistemas de Tempo Real} %OK
+\subsection{Sistemas de Tempo Real} %OK
 
 Conforme~\cite{BUTTAZZO:2011}, um sistema em tempo real deve ter o tempo do sistema medido utilizando a mesma escala de tempo do mundo real, isto ocorre pelo fato de que o sistema deve ter ciência do ambiente no qual ele irá operar. Sistemas em tempo real geralmente contam com uma definição errônea do seu funcionamento, que diz que um sistema em tempo real deve reagir à estímulos externos com uma certa rapidez e que apenas tendo sido este requisito atendido é o suficiente para que o sistema receba tal classificação, no entanto a definição de tal sistema é mais complexa que apenas esta, o que demonstra que existe um consenso errado sobre o que realmente é um sistema em tempo real.
 
@@ -63,18 +66,29 @@ A luva Hand.io é um sistema de tempo real que trabalha com atividades com criti
 %----------------------------------
 % VSS
 %----------------------------------
+
 \section{Verificação de Software e Hardware}
+
+
 \subsection{Modelos Formais}
+
+
 \subsection{Máquina de Estados}
+
+
 \subsection{Rede de Petri}
 ~\cite{VALK:2002}
+
+\section{Modelagem de sistemas}
+
+\subsection{UML}
 
 %----------------------------------
 % IoT
 %----------------------------------
 \section{Internet das Coisas}
 
-Em~\cite{ATZORI:2010} é demonstrado que em sua ideia fundamental a internet das coisas é um ambiente de computadores pervasivos que interagem um com os outros de maneira cooperativa para atingir metas em comum, este conceito permite a idealização de ambientes inteligentes onde todos os objetos estão em constante comunicação: para auxiliar o usuário a atingir uma qualidade de vida maior.
+No trabalho de~\cite{ATZORI:2010} é demonstrado que em sua ideia fundamental a internet das coisas é um ambiente de computadores pervasivos que interagem um com os outros de maneira cooperativa para atingir metas em comum, este conceito permite a idealização de ambientes inteligentes onde todos os objetos estão em constante comunicação: para auxiliar o usuário a atingir uma qualidade de vida maior.
 
 Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a vida muito mais confortável e eficiente com sensores e atuadores, coletando dados sobre a preferência dos usuários e sobre o clima é possível que a temperatura seja adequada automaticamente levando em consideração o gasto de energia elétrica para uma maior economia.
 
@@ -82,4 +96,6 @@ Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a v
 % IA
 %----------------------------------
 \section{Reconhecimento de Padrões}
+
+
 \subsection{Aprendizagem de Máquina}

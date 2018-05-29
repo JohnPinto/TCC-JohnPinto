@@ -28,7 +28,7 @@ O estudo conclui que a utilização de gestos combinados com outros métodos de 
 
 Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io, sendo o mais perdominante o fato dos sensores da Hand.io estarem presos diretamente à mão do usuário, na tabela a baixo as diferenças entre os dois trabalhos são apontadas de forma sucinta.
 
-\begin{table}[h!]
+\begin{table}[ht]
 	\centering
     \caption{Comparação entre Hand.io e SoapBox}
     \label{tab:comp_soapbox}
@@ -49,6 +49,11 @@ Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io
         \hline
         \hline
         Acelerômetro & x & x \\
+        \hline
+        Giroscópio & x & \\
+        \hline
+        \hline
+        \textbf{Contexto aplicado} & Residencial & Estúdio de design \\
         \hline
 	\end{tabular}
 
@@ -79,6 +84,39 @@ A segunda aplicação é a utilização de gestos para navegação de um ambient
 Em sua conclusão \cite{uwave:2009}, discorre sobre os desafios encontrados em definir um vocabulário de gestos que possam ser intuitivos para a grande maioria dos usuários. Outro ponto frisado é o fato do algoritmo depender apenas de um acelerômetro, o que dificulta no registro de certos gestos devido à falta de dados sobre a inclinação e o ângulo das forças realizada sobre o sensor, gerando uma certa confusão nos dados dos movimentos.
 
 Diferentemente do uWave, a Hand.io utiliza um módulo MPU 6050 que conta com um acelerômetro e um giroscópio integrados, o que permite que seja realizada uma medição mais precisa da direção dos movimentos realizados com a luva. Na tabela abaixo estão resumidos os principais pontos de diferenciação deste trabalho em relação ao uWave.
+
+\begin{table}[ht]
+	\centering
+    \caption{Comparação entre Hand.io e uWave}
+    \label{tab:comp_uwave}
+	\begin{tabular}{|l|c|c|c|}
+    	\hline
+        %\rowcolor{\color{gray}}
+		\textbf{Recursos} & \textbf{Hand.io} & \textbf{uWave controle} & \textbf{uWave autenticação} \\
+        \hline
+        \hline
+        Preso à mão & x & x & \\
+        \hline
+        Utiliza botões &  & x & \\
+        \hline
+        Captura contínua de sinais & x & & \\
+        \hline
+        \hline
+        \textbf{Sensores} & & & \\
+        \hline
+        \hline
+        Acelerômetro & x & x & \\
+        \hline
+        Giroscópio & x & x & \\
+        \hline
+        Compasso eletrônico & & x & \\
+        \hline
+        \hline
+        \textbf{Contexto aplicado} & Residencial & Controle & Autenticação\\
+        \hline
+	\end{tabular}
+
+\end{table}
 
 \todo{fazer tabela de comparação}
 
