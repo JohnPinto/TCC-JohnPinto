@@ -20,14 +20,17 @@ Este trabalho utilizará diversos sistemas embarcados para atingir o seu objetiv
 
 \subsection{Restrições de um Sistema Embarcado}
 
-Um sistema embarcado geralmente trabalha em condições restritas nas quais certas métricas devem ser cumpridas para que seu funcionamento se dê de maneira eficiente, em seu livro, \cite{marwedel:2011} define uma série de métricas utilizadas para medir a eficiência de um dado sistema, em alguns casos existem situações onde estas métricas entram em conflito, neste caso cabe ao projetista do sistema definir qual a melhor configuração abrindo mão de certas funcionalidades para melhor atender as necessidades da aplicação. 
+Um sistema embarcado geralmente trabalha em condições restritas nas quais certas métricas devem ser cumpridas para que seu funcionamento se dê de maneira eficiente, em seu livro, \cite{marwedel:2011} define uma série de métricas utilizadas para medir a eficiência de um dado sistema como:consumo energético, eficiência em tempo de execução, tamanho de código, peso e custo. Em alguns casos existem situações onde estas métricas entram em conflito, neste caso cabe ao projetista do sistema definir qual a melhor configuração abrindo mão de certas funcionalidades para melhor atender as necessidades da aplicação.
 
-O consumo de energia de um 
+O consumo de energia em um sistema embarcado muitas vezes é limitado devido à tecnologia atual de baterias e ao tipo do circuito utilizado, circuitos integrados desenvolvidos específicamente para certas aplicações tendem a ter uma eficiência energética muito superior aos demais, no entanto abrem mão de flexibilidade no desenvolvimento do software do sistema, circuitos reconfiguráveis como FPGAs \footnote{Field programable gate arrays} tem sua eficiência energética inferior aos ASICs mas oferecem uma flexibilidade de desenvolvimento muito maior apesar são limitados pelo tamanho dos circuitos reconfiguráveis. A limitação entre flexiblidade e eficiência também se aplica aos processadores. Processadores desenvolvidos específicamente para processamento de sinais analógicos, por exemplo, são exponencialmente mais eficientes energéticamente que processadores de propósito geral, que contam com a pior eficiência energética dentre os circuitos apresentados, mas permitem uma grande gama de possibilidades durante o desenvolvimento do sistema.
 
-Custo
-Tamanho
-Performance
-Gasto energético
+As limitações em tempo de execução devem ser reduzidas ao máximo para aproveitar o hardware disponível da melhor maneira possível, problemas acarretados por compiladores que geram binários que não utilizam todo o potencial da arquitetura devem ser corrigidos para afim desperdícios de instruções por ciclo de processamento.
+
+O tamanho do código e as limitações em espaço de armazenamento são um desafio recorrente no mundo dos sistemas embarcados, em diversas aplicações onde não existe a possiblidade de carregamento dinâmico de dados, como ocorrem nos smartphones, todos os dados devem ser armazenados na memória limitada dos chips, como nos casos de Systems on a Chip SoC, nos quais todos os componentes de processamento de dados se encontram em um único chip, nesse tipo de situação onde o espaço se torna um recurso precioso é necessário um cuidado maior durante a construção do código que será executado na plataforma. Tal limitação pode ser contornada com a utilização de memórias flash, mas em certas aplicações devido à outras limitações este tipo de recurso pode não estar disponível.
+
+O peso dos componentes pode ser o fator decisivo na aplicação de um sistema embarcado, existem situações onde o sistema deve ser portátil, logo um peso elevado acabaria por dificultar o manuseio do protótipo, nestes casos o projetista deve ter preferência pelos componentes de tamanho mais reduzido possível.
+
+Em sistemas voltados para o mercado de consumo onde existe um orçamento limitado para o desenvolvimento do sistema, o custo passa a ser uma métrica crucial para o projéto, componentes que não melhoram de maneira significativa a eficiência do pior caso do sistema devem ser descartados afim de reduzir o consumo total de energia. Os requisitos da aplicação devem ser cumpridos utilizando o menor número de componentes possível e com os componentes mais baratos possíveis desde que não compromentam a qualidade do produto final.
 
 \subsection{Sistemas de Tempo Real} %OK
 
