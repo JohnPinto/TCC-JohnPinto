@@ -11,7 +11,7 @@ A Hand.io é uma luva de controle que permite que quem a use realize gestos para
     \label{fig:bigpicture}
 \end{figure}
 
-Os sinais dos movimentos são processados pela central utilizando algoritmos de aprendizado de máquina, que ajustam os valores de referência dos gestos à cada vez que o usuário os realiza, buscando aumentar a precisão do reconhecimento dos gestos.
+Os sinais dos movimentos são processados pela central utilizando algoritmos de aprendizado de máquina, que classificam o gesto realizado e realizam as ações correspondentes que estão definidas no banco de dados do sistema.
 
 %Após os gestos terem sido reconhecidos com sucesso, a central de controle realiza a ação que 
 
@@ -56,18 +56,28 @@ A conexão entre a luva e a central será realizada utilizando o protocolo de re
 
 \section{Reconhecimento de Padrões Baseado em Movimentos e Ações}
 
-Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina que ficam em constante execução tentando classificar os sinais recebidos à algum sinal já registrado no banco de dados. 
+Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema. 
+
+Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de implementação dos sistema. O trabalho de \todo{referência de trabalho correlato} demonstra que um grande volume de gestos personalizados não é pratico do ponto de vista do usuário, pois existe uma quantidade limitada de gestos que podem ser lembrados com precisão sem que haja confusão durante a realização de um determinado gesto.
+
+Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos . Estes dados serão utilizados como treinamento 
+
+
 
 Existem dois momentos durante o fluxo de execução da Hand.io onde estes algoritmos são utilizados, quando o sistema aguarda que o usuário selecione o dispositivo que ele deseja controlar e quando o sistema aguarda um comando que será realizado no dispositivo selecionado, ambos os momentos podem ser vistos respectivamente na \autoref{fig:fluxograma} na letra B. A cada vez que os algoritmos finalizam a classificação dos sinais tidos como entrada, o sistema retorna para o usuário um sinal sonoro de confirmação. 
 
 
+
+
 \section{Modelo de Conexão Entre Dispositivos Eletrônicos}
 
-O controle dos dispositivos se dá utilizando um LED infravermelho, seguindo um padrão muito bem estabelecido pela industria de eletrônicos de consumo como controle remoto. Cada fabricante define códigos infravermelhos específicos para cada dispositivo, isto tal decisão foi tomada visando impedir a interferência de controles diferentes em dispositivos diferentes.
+O controle dos dispositivos se dará utilizando um LED infravermelho, seguindo um padrão de controle remoto bem estabelecido pela industria de eletrônicos de consumo. Cada fabricante define códigos infravermelhos específicos para cada dispositivo. Códigos de controle diferentes foram escolhidos visando impedir a interferência entre controles e dispositivos de fabricantes diferentes, como por exemplo o usuário tentar ligar o ar condicionado e acabar ligando a TV por acidente.
 
-Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarão armazenados e
+Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarão armazenados em um banco de dados localizado na central de processamento. Cada código estará relacionado à um gesto específico que quando classificado pelo sistema será executado.
 
 \section{Inferência de Comportamentos para Acionamento de Dispositivos Eletrotônicos}
+
+Com o passar do uso da luva 
 
 \section{Modelo de Prototipação}
 

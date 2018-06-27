@@ -1,11 +1,3 @@
-*.bbl
-*.blg
-*.brf
-*.idx
-*.lof
-*.lot
-main.pdf
-*.toc
 *.aux
 *.fdb_latexmk
 *.fls
