@@ -90,7 +90,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{HAND.IO: UMA LUVA PARA CONTROLE DE DISPOSITOVOS ELETRO-ELETRÔNICOS UTILIZANDO CONHECIMENTO DE GESTOS}
+\titulo{HAND.IO: UMA LUVA PARA CONTROLE DE DISPOSITOVOS ELETRO-ELETRÔNICOS UTILIZANDO RECONHECIMENTO DE GESTOS}
 
 \autor{JOÃO PAULO VERÇOSA PINTO}
 \local{Boa Vista - RR}
@@ -194,7 +194,7 @@
 % ---
 % Agradecimentos
 % ---
-\begin{agradecimentos}
+\begin{agradecimentos}[agradecimentos]
 
 
 \end{agradecimentos}
@@ -217,7 +217,7 @@
 
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
+\begin{resumo}[Resumo]
   \textbf{Palavras-chaves}: controle de dispositivos, acelerômetro, giroscópio, ambientes inteligentes, vestíveis, luva inteligente.
 \end{resumo}
 
@@ -225,6 +225,7 @@
 % inserir lista de ilustrações
 % ---
 \pdfbookmark[0]{\listfigurename}{lof}
+\renewcommand{\listfigurename}{Lista de Figuras}
 \listoffigures*
 \cleardoublepage
 % ---
@@ -233,6 +234,7 @@
 % inserir lista de tabelas
 % ---
 \pdfbookmark[0]{\listtablename}{lot}
+\renewcommand{\listtablename}{Lista de Tabelas}
 \listoftables*
 \cleardoublepage
 % ---
@@ -240,11 +242,11 @@
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
-\begin{siglas}
-	\item[SE] Sistema Embarcado
-    \item[HMM] Hidden Markov Model
-    \item[CAD] Computer Assisted Design
-\end{siglas}
+% \begin{siglas}
+% 	\item[SE] Sistema Embarcado
+%     \item[HMM] Hidden Markov Model
+%     \item[CAD] Computer Assisted Design
+% \end{siglas}
 % ---
 
 % ---
@@ -262,6 +264,7 @@
 % inserir o sumario
 % ---
 \pdfbookmark[0]{\contentsname}{toc}
+\renewcommand{\contentsname}{Sumário}
 \tableofcontents*
 \cleardoublepage
 % ---
