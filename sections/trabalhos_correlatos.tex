@@ -65,8 +65,10 @@ Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io
 
 \section{I'm home: Defining and evaluating a gesture set for smart-home control}
 
+\label{cor:home}
+
 O artigo \textit{I'm home} de \citeonline{imhome:2011} apresenta uma metodologia extensa para definição e avaliação de gestos para controle de ambientes inteligentes, em específico casas inteligentes. 
-O dispositivo escolhido para a realização da captura dos gestos foi um \textit{Smartphone Iphone}, tal dispositivo foi escolhido devido a presença de um sensor acelerômetro e giroscópio e a sua grande disponibilidade. 
+O dispositivo escolhido para a realização da captura dos gestos foi um \textit{Smartphone Iphone}, tal dispositivo foi escolhido devido a presença de um sensor acelerômetro e giroscópio e a sua grande disponibilidade. Os sinais enviados pelos sensores foram processador por um algoritmo Fast Dynamic Time Warping (FastDTW) \cite{Salvador:2007} que conta com uma complexidade de tempo de de espaço linear.
 
 Foram realizados três estudos que buscavam definir um vocabulário de gestos simples e coeso, definir o grau de distinção entre diferentes gestos e o grau de dificuldade na memorização de cada gesto. 
 
@@ -84,7 +86,9 @@ No terceiro estudo participantes que não tiveram relação nenhuma com os estud
 
 No segundo momento foram exibidos aos participantes somente as ações que cada gesto realizava em ordem aleatória e durante os 5 segundos seguintes foi requisitado que o gesto correspondente à ação fosse realizado. Caso o gesto fosse correto a apresentação continuaria, caso contrário, o gesto correto seria mostrado e a ação seria exibida ao final da apresentação, que continuaria até que todos os gestos fossem realizados corretamente. Foram registradas a quantidade de erros para cada gesto.
 
-Este estudo conclui que os usuários conseguem distinguir gestos intuitivos de gestos menos intuitivos. Algo que foi comprovado pela quantidade de erros durante o teste de memorabilidade. Gestos que tiveram um grau maior de 
+O terceiro estudo conclui que os usuários conseguem distinguir gestos intuitivos de gestos menos intuitivos. Algo que foi comprovado pela quantidade de erros durante o teste de memorabilidade. Gestos mais simples e que rápidos são os mais indicados.
+
+    
 
 
 
@@ -92,7 +96,7 @@ Este estudo conclui que os usuários conseguem distinguir gestos intuitivos de g
 
 \label{cor:uwave}
 
-O trabalho realizado por \citeonline{uwave:2009} propõe um algoritmo de reconhecimento de gestos chamado \textit{uWave}, que é baseado no algoritmo \textit{Dynamic Time Warping} (DTW) \todo{adicionar referência}, diferentemente de métodos estatísticos como o Modelo Oculto de Markov (HMM)~\cite{hmm:1989}, que requer um volume muito grande de amostras de referência, o \textit{uWave} necessita de apenas uma amostra para realizar o reconhecimento de um gesto, algo que é muito vantajoso para a criação de gestos personalizados especificamente para cada usuário. O algoritmo foi criado para ser aplicado em qualquer dispositivo que conte com um sensor acelerômetro de três eixos, tal sensor foi escolhido devido à sua grande disponibilidade em dispositivos eletrônicos de consumo, o que aumenta consideravelmente a aplicabilidade do algoritmo em um ambiente real.
+O trabalho realizado por \citeonline{uwave:2009} propõe um algoritmo de reconhecimento de gestos chamado \textit{uWave}, que é baseado no algoritmo \textit{Dynamic Time Warping} (DTW) \cite{Salvador:2007}, diferentemente de métodos estatísticos como o Modelo Oculto de Markov (HMM)~\cite{hmm:1989}, que requer um volume muito grande de amostras de referência, o \textit{uWave} necessita de apenas uma amostra para realizar o reconhecimento de um gesto, algo que é muito vantajoso para a criação de gestos personalizados especificamente para cada usuário. O algoritmo foi criado para ser aplicado em qualquer dispositivo que conte com um sensor acelerômetro de três eixos, tal sensor foi escolhido devido à sua grande disponibilidade em dispositivos eletrônicos de consumo, o que aumenta consideravelmente a aplicabilidade do algoritmo em um ambiente real.
 
 No artigo são realizadas duas aplicações distintas do algoritmo afim de demonstrar a sua versatilidade e usabilidade em cenários reais, a primeira tem como objetivo a identificação simples e precisa de um usuário através de gestos personalizados, analogamente à uma senha alfanumérica. Nesta esta aplicação foi utilizado um controle de um Nintendo Wii \todo{adicionar referência} como método de entrada de gestos. O estudo constata, através de uma pesquisa realizada com os usuários, que um gesto personalizado é um meio de identificação muito mais fácil de memorizar do que uma senha composta por vários caracteres. 
 
@@ -138,9 +142,9 @@ Diferentemente do uWave, a Hand.io utiliza um módulo MPU 6050 que conta com um 
 \todo{fazer tabela de comparação}
 
 
-\section{A survey of glove-based systems and their applications}
+%\section{A survey of glove-based systems and their applications}
 
-\cite{survey:2008}
+%\cite{survey:2008}
 
 
 

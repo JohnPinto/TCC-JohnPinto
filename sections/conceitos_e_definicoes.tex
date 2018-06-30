@@ -10,23 +10,27 @@ De acordo com~\citeonline{VAHID:2001} um sistema embarcado é um sistema computa
 
 Dispositivos como smartphones e computadores pessoais, são compostos por diversos sistemas embarcados que realizam apenas uma função, mas que quando estão juntos passam a realizar diversas atividades, passando a ser classificado como um sistema de propósito geral. Um exemplo de um sistema embarcado que faz parte de um sistema maior seria a placa de rede de um smartphone~\cite{qualcomm_2017}, que por si só é um sistema que apenas recebe e envia dados através de uma rede sem fio, mas que quando contextualizado em um smartphone possibilita o acesso a internet, o que promove a realização de diversas atividades disponíveis online, como acesso à redes sociais ou a reprodução de vídeos. \cite{VAHID:2001}
 
+%Este trabalho irá utilizar diversos sistemas embarcados durante o desenvolvimento de seu protótipo, que permitirão que a luva Hand.io atinja um
+
 \todo{adicionar imagem}
 
 \subsection{Restrições de um Sistema Embarcado} %OK
 
-Um sistema embarcado geralmente trabalha em condições restritas nas quais certas métricas devem ser cumpridas para que seu funcionamento se dê de maneira eficiente, em seu livro, \citeonline{marwedel:2011} define uma série de métricas utilizadas para medir a eficiência de um dado sistema como:consumo energético, eficiência em tempo de execução, tamanho de código, peso e custo. Em alguns casos existem situações onde estas métricas entram em conflito, neste caso cabe ao projetista do sistema definir qual a melhor configuração abrindo mão de certas funcionalidades para melhor atender as necessidades da aplicação.
+Um sistema embarcado geralmente trabalha em condições restritas nas quais certas métricas devem ser cumpridas para que seu funcionamento se dê de maneira eficiente, em seu livro, \citeonline{marwedel:2011} define uma série de métricas utilizadas para medir a eficiência de um dado sistema como: consumo energético, eficiência em tempo de execução, tamanho de código, peso e custo. Em alguns casos existem situações onde estas métricas entram em conflito, neste caso cabe ao projetista do sistema definir qual a melhor configuração abrindo mão de certas funcionalidades para melhor atender as necessidades da aplicação.
 
-O consumo de energia em um sistema embarcado muitas vezes é limitado devido à tecnologia atual de baterias e ao tipo do circuito utilizado, circuitos integrados desenvolvidos especificamente para certas aplicações tendem a ter uma eficiência energética muito superior aos demais, no entanto abrem mão de flexibilidade no desenvolvimento do software do sistema, circuitos reconfiguráveis como FPGAs\footnote{Field programable gate arrays} tem sua eficiência energética inferior aos ASICs mas oferecem uma flexibilidade de desenvolvimento muito maior apesar são limitados pelo tamanho dos circuitos reconfiguráveis. \cite{marwedel:2011}
+O consumo de energia em um sistema embarcado muitas vezes é limitado devido à tecnologia atual de baterias e ao tipo do circuito utilizado. Circuitos Integrados de Aplicações Específicas (ASICs, em inglês) tendem a ter uma eficiência energética muito superior aos demais, no entanto abrem mão de flexibilidade no desenvolvimento do software , circuitos reconfiguráveis como os Arranjos de Portas Programáveis em Campo (FPGAs, em inglês) tem sua eficiência energética inferior aos ASICs mas oferecem uma flexibilidade de desenvolvimento muito maior apesar de serem limitados pelo tamanho dos circuitos reconfiguráveis disponíveis. \cite{marwedel:2011}
 
 A limitação entre flexibilidade e eficiência também se aplica aos processadores. Processadores desenvolvidos especificamente para processamento de sinais analógicos, por exemplo, são exponencialmente mais eficientes energeticamente que processadores de propósito geral, que contam com a pior eficiência energética dentre os circuitos apresentados, mas permitem uma grande gama de possibilidades durante o desenvolvimento do sistema. \cite{marwedel:2011}
 
-As limitações em tempo de execução devem ser reduzidas ao máximo para aproveitar o hardware disponível da melhor maneira possível, problemas acarretados por compiladores que geram binários que não utilizam todo o potencial da arquitetura devem ser corrigidos para afim desperdícios de instruções por ciclo de processamento. \cite{marwedel:2011}
+As limitações em tempo de execução devem ser reduzidas ao máximo para aproveitar o hardware disponível da melhor maneira possível. Problemas acarretados por compiladores que geram binários que não utilizam todo o potencial da arquitetura devem ser corrigidos a fim de eliminar desperdícios de instruções por ciclo de processamento. \cite{marwedel:2011}
 
-O tamanho do código e as limitações em espaço de armazenamento são um desafio recorrente no mundo dos sistemas embarcados, em diversas aplicações onde não existe a possibilidade de carregamento dinâmico de dados, como ocorrem nos smartphones, todos os dados devem ser armazenados na memória limitada dos chips, como nos casos de Systems on a Chip SoC, nos quais todos os componentes de processamento de dados se encontram em um único chip, nesse tipo de situação onde o espaço se torna um recurso precioso é necessário um cuidado maior durante a construção do código que será executado na plataforma. Tal limitação pode ser contornada com a utilização de memórias flash, mas em certas aplicações devido à outras limitações este tipo de recurso pode não estar disponível. \cite{marwedel:2011}
+O tamanho do código e as limitações em espaço de armazenamento são um desafio recorrente no mundo dos sistemas embarcados. Em diversas aplicações onde não existe a possibilidade de carregamento dinâmico de dados, como ocorrem nos smartphones, todos os dados devem ser armazenados na memória limitada dos chips, como nos casos de \textit{Systems on a Chip} (SoC), nos quais todos os componentes de processamento de dados se encontram em um único chip. Nesse tipo de situação onde o espaço se torna um recurso precioso é necessário um cuidado maior durante a construção do código que será executado na plataforma. Tal limitação pode ser contornada com a utilização de memórias flash, mas em certas aplicações devido à outras limitações este tipo de recurso pode não estar disponível. \cite{marwedel:2011}
 
-O peso dos componentes pode ser o fator decisivo na aplicação de um sistema embarcado, existem situações onde o sistema deve ser portátil, logo um peso elevado acabaria por dificultar o manuseio do protótipo, nestes casos o projetista deve ter preferência pelos componentes de tamanho mais reduzido possível. \cite{marwedel:2011}
+O peso dos componentes pode ser o fator decisivo na aplicação de um sistema embarcado, existem situações onde o sistema deve ser portátil, logo um peso elevado acabaria por dificultar o manuseio do protótipo. Nestes casos o projetista deve ter preferência pelos componentes de tamanho mais reduzido possível. \cite{marwedel:2011}
 
 Em sistemas voltados para o mercado de consumo onde existe um orçamento limitado para o desenvolvimento do sistema, o custo passa a ser uma métrica crucial para o projeto, componentes que não melhoram de maneira significativa a eficiência do pior caso do sistema devem ser descartados afim de reduzir o consumo total de energia. Os requisitos da aplicação devem ser cumpridos utilizando o menor número de componentes possível e com os componentes mais baratos possíveis desde que não comprometam a qualidade do produto final. \cite{marwedel:2011}
+
+%A luva Hand.io contará com diversas restrições em seu protótipo devido à natureza da luva. Por ser uma peça de roupa, se espera que seu peso seja reduzido.
 
 \subsection{Sistemas de Tempo Real} %OK
 
@@ -62,22 +66,34 @@ A luva Hand.io é um sistema de tempo real que trabalha com atividades com criti
 
 As diferenças entre microcontroladores e microprocessadores são apresentadas por \citeonline{ayala:1991} em seu livro, onde fica claro que apesar de terem surgido da mesma ideia e serem fabricados pelo mesmo grupo de pessoas, seu funcionamento e aplicação diferem grandemente. Existem diferenças fundamentais no design de tais dispositivos, enquanto microcontroladores por si só contam com todos os componentes necessários para o seu funcionamento, microprocessadores necessitam de outros componentes e periféricos para funcionar como um computador completo.
 
-Microprocessadores são conhecidos popularmente como Unidades Centrais de Processamento (CPU, em inglês), e tem como sua função principal buscar e modificar extensivamente dados da memória para que sejam armazenados ou exibidos para o usuário. Por si só um microprocessador não constitui um microcomputador completo, para se tornar uma máquina capaz de executar programas de propósito geral se faz necessária a utilização de memórias RAM, memórias de armazenamento massivo e diversos dispositivos de entrada e saída externos. O termo que melhor descreve microprocessadores seria \textit{propósito geral}, o hardware destes componentes é desenvolvido de tal maneira a permitir o desenvolvimento de sistemas grandes ou pequenos dependendo da demanda da aplicação. O design do microprocessador é desenvolvido de modo a atender as suas expectativas no mercado de consumo em massa. \cite{ayala:1991}
+Microprocessadores são conhecidos popularmente como Unidades Centrais de Processamento (CPU, em inglês), e tem como sua função principal buscar e modificar extensivamente dados da memória para que sejam armazenados ou exibidos para o usuário. Por si só um microprocessador não constitui um microcomputador completo, para se tornar uma máquina capaz de executar programas de propósito geral se faz necessária a utilização de memórias RAM, memórias de armazenamento massivo e diversos dispositivos de entrada e saída externos. \cite{ayala:1991}
 
-Os microcontroladores funcionam de maneira similar aos microprocessadores, no entanto, além de terem os componentes encontrados em um microprocessador eles também contam com todos os componentes necessários para o funcionamento de um computador completo, como memórias RAM, memórias ROM e portas paralelas e seriais de entrada e saída. Como os microprocessadores, os microcontroladores também são componentes de propósito geral, mas o seu foco deixa de ser apenas computar os dados encontrados na memória e armazena-los, e passa também controlar o ambiente em que se encontram se baseando nos resultados do processamento dos dados disponíveis. Os programas utilizados em microcontroladores são armazenados na memória ROM e não tem seu funcionamento alterado durante o ciclo de vida do sistema. As instruções de máquina encontradas nos microcontroladores geralmente envolvem buscar dados na memória interna e que também realizam operações envolvendo os pinos inclusos na plataforma, o que permite que cada pino tenha seu propósito programado de acordo com a vontade do desenvolvedor. \cite{ayala:1991}
+O termo que melhor descreve microprocessadores seria \textit{propósito geral}, o hardware destes componentes é desenvolvido de tal maneira a permitir o desenvolvimento de sistemas grandes ou pequenos dependendo da demanda da aplicação. O design do microprocessador é desenvolvido de modo a atender as suas expectativas no mercado de consumo em massa. \cite{ayala:1991}
+
+Os microcontroladores funcionam de maneira similar aos microprocessadores, no entanto, além de terem os componentes encontrados em um microprocessador eles também contam com todos os componentes necessários para o funcionamento de um computador completo, como memórias RAM, memórias ROM e portas paralelas e seriais de entrada e saída. Como os microprocessadores, os microcontroladores também são componentes de propósito geral, mas o seu foco deixa de ser apenas computar os dados encontrados na memória e armazená-los, e passa também controlar o ambiente em que se encontram se baseando nos resultados do processamento dos dados disponíveis. \cite{ayala:1991}
+
+Os programas utilizados em microcontroladores são armazenados na memória ROM e não tem seu funcionamento alterado durante o ciclo de vida do sistema. As instruções de máquina encontradas nos microcontroladores geralmente envolvem buscar dados na memória interna e que também realizam operações envolvendo os pinos inclusos na plataforma, o que permite que cada pino tenha seu propósito programado de acordo com a vontade do desenvolvedor. \cite{ayala:1991}
 
 
 %----------------------------------
 % VSS
 %----------------------------------
 
-\section{Modelagem de sistemas}
+\section{Modelagem e verificação de sistemas}
 
-\subsection{UML}
+Segundo \citeonline{edwards:1997}, os sistemas atualmente, em sua maioria, são desenvolvidos com uma abordagem \textit{ad hoc} que é baseada em experiências prévias dos desenvolvedores com produtos similares aos que serão utilizados durante a implementação do sistema. Uma abordagem utilizando modelos formais e métodos de síntese automatizada de implementação, é uma maneira mais efetivas de garantir um sistema seguro. 
 
-\section{Verificação de Software e Hardware}
+Um modelo é uma representação abstrata e simplificada de uma coisa real. No desenvolvimento de sistemas um modelo permite aos desenvolvedores a possibilidade de distinguir o que realmente é necessário e o que é supérfluo, além de permitir que seja realizada uma análise mais rápida do sistema do que se cada componente do sistema tivesse que ser analisado individualmente. \cite{UML:2006}
 
-Segundo \citeonline{edwards:1997} 
+A utilização de um ou mais modelos formais para descrever os comportamentos do sistema antes de tomar decisões mais específicas da implementação, como por exemplo, qual plataforma de hardware ou qual linguagem de programação utilizar, podem reduzir consideravelmente as falhas durante o funcionamento do sistema. \cite{edwards:1997}
+
+Estes modelos permitem que as propriedades do sistema sejam validadas de maneira simples, ainda durante as fases inciais do desenvolvimento, através de ferramentas de simulação e verificação automatizadas,  evitando eventuais entraves que podem comprometer a eficiência do sistema. \cite{edwards:1997} 
+
+\subsection{United Modeling Language}
+
+De acordo com \citeonline{UML:2006} a Linguagem de Modelagem Unificada (UML, em Inglês) é um padrão amplamente utilizado por desenvolvedores para modelagem de software e hardware de sistemas em geral. A UML é uma ferramenta muito útil durante o desenvolvimento de um sistema, pois permite aos desenvolvedores manter um certo controle sobre a complexidade do sistema, permitindo que as partes mais importantes do sistema se sobressaiam em relação às outras, evitando eventuais confusões durante a implementação.
+
+
 
 \subsection{Modelos Formais}
 
