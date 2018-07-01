@@ -58,9 +58,12 @@ A conexão entre a luva e a central será realizada utilizando o protocolo de re
 
 Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema. 
 
-Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de implementação e contarão com a ajuda de um grupo de voluntários que servirão de referência para o desenvolvimento de gestos simples e coesos. O trabalho de \citeonline{imhome:2011} encontrado na \autoref{cor:home} demonstra que um grande volume de gestos personalizados não é pratico do ponto de vista do usuário, pois existe uma quantidade limitada de gestos que podem ser lembrados com precisão sem que haja confusão durante a realização de um determinado gesto.
+Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de implementação e contarão com a ajuda de um grupo de voluntários que servirão de referência para o desenvolvimento de gestos simples e coesos. O trabalho de \citeonline{imhome:2011} encontrado na \autoref{cor:home} demonstra que um grande grupo de voluntários é fundamental para a criação de um vocabulário de gestos eficiente. 
 
-Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina que irão reconhecer os gestos realizados pelo usuário.
+Gestos pré definidos e gestos criados pelos usuários são a abordagem mais efetiva para controlar um ambiente.
+No entanto uma quantidade muito grande de gestos e gestos muito complexos não são a melhor escolha, pois existe uma quantidade limitada de gestos que podem ser lembrados com precisão sem que haja confusão durante a realização de um determinado gesto.
+
+Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina que irão reconhecer os gestos realizados pelo usuário. 
 
 
 
@@ -85,7 +88,9 @@ Os componentes utilizados para a confecção do protótipo da luva e da central 
 
 O protótipo é composto pela luva em si que conta com sensores que irão capturar os movimentos do usuário apresentado na \autoref{fig:esq_luva}, e pela central de processamento que irá realizar as ações correspondentes aos gestos exibida na \autoref{fig:esq_central}, nos dispositivos conectados.
 
-A luva será composta por uma placa GY-521 que tem um sensor MPU-6050, apresentado no canto esquerdo da \autoref{fig:esq_luva}. Esta placa é utilizada em diversos projetos que utilizam captura de movimentos devido a sua boa relação custo benefício em relação a precisão dos sensores. O sensor MPU-6050 conta com um acelerômetro de três eixos 
+A luva será composta por uma placa GY-521 que tem um sensor MPU-6050, apresentado no canto direito da \autoref{fig:esq_luva}. Esta placa é utilizada em diversos projetos que utilizam captura de movimentos devido a sua boa relação custo benefício em relação a precisão dos sensores. O sensor MPU-6050 conta com um acelerômetro de três eixos e um processador de sinais digitais integrado
+
+A comunicação com a central de processamento ocorrerá utilizando uma placa Wi-Fi ESP-8266 
 
 
 
