@@ -45,7 +45,7 @@ A ideia principal da luva Hand.io é que o usuário controle seu ambiente utiliz
 
 A luva Hand.io utilizará dois sensores para realizar a captura dos movimentos da mão do usuário, um acelerômetro e um giroscópio. Estes dois sensores foram escolhidos visando evitar problemas os encontrados no trabalho de \citeonline{uwave:2009} encontrado na Seção~\ref{cor:uwave} que sofre problemas de precisão devido a presença de apenas um sensor acelerômetro.
 % 
-Os sensores escolhidos realizam diversas amostras nas mudanças na aceleração e no giro realizados na luva, 
+Os sensores escolhidos realizam diversas amostras nas mudanças na aceleração e no giro realizados na luva\todo{Apresentar exemplos de dados gerados pelos sensores}. 
 
 
 
@@ -69,8 +69,6 @@ No entanto uma quantidade muito grande de gestos e gestos muito complexos não s
 
 Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina que irão reconhecer os gestos realizados pelo usuário. 
 
-
-
 Existem dois momentos durante o fluxo de execução da Hand.io onde estes algoritmos são utilizados, quando o sistema aguarda que o usuário selecione o dispositivo que ele deseja controlar e quando o sistema aguarda um comando que será realizado no dispositivo selecionado, ambos os momentos podem ser vistos respectivamente na \autoref{fig:fluxograma} na letra B. A cada vez que os algoritmos finalizam a classificação dos sinais tidos como entrada, o sistema retorna para o usuário um sinal sonoro de confirmação. 
 
 
@@ -78,9 +76,9 @@ Existem dois momentos durante o fluxo de execução da Hand.io onde estes algori
 
 \section{Modelo de Conexão Entre Dispositivos Eletrônicos}
 
-O controle dos dispositivos se dará utilizando um LED infravermelho, seguindo um padrão de controle remoto bem estabelecido pela industria de eletrônicos de consumo. Cada fabricante define códigos infravermelhos específicos para cada dispositivo. Códigos de controle diferentes foram escolhidos visando impedir a interferência entre controles e dispositivos de fabricantes diferentes, como por exemplo o usuário tentar ligar o ar condicionado e acabar ligando a TV por acidente.
+O controle dos dispositivos se dará utilizando um LED infravermelho, seguindo um padrão de controle remoto bem estabelecido pela industria de eletrônicos de consumo. Cada fabricante define códigos infravermelhos específicos para cada dispositivo\todo{Apresentar exemplo}. Códigos de controle diferentes foram escolhidos visando impedir a interferência entre controles e dispositivos de fabricantes diferentes, como por exemplo o usuário tentar ligar o ar condicionado e acabar ligando a TV por acidente.
 
-Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarão armazenados em um banco de dados localizado na central de processamento. Cada código estará relacionado à um gesto específico que quando classificado pelo sistema será executado.
+Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarão armazenados em um banco de dados localizado na central de processamento. Cada código estará relacionado à um gesto específico que quando classificado pelo sistema será executado\todo{Descrever como cada código será cadastrado na central}.
 
 %\section{Inferência de Comportamentos para Acionamento de Dispositivos Eletrotônicos}
 
@@ -88,15 +86,17 @@ Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarã
 
 \section{Modelo de Prototipação}
 
-Os componentes utilizados para a confecção do protótipo da luva e da central buscam ter o menor custo possível, sem comprometer a qualidade do sistema. Componentes produzidos em massa que já tem sua utilização testada extensivamente pela comunidade foram selecionados. 
+Os componentes utilizados para a confecção do protótipo da luva e da central buscam ter o menor custo possível, sem comprometer a qualidade do sistema. Componentes produzidos em massa que já tem sua utilização testada extensivamente pela comunidade foram selecionados\todo{Apresentar exemplos}. 
 
 O protótipo é composto pela luva em si que conta com sensores que irão capturar os movimentos do usuário apresentado na \autoref{fig:esq_luva}, e pela central de processamento que irá realizar as ações correspondentes aos gestos exibida na \autoref{fig:esq_central}, nos dispositivos conectados.
 
-A luva será composta por uma placa GY-521 que tem um sensor MPU-6050, apresentado no canto direito da \autoref{fig:esq_luva}. Esta placa é utilizada em diversos projetos que utilizam captura de movimentos devido a sua boa relação custo benefício em relação a precisão dos sensores. O sensor MPU-6050 conta com um acelerômetro de três eixos e um processador de sinais digitais integrado
+\todo[inline]{Descrever quais são os componentes da central}
 
-A comunicação com a central de processamento ocorrerá utilizando uma placa Wi-Fi ESP-8266 
+A luva será composta por uma placa GY-$521$ que tem um sensor MPU-$6050$, apresentado no canto direito da \autoref{fig:esq_luva}. Esta placa é utilizada em diversos projetos que utilizam captura de movimentos devido a sua boa relação custo benefício em relação a precisão dos sensores. O sensor MPU-$6050$ conta com um acelerômetro de três eixos e um processador de sinais digitais integrado
+% 
+A comunicação com a central de processamento ocorrerá utilizando uma placa Wi-Fi ESP-$8266$\todo{Apresentar uma estimativa de preço para o sistema completo}.
 
-
+\todo[inline]{Descrever as figuras apresentadas abaixo, e razão da escolho do arduino.}
 
 \begin{figure}[ht]
     \centering
@@ -111,5 +111,8 @@ A comunicação com a central de processamento ocorrerá utilizando uma placa Wi
     \caption{Esquemático da central de processamento de sinais e execução de ações}
     \label{fig:esq_central}
 \end{figure}
+
+
+\todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
 
 %\section{Cronograma}
