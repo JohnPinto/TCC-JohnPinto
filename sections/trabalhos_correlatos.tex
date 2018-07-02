@@ -1,32 +1,34 @@
-Neste capítulo serão expostos trabalhos que contam com métodos de captura de movimentos de mão utilizando dispositivos com funções similares à luva Hand.io, para uma melhor comparação os trabalhos selecionados contam com sensores acelerômetros e giroscópios como principal método de captura de sinais, assim como a luva Hand.io. Os métodos dos estudos serão analisados de maneira critica afim de permitir uma comparação entre os pontos fortes e fracos de cada abordagem em relação a este trabalho.
+Neste capítulo serão expostos trabalhos que contam com métodos de captura de movimentos de mão utilizando dispositivos com funções similares ao trabalho aqui proposto para a construção da luva Hand.io. Para uma melhor comparação, os trabalhos selecionados contam com sensores de acelerômetros e giroscópios como principal método de captura de sinais, assim como a luva Hand.io. 
+% Os métodos dos estudos serão analisados de maneira critica afim de permitir uma comparação entre os pontos fortes e fracos de cada abordagem em relação a este trabalho.
 
-Os trabalhos demonstrados contam com diferentes abordagens no registro dos gestos sendo eles: \textit{Accelerometer-based gesture control for a design environment}~\cite{accelerometer:2006}, que propõe um pequeno dispositivo para controle de um estúdio de design inteligente,   \textit{I'm home}~\cite{imhome:2011}, que apresenta um método bem detalhado para a definição um dicionário de gestos eficientes utilizando a participação dos usuários durante o período de desenvolvimento do sistema, \textit{uWave}~\cite{uwave:2009}, que demonstra um algoritmo eficiente de reconhecimento de gestos com uma baixa necessidade de recursos computacionais, e por fim \textit{A survey of glove-based systems and their applications}~\cite{survey:2008} faz uma análise profunda no campo de dispositivos vestíveis, em específico luvas de controle, mostrando desde os dispositivos mais primitivos até os utilizados atualmente. 
+% Os trabalhos aqui analisado contam com diferentes abordagens para o registro dos gestos, sendo eles: \textit{Accelerometer-based gesture control for a design environment}~\cite{accelerometer:2006}, que propõe um pequeno dispositivo para controle de um estúdio de design inteligente; \textit{I'm home}~\cite{imhome:2011} que apresenta um método bem detalhado para a definição um dicionário de gestos eficientes utilizando a participação dos usuários durante o período de desenvolvimento do sistema; \textit{uWave}~\cite{uwave:2009} que demonstra um algoritmo eficiente de reconhecimento de gestos com uma baixa necessidade de recursos computacionais; e por fim \textit{A survey of glove-based systems and their applications}~\cite{survey:2008} faz uma análise profunda no campo de dispositivos vestíveis, em específico luvas de controle, mostrando desde os dispositivos mais primitivos até os utilizados atualmente. 
 
-Estes trabalhos demonstram a viabilidade do desenvolvimento da Hand.io e sua aplicação em um ambiente real. As principais particularidades da Hand.io seguem listadas abaixo e servem de parâmetro de comparação com as demais aplicações:
+Os trabalhos aqui analisados demonstram a viabilidade do desenvolvimento da Hand.io e sua aplicação em um ambiente real. As principais particularidades da Hand.io seguem listadas abaixo e servem de parâmetro de comparação com as demais aplicações:
 \begin{itemize}
-	\item Captura passiva de gestos;
+    \item Captura passiva de gestos;
     \item Sensores presos à mão;
     \item Aplicado em um ambiente residencial;
     \item Presença de sensor acelerômetro;
     \item Presença de sensor giroscópio;
     \item Conexão sem fio;
-    \item Controle por infravermelho.
+    \item Controle por infravermelho; e
     \item Personalização de gestos.
 \end{itemize}
 
 
 \section{Accelerometer-based gesture control for a design environment}
 
-O artigo escrito por \citeonline{accelerometer:2006} conta com dois estudos principais, sendo o primeiro a aplicação e o estudo da viabilidade da utilização de gestos em um estúdio de design inteligente, em específico em aplicações de Desenho Assistido por Computador (CAD) e o segundo uma avaliação e comparação da interface por gestos em relação a outras modalidades como: controle por voz, objetos físicos utilizando RFID, uma tela de toque através de um tablet, e um dispositivo conhecido como IntelliPen, que funciona com um lazer apontado para uma tela que realiza funções similares à um mouse. Foi utilizado um Modelo Oculto de Markov (HMM)~\cite{hmm:1989} a partir de sinais discretos para o reconhecimento dos padrões, o algoritmo conta com duas fases distintas de treino e de reconhecimento.
+% O artigo escrito por
+O trabalho de \citeonline{accelerometer:2006} conta com dois estudos principais, sendo o primeiro a aplicação e o estudo da viabilidade da utilização de gestos em um estúdio de projetos inteligentes, em específico em aplicações de Desenho Assistido por Computador (CAD) e o segundo uma avaliação e comparação da interface por gestos em relação a outras modalidades como: controle por voz, objetos físicos utilizando RFID, uma tela de toque através de um \textit{tablet}, e um dispositivo conhecido como IntelliPen, que funciona com um lazer apontado para uma tela que realiza funções similares à um mouse. Foi utilizado um Modelo Oculto de Markov (HMM)~\cite{hmm:1989} a partir de sinais discretos para o reconhecimento dos padrões, o algoritmo conta com duas fases distintas de treino e de reconhecimento.
 
 
 O dispositivo utilizado para captura de movimentos foi uma \textit{SoapBox}~\cite{soapbox:2002}, que é uma placa miniaturizada do tamanho de uma caixa de fósforos que conta com um processador, um giroscópio, um acelerômetro, um compasso eletrônico, e comunicação com e sem fios. O protótipo em questão conta com dois botões que são pressionados no inicio e no fim da realização de um gesto, além do modo de reconhecimento de gestos o protótipo conta com um modo de leitura contínua de movimentos, que pode ser acionado pressionando ambos os botões. Este modo realiza medições diretas dos valores fornecidos pelos sensores e os utiliza para ações de zoom e rotação de objetos virtuais 3D, permitindo que o usuário sinta que está segurando o objeto em suas mãos.
 
 Os resultados do estudo apontam que existe um grande potencial para a utilização de controle por gestos em um ambiente de trabalho, em específico para o aumento da produtividade em determinadas atividades. De acordo com o grau de conhecimento dos participantes dos testes houveram diferentes preferências quanto a interface de utilização do estúdio inteligente, participantes com um grau maior de experiência com design se mostraram mais favoráveis a IntelliPen, devido a similaridade à um mouse, já os demais também demonstraram um interesse maior pela interface por gestos. 
-
+% 
 O estudo conclui que a utilização de gestos combinados com outros métodos de controle pode ser benéfica para o aumento da produtividade em um ambiente de design, por permitir um controle mais natural e intuitivo de objetos 3D e facilitar a realização de atalhos em programas CAD.
 
-Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io, sendo o mais perdominante o fato dos sensores da Hand.io estarem presos diretamente à mão do usuário, na tabela a baixo as diferenças entre os dois trabalhos são apontadas de forma sucinta.
+Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io, sendo o mais perdominante o fato dos sensores da Hand.io estarem presos diretamente à mão do usuário\todo{Descrever como isso pode ser uma vantagem}, na tabela a baixo as diferenças entre os dois trabalhos são apontadas de forma sucinta.
 
 \begin{table}[ht]
 	\centering
@@ -59,7 +61,7 @@ Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io
 
 \end{table}
 
-\todo{fazer tabela de comparação}
+% \todo{fazer tabela de comparação}
 
 
 
