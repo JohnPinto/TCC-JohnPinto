@@ -2,11 +2,4 @@
 *.fdb_latexmk
 *.fls
 *.log
-main.pdf
-main.bbl
-main.blg
-main.brf
-main.idx
-main.lof
-main.lot
-main.toc
+
