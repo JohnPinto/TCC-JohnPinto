@@ -97,18 +97,19 @@ O terceiro estudo conclui que os usuários conseguem distinguir gestos intuitivo
 
 
 \section{uWave: Accelerometer-based personalized gesture recognition and its applications}
-
 \label{cor:uwave}
 
-O trabalho realizado por \citeonline{uwave:2009} propõe um algoritmo de reconhecimento de gestos chamado \textit{uWave}, que é baseado no algoritmo \textit{Dynamic Time Warping} (DTW) \cite{Salvador:2007}, diferentemente de métodos estatísticos como o Modelo Oculto de Markov (HMM)~\cite{hmm:1989}, que requer um volume muito grande de amostras de referência, o \textit{uWave} necessita de apenas uma amostra para realizar o reconhecimento de um gesto, algo que é muito vantajoso para a criação de gestos personalizados especificamente para cada usuário. O algoritmo foi criado para ser aplicado em qualquer dispositivo que conte com um sensor acelerômetro de três eixos, tal sensor foi escolhido devido à sua grande disponibilidade em dispositivos eletrônicos de consumo, o que aumenta consideravelmente a aplicabilidade do algoritmo em um ambiente real.
+O trabalho realizado por \citeonline{uwave:2009} propõe um algoritmo de reconhecimento de gestos chamado \textit{uWave}, que é baseado no algoritmo \textit{Dynamic Time Warping} - DTW \cite{Salvador:2007}, diferentemente de métodos estatísticos como o Modelo Oculto de Markov - HMM~\cite{hmm:1989} que requer um volume muito grande de amostras de referência, o \textit{uWave} necessita de apenas uma amostra para realizar o reconhecimento de um gesto, algo que é muito vantajoso para a criação de gestos personalizados especificamente para cada usuário. O algoritmo foi criado para ser aplicado em qualquer dispositivo que conte com um sensor acelerômetro de três eixos, tal sensor foi escolhido devido à sua grande disponibilidade em dispositivos eletrônicos de consumo, o que aumenta consideravelmente a aplicabilidade do algoritmo em um ambiente real.
 
-No artigo são realizadas duas aplicações distintas do algoritmo afim de demonstrar a sua versatilidade e usabilidade em cenários reais, a primeira tem como objetivo a identificação simples e precisa de um usuário através de gestos personalizados, analogamente à uma senha alfanumérica. Nesta esta aplicação foi utilizado um controle de um Nintendo Wii \todo{adicionar referência} como método de entrada de gestos. O estudo constata, através de uma pesquisa realizada com os usuários, que um gesto personalizado é um meio de identificação muito mais fácil de memorizar do que uma senha composta por vários caracteres. 
+% No artigo são realizadas 
+\citeonline{uwave:2009} apresenta duas aplicações distintas do algoritmo afim de demonstrar a sua versatilidade e usabilidade em cenários reais, a primeira tem como objetivo a identificação simples e precisa de um usuário através de gestos personalizados, analogamente à uma senha alfanumérica. Nesta aplicação foi utilizado um controle de um Nintendo Wii \todo{adicionar referência} como método de entrada de gestos. O estudo constata, através de uma pesquisa realizada com os usuários, que um gesto personalizado é um meio de identificação muito mais fácil de memorizar do que uma senha composta por vários caracteres. 
 
-A segunda aplicação é a utilização de gestos para navegação de um ambiente 3D, foi desenvolvida uma rede social baseada em compartilhamento de vídeos utilizando um \textit{smartphone} da Motorola, que conta com um acelerômetro integrado. A aplicação permite que o usuário realize um remapeamento dos gestos para qualquer função específica do aplicativo, o que reforça a natureza de personalização do algoritmo.
+A segunda aplicação é a utilização de gestos para navegação de um ambiente 3D, foi desenvolvida uma rede social baseada em compartilhamento de vídeos utilizando um \textit{smartphone} da marca Motorola, que conta com um acelerômetro integrado. A aplicação permite que o usuário realize um remapeamento dos gestos para qualquer função específica do aplicativo, o que reforça a natureza de personalização do algoritmo.
 
-Em sua conclusão \citeonline{uwave:2009}, discorre sobre os desafios encontrados em definir um vocabulário de gestos que possam ser intuitivos para a grande maioria dos usuários. Outro ponto frisado é o fato do algoritmo depender apenas de um acelerômetro, o que dificulta no registro de certos gestos devido à falta de dados sobre a inclinação e o ângulo das forças realizada sobre o sensor, gerando uma certa confusão nos dados dos movimentos.
+% Em sua conclusão 
+\citeonline{uwave:2009} discorre sobre os desafios encontrados em definir um vocabulário de gestos que possam ser intuitivos para a grande maioria dos usuários. Outro ponto frisado é o fato do algoritmo depender apenas de um acelerômetro, o que dificulta no registro de certos gestos devido à falta de dados sobre a inclinação e o ângulo das forças realizada sobre o sensor, gerando uma certa confusão nos dados dos movimentos.
 
-Diferentemente do uWave, a Hand.io utiliza um módulo MPU 6050 que conta com um acelerômetro e um giroscópio integrados, o que permite que seja realizada uma medição mais precisa da direção dos movimentos realizados com a luva. Na tabela abaixo estão resumidos os principais pontos de diferenciação deste trabalho em relação ao uWave.
+Diferentemente do uWave, a Hand.io utiliza irá utilizar um módulo MPU $6050$\todo{Adicionar referência} que conta com um acelerômetro e um giroscópio integrados, o que permite que seja realizada uma medição mais precisa da direção dos movimentos realizados com a luva. Na tabela abaixo estão resumidos os principais pontos de diferenciação deste trabalho em relação ao uWave.
 
 \begin{table}[ht]
 	\centering
@@ -117,33 +118,44 @@ Diferentemente do uWave, a Hand.io utiliza um módulo MPU 6050 que conta com um 
 	\begin{tabular}{|l|c|c|c|}
     	\hline
         %\rowcolor{\color{gray}}
-		\textbf{Recursos} & \textbf{Hand.io} & \textbf{uWave controle} & \textbf{uWave autenticação} \\
+		\textbf{Recursos} & \textbf{Hand.io} & \textbf{uWave controle} \\
+% 		& \textbf{uWave autenticação} \\
         \hline
         \hline
-        Preso à mão & x & x & \\
+        Preso à mão & x & x \\
+%         & \\
         \hline
-        Utiliza botões &  & x & \\
+        Utiliza botões &  & x \\
+%         & \\
         \hline
-        Captura contínua de sinais & x & & \\
-        \hline
-        \hline
-        \textbf{Sensores} & & & \\
-        \hline
-        \hline
-        Acelerômetro & x & x & \\
-        \hline
-        Giroscópio & x & x & \\
-        \hline
-        Compasso eletrônico & & x & \\
+        Captura contínua de sinais & x & \\
+%         & \\
         \hline
         \hline
-        \textbf{Contexto aplicado} & Residencial & Controle & Autenticação\\
+        \textbf{Sensores} & & \\
+%         & \\
+        \hline
+        \hline
+        Acelerômetro & x & x \\
+%         & \\
+        \hline
+        Giroscópio & x & x \\
+%         & \\
+        \hline
+        Compasso eletrônico & & x \\
+%         & \\
+        \hline
+        \hline
+        \textbf{Contexto aplicado} & Residencial & Controle \\
+%         & Autenticação\\
         \hline
 	\end{tabular}
 
 \end{table}
 
-\todo{fazer tabela de comparação}
+% \todo{fazer tabela de comparação}
+
+\todo[inline]{Descrever o que do trabalho apresentado pode ser aproveitado para o seu TCC}
 
 
 %\section{A survey of glove-based systems and their applications}
