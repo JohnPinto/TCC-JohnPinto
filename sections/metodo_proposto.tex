@@ -1,8 +1,8 @@
-Durante este capítulo serão descritas em detalhes as diferentes etapas de funcionamento da luva Hand.io e será explicado como os objetivos deste trabalho serão satisfeitos.
+Este capítulo apresenta as etapas do método proposto para o funcionamento do sistema computacional da luva Hand.io e será explicado como os objetivos deste trabalho serão satisfeitos. 
 
 \section{Visão geral do método da Hand.io}
 
-A Hand.io é uma luva de controle que permite que quem a use realize gestos para controlar os dispositivos disponíveis em um dado ambiente. O projeto conta com uma luva de pano com um dispositivo preso ao tecido, que lê os movimentos da mão do usuário e uma central de processamento posicionada em um local estratégico, que recebe os sinais dos gestos através de uma conexão sem fio e executa as ações previamente definidas correspondentes a eles.
+A Hand.io é uma luva de controle que permite que quem a use realize gestos para controlar os dispositivos eletronicos disponíveis em um dado ambiente. O projeto conta com uma luva de pano com um dispositivo preso ao tecido, que lê os movimentos da mão do usuário e uma central de processamento posicionada em um local estratégico, que recebe os sinais dos gestos através de uma conexão sem fio e executa as ações previamente definidas correspondentes a eles.
 
 \begin{figure}[ht]
     \centering
@@ -17,15 +17,8 @@ Os sinais dos movimentos são processados pela central utilizando algoritmos de 
 
 \section{Fluxo de execução da Hand.io}
 
-A~\autoref{fig:fluxograma}, descreve o método proposto para a luva Hand.io através de um fluxograma, mostrando as diferentes etapas de funcionamento da luva de maneira sequencial.
-
-\begin{figure}[ht]
-    \centering
-	\includegraphics[width=\textwidth, keepaspectratio]{resources/fluxograma.pdf}
-	\caption{Fluxograma da Hand.io}
-	\label{fig:fluxograma}
-\end{figure}
-
+A~\autoref{fig:fluxograma}, descreve o método proposto para a luva Hand.io através de um fluxograma, mostrando as diferentes etapas de funcionamento da luva de maneira sequencial. Os itens do fluxograma apresentado abaixo significam:
+% 
 \begin{itemize}
     \item A posição inicial do fluxograma é definida por uma \textbf{seta sem origem} a partir da qual são realizadas as checagens iniciais do sistema.
     \item Os \textbf{losangos} representam condições onde dependendo do resultado o fluxo do sistema pode ser alterado, no primeiro momento é verificada a conexão com a luva de controle e logo depois o sistema verifica se existem dispositivos cadastrados, caso não existam o sistema aguarda pela inserção de dispositivos no banco de dados.
@@ -34,6 +27,14 @@ A~\autoref{fig:fluxograma}, descreve o método proposto para a luva Hand.io atra
 e quadrados com barras laterais representam os processos predefinidos do sistema.
     \item O banco de dados que irá armazenar os dados de gestos e códigos de infra-vermelhos de controle de dispositivos, está representado por um \textbf{cilindro} encontrado na parte central da figura.
 \end{itemize}
+
+
+\begin{figure}[ht]
+    \centering
+	\includegraphics[width=\textwidth, keepaspectratio]{resources/fluxograma.pdf}
+	\caption{Fluxograma da Hand.io}
+	\label{fig:fluxograma}
+\end{figure}
 
 
 
