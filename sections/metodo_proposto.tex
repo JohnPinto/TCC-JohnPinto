@@ -2,7 +2,7 @@ Este capítulo apresenta as etapas do método proposto para o funcionamento do s
 
 \section{Visão geral do método da Hand.io}
 
-A Hand.io é uma luva de controle que permite que quem a use realize gestos para controlar os dispositivos eletronicos disponíveis em um dado ambiente. O projeto conta com uma luva de pano com um dispositivo preso ao tecido, que lê os movimentos da mão do usuário e uma central de processamento posicionada em um local estratégico, que recebe os sinais dos gestos através de uma conexão sem fio e executa as ações previamente definidas correspondentes a eles.
+A Hand.io é uma luva de controle que permite que quem a use realize gestos para controlar os dispositivos eletrônicos disponíveis em um dado ambiente. O projeto conta com uma luva de pano com um dispositivo preso ao tecido, que lê os movimentos da mão do usuário e uma central de processamento posicionada em um local estratégico, que recebe os sinais dos gestos através de uma conexão sem fio e executa as ações previamente definidas correspondentes a eles.
 
 \begin{figure}[ht]
     \centering
@@ -54,15 +54,16 @@ Os sensores escolhidos realizam diversas amostras nas mudanças na aceleração 
 A central de processamento (semelhante ao um pequeno aparelho de TV a cabo) inicia a sua operação esperando o recebimento de algum sinal da luva e até que a conexão tenha sido confirmada.
 % , não realiza qualquer ação
 % 
-A conexão entre a luva e a central será realizada utilizando o protocolo de redes sem fio IEEE $802$.$11$~\cite{802.11:1997}, conhecida popularmente como Wi-Fi, através de uma rede LAN\todo{Descrever pq este protocolo foi escolhido, suas vantagens}. 
+A conexão entre a luva e a central será realizada utilizando o protocolo de redes sem fio IEEE $802$.$11$~\cite{802.11:1997}, conhecida popularmente como Wi-Fi, através de uma rede LAN, teste protocolo foi escolhido por permitir que a luva tenha uma movimentação
+\todo{Descrever pq este protocolo foi escolhido, suas vantagens}. 
 
 % Os sinais 
 
 \section{Reconhecimento de Padrões Baseado em Movimentos e Ações}
 
-Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina\todo{Apresentar exemplos com referência de usados em trabalhos correlatos} que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema\todo{Apresentar ferramentas que pretende usar com ML}. 
+Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina\todo{Apresentar exemplos com referência de usados em trabalhos correlatos} que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema\todo{Apresentar ferramentas que pretende usar com Machine Learning}. 
 
-Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de implementação e contarão com a ajuda de um grupo de voluntários que servirão de referência para o desenvolvimento de gestos simples e coesos. O trabalho de \citeonline{imhome:2011} encontrado na Seção~\ref{cor:home} demonstra que um grande grupo de voluntários é fundamental para a criação de um vocabulário de gestos eficiente\todo{Apresentar um figura com possiveis gestos para mostrar a vantagem de usar uma luva}. 
+Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de implementação e contarão com a ajuda de um grupo de voluntários que servirão de referência para o desenvolvimento de gestos simples e coesos. O trabalho de \citeonline{imhome:2011} encontrado na Seção~\ref{cor:home} demonstra que um grande grupo de voluntários é fundamental para a criação de um vocabulário de gestos eficiente\todo{Apresentar um figura com possíveis gestos para mostrar a vantagem de usar uma luva}. 
 
 Gestos pré definidos e gestos criados pelos usuários são a abordagem mais efetiva para controlar um ambiente.
 No entanto uma quantidade muito grande de gestos e gestos muito complexos não são a melhor escolha, pois existe uma quantidade limitada de gestos que podem ser lembrados com precisão sem que haja confusão durante a realização de um determinado gesto.
@@ -76,9 +77,9 @@ Existem dois momentos durante o fluxo de execução da Hand.io onde estes algori
 
 \section{Modelo de Conexão Entre Dispositivos Eletrônicos}
 
-O controle dos dispositivos se dará utilizando um LED infravermelho, seguindo um padrão de controle remoto bem estabelecido pela industria de eletrônicos de consumo. Cada fabricante define códigos infravermelhos específicos para cada dispositivo\todo{Apresentar exemplo}. Códigos de controle diferentes foram escolhidos visando impedir a interferência entre controles e dispositivos de fabricantes diferentes, como por exemplo o usuário tentar ligar o ar condicionado e acabar ligando a TV por acidente.
+O controle dos dispositivos se dará utilizando um LED infravermelho, seguindo um padrão de controle remoto bem estabelecido pela industria de eletrônicos de consumo. Cada fabricante define um protocolo de códigos infravermelhos específicos para cada dispositivo como o protocolo Sony12 que é utilizado pela Sony em suas TVs \todo{referecia} e o protocolo RC5 que é utilizado pela Philips \cite{rc5}. Protocolos diferentes foram criados visando impedir a interferência entre controles e dispositivos de fabricantes diferentes, como por exemplo o usuário tentar ligar o ar condicionado e acabar ligando a TV por acidente.
 
-Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarão armazenados em um banco de dados localizado na central de processamento. Cada código estará relacionado à um gesto específico que quando classificado pelo sistema será executado\todo{Descrever como cada código será cadastrado na central}.
+Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarão armazenados em um banco de dados localizado na central de processamento. Cada código estará relacionado à um gesto específico que quando classificado pelo sistema será executado. Durante o cadastro de dispositivos, exibido na \autoref{fig:fluxograma} letra A, o sistema pedirá ao usuário que pressione os botões do controle remoto do dispositivo a ser controlado correspondentes às ações que ele deseja realizar por gestos. A intenção é que a base de dados dos sinais de infravermelho seja populada ao ponto de que sejam criados perfis pré definidos para cada dispositivo, para que quando um dispositivo já presente na base de dados seja cadastrado, não seja necessário realizar o cadastro dos sinais manualmente. 
 
 %\section{Inferência de Comportamentos para Acionamento de Dispositivos Eletrotônicos}
 
@@ -88,13 +89,31 @@ Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarã
 
 Os componentes utilizados para a confecção do protótipo da luva e da central buscam ter o menor custo possível, sem comprometer a qualidade do sistema. Componentes produzidos em massa que já tem sua utilização testada extensivamente pela comunidade foram selecionados\todo{Apresentar exemplos}. 
 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Componentes}   & \textbf{Preços}   \\ \hline
+        Raspberry pi 3         & R\$ 239,90        \\ \hline
+        Sensor MPU-6050        & R\$ 23,90         \\ \hline
+        Módulo WiFi ESP8266-01 & R\$ 26,90         \\ \hline
+        Receptor Infravermelho TSOP4838 & R\$ 6,90 \\ \hline
+        LED Emissor Infravermelho       & R\$ 0,90 \\ \hline
+        \textbf{Total}         & R\$ 298,50        \\ \hline
+    \end{tabular}
+    \caption{Estimativa de preços dos componentes. \cite{filipeflop}.}
+    \label{tab:custos}
+\end{table}
+
 O protótipo é composto pela luva em si que conta com sensores que irão capturar os movimentos do usuário apresentado na \autoref{fig:esq_luva}, e pela central de processamento que irá realizar as ações correspondentes aos gestos exibida na \autoref{fig:esq_central}, nos dispositivos conectados.
 
 \todo[inline]{Descrever quais são os componentes da central}
 
-A luva será composta por uma placa GY-$521$ que tem um sensor MPU-$6050$, apresentado no canto direito da \autoref{fig:esq_luva}. Esta placa é utilizada em diversos projetos que utilizam captura de movimentos devido a sua boa relação custo benefício em relação a precisão dos sensores. O sensor MPU-$6050$ conta com um acelerômetro de três eixos e um processador de sinais digitais integrado
-% 
-A comunicação com a central de processamento ocorrerá utilizando uma placa Wi-Fi ESP-$8266$\todo{Apresentar uma estimativa de preço para o sistema completo}.
+A luva conta uma placa GY-$521$ que tem um sensor MPU-$6050$~\cite{invensense}, apresentado no canto direito da \autoref{fig:esq_luva}. Esta placa é utilizada em diversos projetos que utilizam captura de movimentos devido a sua boa relação custo benefício em relação a precisão dos sensores. O sensor MPU-$6050$~\cite{invensense} conta com um acelerômetro e um giroscópio de três eixos cada, e um processador de sinais digitais integrado que pode ser utilizado para pré processar os sinais da luva antes que eles sejam enviados para a central de processamento, reduzindo a carga de trabalho realizada pela central.
+
+A comunicação com a central de processamento ocorrerá utilizando uma placa Wi-Fi ESP-$8266$, segundo componente da direita para a esquerda na \autoref{fig:esq_luva}, que pode enviar sinais de maneira independente à qualquer computador conectado a uma rede LAN. Como fonte de energia a luva irá utilizar um conjunto de baterias que terão sua voltagem ajustada por um regulador, já que tanto a placa GY-521 quanto a placa Wi-Fi ESP-$8266$ podem funcionar com uma voltagem nominal de 3.3v.
+
+
 
 \todo[inline]{Descrever as figuras apresentadas abaixo, e razão da escolho do arduino.}
 
@@ -105,6 +124,8 @@ A comunicação com a central de processamento ocorrerá utilizando uma placa Wi
     \label{fig:esq_luva}
 \end{figure}
 
+Os componentes da central de processamento apresentados na \autoref{fig:esq_central}, será composta por um Raspberry pi que ficará conectado à internet esperando os sinais da luva e realizará o reconhecimento dos sinais, um receptor infravermelho TSOP4838 que servirá para a realização do cadastro de novos dispositivos e um LED emissor de sinais infravermelhos que podem ser reconhecidos por dispositivo que utilizam este protocolo como meio de controle.
+
 \begin{figure}[ht]
     \centering
     \includegraphics{resources/esquematico_central_bb.pdf}
@@ -112,6 +133,9 @@ A comunicação com a central de processamento ocorrerá utilizando uma placa Wi
     \label{fig:esq_central}
 \end{figure}
 
+
+
+\section{Modelagem e verificação formal da Hand.io}
 
 \todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
 

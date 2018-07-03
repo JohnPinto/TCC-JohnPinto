@@ -28,8 +28,9 @@ Os resultados do estudo apontam que existe um grande potencial para a utilizaç�
 % 
 O estudo conclui que a utilização de gestos combinados com outros métodos de controle pode ser benéfica para o aumento da produtividade em um ambiente de design, por permitir um controle mais natural e intuitivo de objetos 3D e facilitar a realização de atalhos em programas CAD.
 
-Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io, sendo o mais perdominante o fato dos sensores da Hand.io estarem presos diretamente à mão do usuário\todo{Descrever como isso pode ser uma vantagem}, na tabela a baixo as diferenças entre os dois trabalhos são apontadas de forma sucinta.
+Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io, sendo o mais perdominante o fato dos sensores da Hand.io estarem presos diretamente à mão do usuário. A natureza vestível da luva Hand.io permite ao usuário controlar os dispositivos ao seu redor de maneira mais natural, sem que seja necessário um dispositivo a parte. \citeonline{accelerometer:2006} demonstra que existe espaço para controle por gestos em diversos ambientes eu que sistemas como a Hand.io podem aumentar cosideravelmente a produtividade em ambientes de trabalho.
 
+\begin{comment}
 \begin{table}[ht]
 	\centering
     \caption{Comparação entre Hand.io e SoapBox}
@@ -60,7 +61,7 @@ Existem diversos pontos de divergência entre o trabalho apresentado e a Hand.io
 	\end{tabular}
 
 \end{table}
-
+\end{comment}
 % \todo{fazer tabela de comparação}
 
 
@@ -90,10 +91,12 @@ No estudo apresentado foi constatado que gestos mais simples tendem a ser relaci
 No terceiro estudo participantes que não tiveram relação nenhuma com os estudos anteriores. No primeiro momento os voluntários foram convidados a assistir um vídeo para cada gesto e sua respectiva ação. Cada gesto foi repetido $5$ vezes por cada participante utilizando um \textit{smartphone} que registrou os sinais dos gestos que vão ser utilizados como referência para um classificador. Os participantes então, foram perguntados qual o grau de compatibilidade entre o gesto e a ação relacionada a ele.
 
 No segundo momento foram exibidos aos participantes somente as ações que cada gesto realizava em ordem aleatória e durante os $5$ segundos seguintes foi requisitado que o gesto correspondente à ação fosse realizado. Caso o gesto fosse correto a apresentação continuaria, caso contrário, o gesto correto seria mostrado e a ação seria exibida ao final da apresentação, que continuaria até que todos os gestos fossem realizados corretamente. Foram registradas a quantidade de erros para cada gesto.
-% 
+
 O terceiro estudo conclui que os usuários conseguem distinguir gestos intuitivos de gestos menos intuitivos. Algo que foi comprovado pela quantidade de erros durante o teste de memorabilidade. Gestos mais simples e que rápidos são os mais indicados.
 
-\todo[inline]{Descrever o que do trabalho apresentado pode ser utilizado no seu TCC}
+A metodologia de definição de gestos apresentada por \citeonline{imhome:2011} e o estudo da viabilidade de cada um, servem de guia para a definição dos gestos que serão utilizados na Hand.io. Testes com grupos de voluntários com diversos graus de conhecimento serão realizados durante o desenvolvimento dos gestos e em um momento posterior a viabilidade dos gestos realizados será medida.
+
+%\todo[inline]{Descrever o que do trabalho apresentado pode ser utilizado no seu TCC}
 
 
 \section{uWave: Accelerometer-based personalized gesture recognition and its applications}
@@ -109,7 +112,7 @@ A segunda aplicação é a utilização de gestos para navegação de um ambient
 % Em sua conclusão 
 \citeonline{uwave:2009} discorre sobre os desafios encontrados em definir um vocabulário de gestos que possam ser intuitivos para a grande maioria dos usuários. Outro ponto frisado é o fato do algoritmo depender apenas de um acelerômetro, o que dificulta no registro de certos gestos devido à falta de dados sobre a inclinação e o ângulo das forças realizada sobre o sensor, gerando uma certa confusão nos dados dos movimentos.
 
-Diferentemente do uWave, a Hand.io utiliza irá utilizar um módulo MPU $6050$\todo{Adicionar referência} que conta com um acelerômetro e um giroscópio integrados, o que permite que seja realizada uma medição mais precisa da direção dos movimentos realizados com a luva. Na tabela abaixo estão resumidos os principais pontos de diferenciação deste trabalho em relação ao uWave.
+Diferentemente do uWave, a Hand.io utiliza irá utilizar um módulo MPU $6050$ \cite{invensense} que conta com um acelerômetro e um giroscópio integrados, o que permite que seja realizada uma medição mais precisa da direção dos movimentos realizados com a luva. Na tabela abaixo estão resumidos os principais pontos de diferenciação deste trabalho em relação ao uWave.
 
 \begin{table}[ht]
 	\centering

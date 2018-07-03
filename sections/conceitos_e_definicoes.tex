@@ -1,5 +1,5 @@
 \label{chapter:conceitos}
-Este capítulo tem como objetivo apresentar as principais conceitos e definições que serão utilizados para o entedimento e desenvolvimento deste trabalho. 
+Este capítulo tem como objetivo apresentar as principais conceitos e definições que serão utilizados para o entendimento e desenvolvimento deste trabalho. 
 
 
 %----------------------------------
@@ -10,6 +10,8 @@ Este capítulo tem como objetivo apresentar as principais conceitos e definiçõ
 De acordo com~\citeonline{VAHID:2001} um sistema embarcado é um sistema computacional desenvolvido para um propósito específico, que em contraposição a sistemas de propósito geral, realiza apenas uma tarefa específica. Existem certas características (exemplo, restrição de memória e tempo de execução) que distinguem um sistema embarcado dos demais, que apesar de nem sempre serem atendidas, servem de referência para a classificação de tais sistemas. Sistemas embarcados geralmente realizam apenas uma atividade repetidas vezes, contam com restrições mais apertadas que um sistema normal, são reativos e muitas vezes funcionam em tempo real. Estes sistemas geralmente fazem parte de sistemas maiores, e quase sempre funcionam sem o conhecimento do usuário.
 
 Dispositivos como \textit{smartphones} e computadores pessoais, são compostos por diversos sistemas embarcados que realizam apenas uma função, mas que quando estão juntos passam a realizar diversas atividades, passando a ser classificado como um sistema de propósito geral. Um exemplo de um sistema embarcado que faz parte de um sistema maior seria a placa de rede de um smartphone~\cite{qualcomm_2017}\todo{Corrgir citação com ...}, que por si só é um sistema que apenas recebe e envia dados através de uma rede sem fio, mas que quando contextualizado em um smartphone possibilita o acesso a internet, o que promove a realização de diversas atividades disponíveis online, como acesso à redes sociais ou a reprodução de vídeos~\cite{VAHID:2001}.
+
+Diante do surgimento da Internet das Coisas (IoT, em inglês), diversos sistemas embarcados capazes de realizar comunicações 
 
 %Este trabalho irá utilizar diversos sistemas embarcados durante o desenvolvimento de seu protótipo, que permitirão que a luva Hand.io atinja um
 
@@ -33,7 +35,7 @@ Em sistemas voltados para o mercado de consumo onde existe um orçamento limitad
 
 %A luva Hand.io contará com diversas restrições em seu protótipo devido à natureza da luva. Por ser uma peça de roupa, se espera que seu peso seja reduzido.
 
-\todo[inline]{Descrever que algumas destas restrições são criticas e precisam de validação com método formais}
+Muitas vezes quando um sistema é desenvolvido em um ambiente com recursos limitados, se faz necessária a utilização de modelos formais para garantir que os recursos disponíveis sejam utilizados da melhor maneira possível. Geralmente o tamanho de código e o tamanho físico de um componente estão em conflito direto com o seu desempenho, o que pode gerar problemas quando um sistema embarcado precisa reagir em tempo real. Modelos formais contam com certos índices de desempenho que podem ser medidos com valores numéricos, o que permite aos desenvolvedores realizar otimizações precisas nas escolha componentes que serão utilizados em um projeto. \citeonline{edwards:1997} 
 
 \subsection{Sistemas de Tempo Real} %OK
 
@@ -43,9 +45,10 @@ Conforme~\citeonline{BUTTAZZO:2011}, um sistema em tempo real deve ter o tempo d
 % 
 \citeonline{BUTTAZZO:2011} realiza uma comparação entre sistemas biológicos e a velocidade das suas reações em seus habitats, um gato e uma tartaruga, por exemplo, podem ter velocidades de reação diferentes, no entanto em seus respectivos ambientes esta velocidade se mostra suficiente para a sua sobrevivência. 
 % No entanto com mudanças ambientais nas quais não há tempo suficiente para a evolução de suas reações, como a introdução de novos predadores, podem colocar em risco a sobrevivência de organismos já bem estabelecidos em um determinado bioma. 
-Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, sejam eles biológicos ou artificiais, mas que na verdade está relacionado com o ambiente no qual estes sistemas irão atuar como apresentado na~\autoref{fig:rt}\todo{Explicar a figura}.
 
-\begin{figure}[h]
+Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, sejam eles biológicos ou artificiais, mas que na verdade está relacionado com o ambiente no qual estes sistemas irão atuar como apresentado na~\autoref{fig:rt}, que demonstra um modelo básico de como um sistema em tempo real deve ser reativo em relação ao ambiente no qual ele está implantado. Captando sinais através de sensores que são processados por sistemas de controle que então realiza ações baseadas nestes dados através de atuadores.~\cite{BUTTAZZO:2011}
+
+\begin{figure}[ht]
 	\includegraphics[width=0.5\textwidth, keepaspectratio]{sistemas_em_tempo_real}
     \centering
     \caption{Diagrama de um sistema em tempo real genérico. (Adaptado de~\citeonline{BUTTAZZO:2011})}
@@ -53,12 +56,10 @@ Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, seja
 \end{figure}
 
 % Existe um certo consenso na comunidade de que a evolução rápida no processamento de dados irá tornar a utilização de sistemas em tempo real obsoleta, no entanto tal afirmação não poderia estar mais enganada, apesar da 
-Em termos de processamento, a computação mais rápida reduza sim o tempo de resposta de um sistema, entretanto ela não necessariamente garante que o tempo de resposta de tarefas individuais será atingido de maneira correta, um sistema em tempo real não deve apenas ser rápido, ele deve ser previsível.
-% 
-Analisando os sistemas do ponto de vista de processos, os processos de um sistema em tempo real contam com um componente ausente em processos de sistemas normais, o chamado \textit{Deadline}, que é o prazo máximo para a finalização de uma determinada tarefa. Em aplicações críticas o retorno de operações fora do \textit{deadline} não é apenas atrasado, mas sim incorreto, o que pode ocasionar em perdas significativas dependendo da criticidade do sistema~\cite{BUTTAZZO:2011}\todo{Exemplificar perda de deadline}.
+Em termos de processamento, a computação mais rápida reduz o tempo de resposta de um sistema, entretanto ela não necessariamente garante que o tempo de resposta de tarefas individuais será atingido de maneira correta, um sistema em tempo real não deve apenas ser rápido, ele deve ser previsível. Analisando os sistemas do ponto de vista de processos, os processos de um sistema em tempo real contam com um componente ausente em processos de sistemas normais, o chamado \textit{Deadline}, que é o prazo máximo para a finalização de uma determinada tarefa.\cite{BUTTAZZO:2011}
 
+Em aplicações críticas o retorno de operações fora do \textit{deadline} não é apenas atrasado, mas sim incorreto, o que pode ocasionar em perdas significativas dependendo da criticidade do sistema.~\cite{BUTTAZZO:2011} Em um contexto de um sistema de banco de dados de tempo real, a perda de deadlines pode acarretar em sobrecarregamentos em requisições ao banco de dados, o que tornaria o sistema inutilizável. \cite{bd:1991} A criticidade de uma aplicação depende das consequências ocasionadas devido ao atraso no tempo de resposta esperado do sistema, sendo este classificado em \textit{Hard}, \textit{Firm} e \textit{Soft}. \cite{BUTTAZZO:2011} 
 
-A criticidade de uma aplicação depende das consequências ocasionadas devido ao atraso no tempo de resposta esperado do sistema, sendo este classificado em \textit{Hard}, \textit{Firm} e \textit{Soft}\todo{Adicionar referência}.
 \begin{itemize}
 \item Sistemas críticos \textit{Hard} são aqueles onde caso não haja resposta no tempo definido podem ocorrer eventos devastadores, muitas vezes com perda de vidas;
 \item Sistemas críticos \textit{Firm} são aqueles onde o atraso na resposta torna o sistema inútil, no entanto nenhum dano é gerado; e
@@ -108,6 +109,10 @@ Estes modelos permitem que as propriedades do sistema sejam validadas de maneira
 
 De acordo com \citeonline{UML:2006} a Linguagem de Modelagem Unificada (UML, em Inglês) é um padrão amplamente utilizado por desenvolvedores para modelagem de software e hardware de sistemas em geral. A UML é uma ferramenta muito útil durante o desenvolvimento de um sistema, pois permite aos desenvolvedores manter um certo controle sobre a complexidade do sistema, permitindo que as partes mais importantes do sistema se sobressaiam em relação às outras, evitando eventuais confusões durante a implementação.
 
+A UML utiliza conceitos de linguagens orientadas a objetos, que por contarem com 
+
+Diversos diagramas são utilizados para a especificação de um sistema. Cada um deles sendo utilizado para descrever alguma parte do modelo, sem conter informações demais relacionadas à outras partes do projeto. 
+
 \todo[inline]{Apresentar os diagramas com exemplo}
 
 \todo[inline]{Descrever um exemplo com diagrama de sequência e apresentar como será usado no seu TCC}
@@ -129,7 +134,8 @@ Segundo \citeonline{hopcroft:2001} máquinas de estados finitos, também conheci
 
 
 \subsection{Rede de Petri}
-~\citeonline{VALK:2002}
+
+Em seu livro \citeonline{VALK:2002} apresenta as redes de petri como uma ferramenta poderosa 
 
 \todo[inline]{Definir formalmente, e apresentar um exemplo prático.}
 
@@ -171,9 +177,13 @@ Um exemplo da aplicabilidade de algoritmos de aprendizado de máquina seria o re
 
 Resultados melhores podem ser atingidos utilizando algoritmos de aprendizado de máquina. Um grande volume de dígitos escritos a mão representados por um conjunto de vetores e um vetor com valores representando categorias manualmente escolhidas por um desenvolvedor são conhecidos como \textit{training sets}, e são utilizados como referência para a realização de ajustes nos parâmetros de um algoritmo de aprendizado de máquina. A ideia por trás deste método é que o algoritmo passe a categorizar novos vetores que não fazem parte do \textit{training set} original nas categorias definidas previamente. A habilidade de reconhecer estes novos padrões corretamente é conhecida como \textit{generalização} \cite{bishop:2006}.
 
-\subsection{Frameworks de aprendizado de máquina}
+\subsection{\textit{Frameworks} de aprendizado de máquina}
 
-\subsubsection{sci-kit learn}
+\subsubsection{Scikit-learn}
+
+O Scikit-learn é um módulo de código aberto para a linguagem Python que conta com implementações do estado da arte de diversos algoritmos de aprendizado de máquina para análise de grandes volumes de dados. \cite{scikit-learn}  
 
 \subsubsection{Tensoflow}
+
+O TensorFlow é uma plataforma de aprendizado de máquina de código aberto desenvolvida por \citeonline{tensorflow:2016}, possibilita ao desenvolvedor realizar o treinamento de um algoritmo em uma plataforma extremamente escalável podendo ser utilizado tanto em grandes \textit{clusters} de servidores quanto em dispositivos móveis. As computações sendo realizadas no algoritmo e o estado no qual este se encontra podem ser visualizadas em tempo real através de uma interface visual em alto nível. Tal interface permite ao desenvolvedor tomar decisões rápidas sobre como otimizar o algoritmo que está sendo treinado.
 
