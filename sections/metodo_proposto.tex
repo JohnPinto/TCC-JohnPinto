@@ -107,7 +107,7 @@ Os componentes utilizados para a confecção do protótipo da luva e da central 
 
 O protótipo é composto pela luva em si que conta com sensores que irão capturar os movimentos do usuário apresentado na \autoref{fig:esq_luva}, e pela central de processamento que irá realizar as ações correspondentes aos gestos exibida na \autoref{fig:esq_central}, nos dispositivos conectados.
 
-\todo[inline]{Descrever quais são os componentes da central}
+%\todo[inline]{Descrever quais são os componentes da central}
 
 A luva conta uma placa GY-$521$ que tem um sensor MPU-$6050$~\cite{invensense}, apresentado no canto direito da \autoref{fig:esq_luva}. Esta placa é utilizada em diversos projetos que utilizam captura de movimentos devido a sua boa relação custo benefício em relação a precisão dos sensores. O sensor MPU-$6050$~\cite{invensense} conta com um acelerômetro e um giroscópio de três eixos cada, e um processador de sinais digitais integrado que pode ser utilizado para pré processar os sinais da luva antes que eles sejam enviados para a central de processamento, reduzindo a carga de trabalho realizada pela central.
 
@@ -115,7 +115,7 @@ A comunicação com a central de processamento ocorrerá utilizando uma placa Wi
 
 
 
-\todo[inline]{Descrever as figuras apresentadas abaixo, e razão da escolho do arduino.}
+%\todo[inline]{Descrever as figuras apresentadas abaixo, e razão da escolho do arduino.}
 
 \begin{figure}[ht]
     \centering
@@ -133,10 +133,12 @@ Os componentes da central de processamento apresentados na \autoref{fig:esq_cent
     \label{fig:esq_central}
 \end{figure}
 
-
+O Raspberry pi foi escolhido devido ao seu tamanho compacto e sua alta capacidade de processamento. Por se tratar de um computador completo em uma placa é possível instalar uma distribuição de Linux com capacidade de se conectar à internet com certa facilidade. Graças à sua unidade de processamento gráfico (GPU, em inglês) integrada, o Raspberry pi consegue executar algoritmos de aprendizado de máquina de maneira eficaz, frameworks como o TensorFlow conseguem tirar todo proveito destes componentes através de paralelismo.
 
 \section{Modelagem e verificação formal da Hand.io}
 
+Serão desenvolvidos modelos formais para descrever os comportamentos da Hand.io, que serão
+
 \todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
 
-%\section{Cronograma}
+\section{Cronograma}

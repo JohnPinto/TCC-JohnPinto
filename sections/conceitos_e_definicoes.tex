@@ -9,7 +9,7 @@ Este capítulo tem como objetivo apresentar as principais conceitos e definiçõ
 
 De acordo com~\citeonline{VAHID:2001} um sistema embarcado é um sistema computacional desenvolvido para um propósito específico, que em contraposição a sistemas de propósito geral, realiza apenas uma tarefa específica. Existem certas características (exemplo, restrição de memória e tempo de execução) que distinguem um sistema embarcado dos demais, que apesar de nem sempre serem atendidas, servem de referência para a classificação de tais sistemas. Sistemas embarcados geralmente realizam apenas uma atividade repetidas vezes, contam com restrições mais apertadas que um sistema normal, são reativos e muitas vezes funcionam em tempo real. Estes sistemas geralmente fazem parte de sistemas maiores, e quase sempre funcionam sem o conhecimento do usuário.
 
-Dispositivos como \textit{smartphones} e computadores pessoais, são compostos por diversos sistemas embarcados que realizam apenas uma função, mas que quando estão juntos passam a realizar diversas atividades, passando a ser classificado como um sistema de propósito geral. Um exemplo de um sistema embarcado que faz parte de um sistema maior seria a placa de rede de um smartphone~\cite{qualcomm_2017}\todo{Corrgir citação com ...}, que por si só é um sistema que apenas recebe e envia dados através de uma rede sem fio, mas que quando contextualizado em um smartphone possibilita o acesso a internet, o que promove a realização de diversas atividades disponíveis online, como acesso à redes sociais ou a reprodução de vídeos~\cite{VAHID:2001}.
+Dispositivos como \textit{smartphones} e computadores pessoais, são compostos por diversos sistemas embarcados que realizam apenas uma função, mas que quando estão juntos passam a realizar diversas atividades, passando a ser classificado como um sistema de propósito geral. Um exemplo de um sistema embarcado que faz parte de um sistema maior seria a placa de rede de um smartphone~\cite{qualcomm_2017}, que por si só é um sistema que apenas recebe e envia dados através de uma rede sem fio, mas que quando contextualizado em um smartphone possibilita o acesso a internet, o que promove a realização de diversas atividades disponíveis online, como acesso à redes sociais ou a reprodução de vídeos~\cite{VAHID:2001}.
 
 Diante do surgimento da Internet das Coisas (IoT, em inglês), diversos sistemas embarcados capazes de realizar comunicações 
 
@@ -84,10 +84,20 @@ Microprocessadores são conhecidos popularmente como Unidades Centrais de Proces
 % O termo que melhor descreve 
 Nos microprocessadores o hardware destes componentes é desenvolvido de tal maneira a permitir o desenvolvimento de sistemas grandes ou pequenos dependendo da demanda da aplicação. O projeto do microprocessador é desenvolvido de modo a atender as suas expectativas no mercado de consumo em massa  \cite{ayala:1991}\todo{Apresentar um exemplo de microprocessador}.
 
+Um exemplo de microprocessador seria o AMD phoneom
+
 Os microcontroladores funcionam de maneira similar aos microprocessadores, no entanto, além de terem os componentes encontrados em um microprocessador eles também contam com todos os componentes necessários para o funcionamento de um computador completo, como memórias RAM, memórias ROM e portas paralelas e seriais de entrada e saída. Como os microprocessadores, os microcontroladores também são componentes de propósito geral, mas o seu foco deixa de ser apenas computar os dados encontrados na memória e armazená-los, e passa também controlar o ambiente em que se encontram se baseando nos resultados do processamento dos dados disponíveis \cite{ayala:1991}.
 
 Os programas utilizados em microcontroladores são armazenados na memória ROM e não tem seu funcionamento alterado durante o ciclo de vida do sistema. As instruções de máquina encontradas nos microcontroladores geralmente envolvem buscar dados na memória interna e que também realizam operações envolvendo os pinos de conexão inclusos na plataforma, o que permite que cada pino tenha seu propósito programado de acordo com a vontade do desenvolvedor \cite{ayala:1991}\todo{Apresentar um exemplo de microcontrolador com a descrição da pinagem}.
 
+Um exemplo de microcontrolador seria o ATmega328P~\cite{atmel}, apresentado na \autoref{fig:atmega},  que é o chip utilizado no Arduíno Uno \cite{arduino}. Por si só o ATmega328P conta com memória interna de 32 kilobytes para a gravação de programas de propósito geral, capacidade de controlar seus pinos e realizar cálculos complexos com os dados providos por eles. Quando integrado à uma placa de microcontrolador como o Arduíno o desenvolvimento passa a ser muito mais simplificado sendo necessário apenas um cabo micro USB para a gravação de programas na memória.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth, keepaspectratio]{resources/ATMega328P-Pinout.png}
+    \caption{Pinagem do microcontrolador ATmega328P}
+    \label{fig:atmega}
+\end{figure}
 
 %----------------------------------
 % VSS
@@ -148,7 +158,14 @@ Em seu livro \citeonline{VALK:2002} apresenta as redes de petri como uma ferrame
 
 No trabalho de~\citeonline{ATZORI:2010} é demonstrado que em sua ideia fundamental a internet das coisas é um ambiente de computadores pervasivos que interagem um com os outros de maneira cooperativa para atingir metas em comum, este conceito permite a idealização de ambientes inteligentes onde todos os objetos estão em constante comunicação: para auxiliar o usuário a atingir uma qualidade de vida maior.
 
-Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a vida muito mais confortável e eficiente com sensores e atuadores, coletando dados sobre a preferência dos usuários e sobre o clima é possível que a temperatura seja adequada automaticamente levando em consideração o gasto de energia elétrica para uma maior economia.
+Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a vida muito mais confortável e eficiente com sensores e atuadores, coletando dados sobre a preferência dos usuários e sobre o clima é possível que a temperatura seja adequada automaticamente levando em consideração o gasto de energia elétrica para uma maior economia. \cite{ATZORI:2010}
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
 
 \todo[inline]{Adicionar uma figura exemplificando os sensores e atuadores em IoT}
 
@@ -178,6 +195,8 @@ Um exemplo da aplicabilidade de algoritmos de aprendizado de máquina seria o re
 Resultados melhores podem ser atingidos utilizando algoritmos de aprendizado de máquina. Um grande volume de dígitos escritos a mão representados por um conjunto de vetores e um vetor com valores representando categorias manualmente escolhidas por um desenvolvedor são conhecidos como \textit{training sets}, e são utilizados como referência para a realização de ajustes nos parâmetros de um algoritmo de aprendizado de máquina. A ideia por trás deste método é que o algoritmo passe a categorizar novos vetores que não fazem parte do \textit{training set} original nas categorias definidas previamente. A habilidade de reconhecer estes novos padrões corretamente é conhecida como \textit{generalização} \cite{bishop:2006}.
 
 \subsection{\textit{Frameworks} de aprendizado de máquina}
+
+Como o foco deste trabalho não é o desenvolvimento e a implementação de algoritmos de aprendizado de máquina, serão utilizados \textit{frameworks} desenvolvidos em Python prontos para desenvolvimento. 
 
 \subsubsection{Scikit-learn}
 
