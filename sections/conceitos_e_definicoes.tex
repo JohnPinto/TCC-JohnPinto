@@ -90,7 +90,7 @@ Um exemplo de microprocessador seria o Broadcom BCM2837 \cite{raspberry_bcm}, qu
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth, keepaspectratio]{resources/rasp.jpg}
-    \caption{Raspberry Pi 3. \cite{raspberry:pi3_store}}
+    \caption{Raspberry Pi 3. \cite{raspberry:pi3}}
     \label{fig:raspberry}
 \end{figure}
 
@@ -115,7 +115,7 @@ Um exemplo de microcontrolador seria o ATmega328P~\cite{atmel}, apresentado na \
 
 \section{Modelagem e verificação de sistemas}
 
-Segundo \citeonline{edwards:1997}, os sistemas atualmente, em sua maioria, são desenvolvidos com uma abordagem \textit{ad hoc} que é baseada em experiências prévias dos desenvolvedores com produtos similares aos que serão utilizados durante a implementação do sistema. Uma abordagem utilizando modelos formais e métodos de síntese automatizada de implementação é uma maneira mais efetivas de garantir um sistema seguro, visto que tais abordagens adotam modelos matemáticos para certificar propriedades de execução do sistema desenvolvido. 
+Segundo \citeonline{edwards:1997}, os sistemas atualmente, em sua maioria, são desenvolvidos com uma abordagem \textit{ad hoc}, que é baseada em experiências prévias dos desenvolvedores com produtos similares aos que serão utilizados durante a implementação do sistema. Uma abordagem utilizando modelos formais e métodos de síntese automatizada de implementação é uma maneira mais efetivas de garantir um sistema seguro, visto que tais abordagens adotam modelos matemáticos para certificar propriedades de execução do sistema desenvolvido. 
 
 Um modelo é uma representação abstrata e simplificada de uma coisa real. No desenvolvimento de sistemas um modelo permite aos desenvolvedores a possibilidade de distinguir o que realmente é necessário e o que é supérfluo, além de permitir que seja realizada uma análise mais rápida do sistema do que se cada componente do sistema tivesse que ser analisado individualmente \cite{UML:2006}.
 
@@ -149,7 +149,7 @@ Diversos diagramas são utilizados para a especificação de um sistema. Cada um
     \item \textbf{Diagrama de implantação:} utilizado para descrever como um sistema pode ser implantado em uma situação real.
 \end{itemize}
 
-Os diagramas UML em especial o diagrama de sequência podem descrever com precisão as interações que ocorrem durante o funcionamento de um sistema embarcado \cite{uml_petri}. Existem ferramentas como o FOREVER \cite{forever} que podem gerar redes de Petri a partir de um diagrama de sequência, o que pode auxiliar grandemente a verificação automatizada do comportamento de um sistema.
+Os diagramas UML, em especial o diagrama de sequência, podem descrever com precisão as interações que ocorrem durante o funcionamento de um sistema embarcado \cite{uml_petri}. Existem ferramentas como o FOREVER \cite{forever} que podem gerar redes de Petri a partir de um diagrama de sequência, o que pode auxiliar grandemente a verificação automatizada do comportamento de um sistema.
 
 %\todo[inline]{Apresentar os diagramas com exemplo}
 
@@ -161,11 +161,33 @@ Os diagramas UML em especial o diagrama de sequência podem descrever com precis
 \subsection{Máquina de Estados}
 % =============================
 
-Segundo \citeonline{hopcroft:2001} máquinas de estados finitos, também conhecidas como autômatos finitos, são uma maneira muito útil de modelar um sistema de maneira que seus componentes ou subsistemas estejam sempre realizando um conjunto de tarefas finitas que podem ser representadas e rastreadas através de estados que são alterados em resposta à entradas externas. 
+Segundo \citeonline{hopcroft:2001} máquinas de estados finitos, também conhecidas como autômatos finitos, são uma maneira muito útil e visual de modelar o comportamento de um sistema de maneira que seus componentes ou subsistemas estejam sempre realizando um conjunto de tarefas finitas que podem ser representadas e rastreadas através de estados que são alterados em resposta à entradas externas. 
 
-\todo[inline]{Descrever os tipos de máquina de estado}
+De acordo com \citeonline{hopcroft:2001}, formalmente uma máquina de estados finitos é definida por uma quíntupla $A = (Q, \Sigma, \delta, q_0, F)$ onde:
 
-\todo[inline]{Apresentar um exemplo de modelagem de sistema usando máquina de estado.}
+\begin{itemize}
+    \item $Q$ é um conjunto de estados.
+    \item $\Sigma$ é um conjunto finito de símbolos de entrada.
+    \item $\delta$ é uma função de transição que recebe um estado e um símbolo e retorna um outro estado.
+    \item $q_0$ é um estado inicial que faz parte de $Q$
+    \item $F$ é um conjunto estados finais que é subconjunto de $Q$ 
+\end{itemize}
+
+Existem duas grande categorias de máquinas de estados, as determinísticas, onde apenas um estado é atingido por vez, e não determinísticas, que permite que vários estados podem estar sendo acessados ao mesmo tempo. \cite{hopcroft:2001}
+
+Um exemplo de modelagem de sistemas com máquinas de estados finitos seria a modelagem de uma máquina de doces com troco automático apresentada por \cite{snack} na \autoref{fig:snack}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{resources/snackmachine.png}
+    \caption{Máquina de estados finita da máquina de venda de doces. \cite{snack}}
+    \label{fig:snack}
+\end{figure}
+
+ \newpage
+%\todo[inline]{Descrever os tipos de máquina de estado}
+
+%\todo[inline]{Apresentar um exemplo de modelagem de sistema usando máquina de estado.}
 
 % O propósito do estados é que o sistema tenha noção do seu histórico, se lembrando apenas das partes relevantes.
 

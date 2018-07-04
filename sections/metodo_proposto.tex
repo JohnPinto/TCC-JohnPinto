@@ -138,7 +138,7 @@ A comunicação com a central de processamento ocorrerá utilizando uma placa Wi
     \label{fig:esq_luva}
 \end{figure}
 
-Os componentes da central de processamento apresentados na \autoref{fig:esq_central}, será composta por um Raspberry pi 3 \cite{raspberry:pi3} que ficará conectado à internet esperando os sinais da luva e realizará o reconhecimento dos sinais, um receptor infravermelho TSOP4838 que servirá para a realização do cadastro de novos dispositivos e um LED emissor de sinais infravermelhos que podem ser reconhecidos por dispositivo que utilizam este protocolo como meio de controle.
+Os componentes da central de processamento apresentados na \autoref{fig:esq_central}, será composta por um Raspberry Pi 3 \cite{raspberry:pi3} que ficará conectado à internet esperando os sinais da luva e realizará o reconhecimento dos sinais, um receptor infravermelho TSOP4838 que servirá para a realização do cadastro de novos dispositivos e um LED emissor de sinais infravermelhos que podem ser reconhecidos por dispositivo que utilizam este protocolo como meio de controle.
 
 \begin{figure}[ht]
     \centering
@@ -147,13 +147,13 @@ Os componentes da central de processamento apresentados na \autoref{fig:esq_cent
     \label{fig:esq_central}
 \end{figure}
 
-O Raspberry pi 3 \cite{raspberry:pi3} foi escolhido devido ao seu tamanho compacto e sua alta capacidade de processamento. Por se tratar de um computador completo em uma placa é possível instalar uma distribuição de Linux com capacidade de se conectar à internet com certa facilidade. Graças à sua unidade de processamento gráfico (GPU, em inglês) integrada, o Raspberry pi consegue executar algoritmos de aprendizado de máquina de maneira eficaz, frameworks como o TensorFlow conseguem tirar todo proveito destes componentes através de paralelismo.
+O Raspberry Pi 3 \cite{raspberry:pi3} foi escolhido devido ao seu tamanho compacto e sua alta capacidade de processamento. Por se tratar de um computador completo em uma placa é possível instalar uma distribuição de Linux com capacidade de se conectar à internet com certa facilidade. Graças à sua unidade de processamento gráfico (GPU, em inglês) integrada, o Raspberry Pi 3 consegue executar algoritmos de aprendizado de máquina de maneira eficaz, frameworks como o TensorFlow conseguem tirar todo proveito destes componentes através de paralelismo.
 
 \section{Modelagem e verificação formal da Hand.io}
 
 Durante a fase de modelagem do sistema, serão desenvolvidos diagramas utilizando UML que servirão de guia para a implementação do protótipo da Hand.io. Graças à natureza formal dos diagramas UML, é possível realizar testes e verificações automatizadas a partir deles em ferramentas como o FOREVER \cite{forever}.
 
-Será construída uma rede de Petri que irá modelar o comportamento do sistema de maneira assíncrona, tendo em vista que a luva e a central de processamento de sinais funcionam de maneira independente uma da outra. A rede de Petri será testada extensivamente utilizando ferramentas de verificação automatizadas, para detectar se ocorrerão problemas como os detectados por \citeonline{peterson:1981} na \autoref{def:petri_prop}.
+Será construída uma rede de Petri que irá modelar o comportamento do sistema de maneira assíncrona, tendo em vista que a luva e a central de processamento de sinais funcionam de maneira independente uma da outra. A rede de Petri será testada extensivamente utilizando ferramentas de verificação automatizadas, para detectar se ocorrerão problemas como os citados por \citeonline{peterson:1981} na \autoref{def:petri_prop}.
 
 %\todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
 
