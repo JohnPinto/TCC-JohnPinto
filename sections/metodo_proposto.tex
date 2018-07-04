@@ -1,3 +1,4 @@
+\label{chapter:metodo}
 Este capítulo apresenta as etapas do método proposto para o funcionamento do sistema computacional da luva Hand.io e será explicado como os objetivos deste trabalho serão satisfeitos. 
 
 \section{Visão geral do método da Hand.io}
@@ -150,10 +151,9 @@ O Raspberry pi 3 \cite{raspberry:pi3} foi escolhido devido ao seu tamanho compac
 
 \section{Modelagem e verificação formal da Hand.io}
 
-Durante a fase de modelagem do sistema, serão desenvolvidos diagramas utilizando UML que servirão de guia para a implementação do protótipo da Hand.io. 
+Durante a fase de modelagem do sistema, serão desenvolvidos diagramas utilizando UML que servirão de guia para a implementação do protótipo da Hand.io. Graças à natureza formal dos diagramas UML, é possível realizar testes e verificações automatizadas a partir deles em ferramentas como o FOREVER \cite{forever}.
 
 Será construída uma rede de Petri que irá modelar o comportamento do sistema de maneira assíncrona, tendo em vista que a luva e a central de processamento de sinais funcionam de maneira independente uma da outra. A rede de Petri será testada extensivamente utilizando ferramentas de verificação automatizadas, para detectar se ocorrerão problemas como os detectados por \citeonline{peterson:1981} na \autoref{def:petri_prop}.
 
-\todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
+%\todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
 
-\section{Cronograma}

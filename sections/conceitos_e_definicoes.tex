@@ -90,7 +90,7 @@ Um exemplo de microprocessador seria o Broadcom BCM2837 \cite{raspberry_bcm}, qu
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth, keepaspectratio]{resources/rasp.jpg}
-    \caption{Raspberry Pi 3}
+    \caption{Raspberry Pi 3. \cite{raspberry:pi3_store}}
     \label{fig:raspberry}
 \end{figure}
 
@@ -105,7 +105,7 @@ Um exemplo de microcontrolador seria o ATmega328P~\cite{atmel}, apresentado na \
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth, keepaspectratio]{resources/ATMega328P-Pinout.png}
-    \caption{Pinagem do microcontrolador ATmega328P}
+    \caption{Pinagem do microcontrolador ATmega328P. \cite{atmel}}
     \label{fig:atmega}
 \end{figure}
 
@@ -129,13 +129,31 @@ Estes modelos permitem que as propriedades do sistema sejam validadas de maneira
 
 De acordo com \citeonline{UML:2006} a Linguagem de Modelagem Unificada (UML, em Inglês) é um padrão amplamente utilizado por desenvolvedores para modelagem de software e hardware de sistemas em geral. A UML é uma ferramenta muito útil durante o desenvolvimento de um sistema, pois permite aos desenvolvedores manter um certo controle sobre a complexidade do sistema, permitindo que as partes mais importantes do sistema se sobressaiam em relação às outras, evitando eventuais confusões durante a implementação.
 
-A UML utiliza conceitos de linguagens orientadas a objetos, que por contarem com 
+Por se tratar de uma linguagem formal, a UML permite a utilização de ferramentas de engenharia de sistemas auxiliada por computador (CASE, em inglês) que geram código executável a partir dos diagramas de modelagem do sistema. Existem diferentes maneiras de utiliza a UML, alguns desenvolvedores a utilizam como um esboço do sistema frisando os componentes mais importantes para a implementação, alguns utilizam como planta baixa do sistema mantendo qualquer mudança realizada no código sincronizada com os modelos e outros utilizam como linguagem de programação, graças à natureza orientada a objetos da UML a conversão de diagramas em código de máquina passa a ser uma realidade no cotidiano de alguns desenvolvedores. \cite{UML:2006}
 
-Diversos diagramas são utilizados para a especificação de um sistema. Cada um deles sendo utilizado para descrever alguma parte do modelo, sem conter informações demais relacionadas à outras partes do projeto. 
+Diversos diagramas são utilizados para a especificação de um sistema. Cada um deles sendo utilizado para descrever alguma parte do modelo, sem conter informações demais relacionadas à outras partes do projeto o que poderia causar confusão durante a implementação do sistema. Abaixo estão listados os diagramas UML e suas respectivas funções. \cite{UML:2006}.
 
-\todo[inline]{Apresentar os diagramas com exemplo}
+\begin{itemize}
+    \item \textbf{Diagrama de caso de uso:} utilizado para modelar interações entre usuário e sistema, também sendo usado para levantamento de requisitos.
+    \item \textbf{Diagrama de atividade:} utilizado para modelar atividades sequenciais e paralelas do sistema.
+    \item \textbf{Diagrama de classe:} utilizado para modelar classes, tipos, interfaces e as relações entre eles.
+    \item \textbf{Diagrama de objeto:} utilizado para modelar as instâncias das classes definidas no diagrama de classes.
+    \item \textbf{Diagrama de sequência:} utilizado para modelar as interações entre objetos quando a ordem delas é importante.
+    \item \textbf{Diagrama de comunicação:} utilizado para modelar a maneira como os objetos interagem e as conexões necessárias para as interações.
+    \item \textbf{Diagrama de tempo:} utilizado para modelar as interações entre objetos quando o tempo é uma preocupação importante
+    \item \textbf{Diagrama de visão geral de interação:} utilizado para unir os diagramas de sequencia, comunicação e tempo com a finalidade de ter uma visão geral do sistema. 
+    \item \textbf{Diagrama de estrutura composta:} utilizado para modelar os componentes internos de uma classe e descrever as relações entre objetos em uma dada situação.
+    \item \textbf{Diagrama de componente:} utilizado para modelar os componentes importantes do sistema e as interfaces que eles utilizam para comunicação;
+    \item \textbf{Diagrama de pacote:} utilizado para descrever a organização hierárquica de grupos de classes e componentes.
+    \item \textbf{Diagrama de estados:} utilizado para modelar o estado de um objeto durante seu período de vida e os eventos que podem gerar mudanças de estados.
+    \item \textbf{Diagrama de implantação:} utilizado para descrever como um sistema pode ser implantado em uma situação real.
+\end{itemize}
 
-\todo[inline]{Descrever um exemplo com diagrama de sequência e apresentar como será usado no seu TCC}
+Os diagramas UML em especial o diagrama de sequência podem descrever com precisão as interações que ocorrem durante o funcionamento de um sistema embarcado \cite{uml_petri}. Existem ferramentas como o FOREVER \cite{forever} que podem gerar redes de Petri a partir de um diagrama de sequência, o que pode auxiliar grandemente a verificação automatizada do comportamento de um sistema.
+
+%\todo[inline]{Apresentar os diagramas com exemplo}
+
+%\todo[inline]{Descrever um exemplo com diagrama de sequência e apresentar como será usado no seu TCC}
 
 % \subsection{Modelos Formais}
 
@@ -154,7 +172,7 @@ Segundo \citeonline{hopcroft:2001} máquinas de estados finitos, também conheci
 
 
 \subsection{Rede de Petri}
-
+\label{def:petri_prop}
 \citeonline{murata:1989} apresenta redes de Petri como uma ferramenta de modelagem de sistemas visual e matemática, que pode ser aplicada em diversas áreas de conhecimento, desde modelagem de grande linhas de produção até para avaliação de desempenho em sistemas com lógica sequencial ou paralela. Por se tratar de um modelo matemático, as redes de Petri podem ser utilizadas em conjunto com ferramentas de teste automatizado para analisar se o sistema modelado está funcionando de maneira correta.
 
 
@@ -193,8 +211,6 @@ Um exemplo de uma rede de Petri modelando um sistema real pode ser apresentado n
     \caption{Modelagem de uma máquina de doce utilizando rede de Petri. \cite{murata:1989}}
     \label{fig:petri_ex}
 \end{figure}
-
-\label{def:petri_prop}
 
 Segundo \citeonline{peterson:1981} existem algumas propriedades que uma rede de Petri devem ser atendidas para que não ocorram eventuais problemas durante o funcionamento do sistema modelado. Seguem elas listadas a baixo:
 
