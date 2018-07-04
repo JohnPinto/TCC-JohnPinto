@@ -80,7 +80,7 @@ Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de i
 Gestos pré definidos e gestos criados pelos usuários são a abordagem mais efetiva para controlar um ambiente.
 No entanto uma quantidade muito grande de gestos e gestos muito complexos não são a melhor escolha, pois existe uma quantidade limitada de gestos que podem ser lembrados com precisão sem que haja confusão durante a realização de um determinado gesto.
 
-Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina que irão reconhecer os gestos realizados pelo usuário. Serão realizados testes utilizando os \textit{frameworks} \textit{Python} Scikit-learn \cite{scikit-learn} e TensorFlow \cite{tensorflow:2016}, seu desempenho será medido para definir qual método de reconhecimento de padrões será mais eficaz na detecção de gestos, levando em consideração o tamanho do \textit{training set} e a capacidade computacional da central de processamento. 
+Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina\todo{Descrever quais podem ser utilizados baseado-se nos trabalhos correlatos} que irão reconhecer os gestos realizados pelo usuário. Serão realizados testes utilizando os \textit{frameworks} \textit{Python} Scikit-learn \cite{scikit-learn} e TensorFlow \cite{tensorflow:2016}, seu desempenho será medido para definir qual método de reconhecimento de padrões será mais eficaz na detecção de gestos, levando em consideração o tamanho do \textit{training set} e a capacidade computacional da central de processamento. 
 
 Existem dois momentos durante o fluxo de execução da Hand.io onde estes algoritmos são utilizados, quando o sistema aguarda que o usuário selecione o dispositivo que ele deseja controlar e quando o sistema aguarda um comando que será realizado no dispositivo selecionado, ambos os momentos podem ser vistos respectivamente na \autoref{fig:fluxograma} na letra B. A cada vez que os algoritmos finalizam a classificação dos sinais tidos como entrada, o sistema retorna para o usuário um sinal sonoro de confirmação. 
 
@@ -152,6 +152,8 @@ O Raspberry Pi 3 \cite{raspberry:pi3} foi escolhido devido ao seu tamanho compac
 \section{Modelagem e verificação formal da Hand.io}
 
 Durante a fase de modelagem do sistema, serão desenvolvidos diagramas utilizando UML que servirão de guia para a implementação do protótipo da Hand.io. Graças à natureza formal dos diagramas UML, é possível realizar testes e verificações automatizadas a partir deles em ferramentas como o FOREVER \cite{forever}.
+
+\todo[inline]{Se tiver o diagram de sequência sugiro adicionar.}
 
 Será construída uma rede de Petri que irá modelar o comportamento do sistema de maneira assíncrona, tendo em vista que a luva e a central de processamento de sinais funcionam de maneira independente uma da outra. A rede de Petri será testada extensivamente utilizando ferramentas de verificação automatizadas, para detectar se ocorrerão problemas como os citados por \citeonline{peterson:1981} na \autoref{def:petri_prop}.
 
