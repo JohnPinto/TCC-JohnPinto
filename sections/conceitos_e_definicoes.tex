@@ -51,7 +51,7 @@ Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, seja
 \begin{figure}[ht]
 	\includegraphics[width=0.5\textwidth, keepaspectratio]{sistemas_em_tempo_real}
     \centering
-    \caption{Diagrama de um sistema em tempo real genérico. (Adaptado de~\citeonline{BUTTAZZO:2011})}
+    \caption{Diagrama de um sistema em tempo real genérico. Adaptado de~\citeonline{BUTTAZZO:2011}}
     \label{fig:rt}
 \end{figure}
 
@@ -82,13 +82,23 @@ As diferenças entre microcontroladores e microprocessadores são apresentadas p
 Microprocessadores são conhecidos popularmente como Unidades Centrais de Processamento (CPU, em inglês), e tem como sua função principal buscar e modificar extensivamente dados da memória para que sejam armazenados ou exibidos para o usuário. Por si só um microprocessador não constitui um microcomputador completo, para se tornar uma máquina capaz de executar programas de propósito geral se faz necessária a utilização de memórias RAM, memórias de armazenamento massivo e diversos dispositivos de entrada e saída externos~\cite{ayala:1991}.
 
 % O termo que melhor descreve 
-Nos microprocessadores o hardware destes componentes é desenvolvido de tal maneira a permitir o desenvolvimento de sistemas grandes ou pequenos dependendo da demanda da aplicação. O projeto do microprocessador é desenvolvido de modo a atender as suas expectativas no mercado de consumo em massa  \cite{ayala:1991}\todo{Apresentar um exemplo de microprocessador}.
+Nos microprocessadores o hardware destes componentes é desenvolvido de tal maneira a permitir o desenvolvimento de sistemas grandes ou pequenos dependendo da demanda da aplicação. O projeto do microprocessador é desenvolvido de modo a atender as suas expectativas no mercado de consumo em massa.  
+%\cite{ayala:1991}\todo{Apresentar um exemplo de microprocessador}.
 
-Um exemplo de microprocessador seria o AMD phoneom
+Um exemplo de microprocessador seria o Broadcom BCM2837 \cite{raspberry_bcm}, que conta com quatro cores ARM que funcionam em uma frequência de 1.2ghz. Este processador é encontrado no Raspberry Pi 3 \cite{raspberry:pi3}, exibido na \autoref{fig:raspberry}, que é um computador de placa única (SBC, em inglês). Por se tratar de um microprocessador, o Broadcom BCM2837 necessita de diversos outros componentes para funcionar como um computador completo.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth, keepaspectratio]{resources/rasp.jpg}
+    \caption{Raspberry Pi 3}
+    \label{fig:raspberry}
+\end{figure}
 
 Os microcontroladores funcionam de maneira similar aos microprocessadores, no entanto, além de terem os componentes encontrados em um microprocessador eles também contam com todos os componentes necessários para o funcionamento de um computador completo, como memórias RAM, memórias ROM e portas paralelas e seriais de entrada e saída. Como os microprocessadores, os microcontroladores também são componentes de propósito geral, mas o seu foco deixa de ser apenas computar os dados encontrados na memória e armazená-los, e passa também controlar o ambiente em que se encontram se baseando nos resultados do processamento dos dados disponíveis \cite{ayala:1991}.
 
-Os programas utilizados em microcontroladores são armazenados na memória ROM e não tem seu funcionamento alterado durante o ciclo de vida do sistema. As instruções de máquina encontradas nos microcontroladores geralmente envolvem buscar dados na memória interna e que também realizam operações envolvendo os pinos de conexão inclusos na plataforma, o que permite que cada pino tenha seu propósito programado de acordo com a vontade do desenvolvedor \cite{ayala:1991}\todo{Apresentar um exemplo de microcontrolador com a descrição da pinagem}.
+Os programas utilizados em microcontroladores são armazenados na memória ROM e não tem seu funcionamento alterado durante o ciclo de vida do sistema. As instruções de máquina encontradas nos microcontroladores geralmente envolvem buscar dados na memória interna e que também realizam operações envolvendo os pinos de conexão inclusos na plataforma, o que permite que cada pino tenha seu propósito programado de acordo com a vontade do desenvolvedor \cite{ayala:1991}
+
+%\todo{Apresentar um exemplo de microcontrolador com a descrição da pinagem}.
 
 Um exemplo de microcontrolador seria o ATmega328P~\cite{atmel}, apresentado na \autoref{fig:atmega},  que é o chip utilizado no Arduíno Uno \cite{arduino}. Por si só o ATmega328P conta com memória interna de 32 kilobytes para a gravação de programas de propósito geral, capacidade de controlar seus pinos e realizar cálculos complexos com os dados providos por eles. Quando integrado à uma placa de microcontrolador como o Arduíno o desenvolvimento passa a ser muito mais simplificado sendo necessário apenas um cabo micro USB para a gravação de programas na memória.
 
@@ -145,9 +155,62 @@ Segundo \citeonline{hopcroft:2001} máquinas de estados finitos, também conheci
 
 \subsection{Rede de Petri}
 
-Em seu livro \citeonline{VALK:2002} apresenta as redes de petri como uma ferramenta poderosa 
+\citeonline{murata:1989} apresenta redes de Petri como uma ferramenta de modelagem de sistemas visual e matemática, que pode ser aplicada em diversas áreas de conhecimento, desde modelagem de grande linhas de produção até para avaliação de desempenho em sistemas com lógica sequencial ou paralela. Por se tratar de um modelo matemático, as redes de Petri podem ser utilizadas em conjunto com ferramentas de teste automatizado para analisar se o sistema modelado está funcionando de maneira correta.
 
-\todo[inline]{Definir formalmente, e apresentar um exemplo prático.}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|}
+         \hline
+         Formalmente uma rede de Petri é uma quíntupla, $PN = (P,T,F,W,M_0)$ onde: \\ \hline
+         $P = \{p_1,p_2,\ldots,p_m\}$ é um conjunto finito de lugares, \\
+         $T = \{t_1,t_2,\ldots,t_n\}$ é um conjunto de transições, \\
+         $F \subseteq (P \times T) \cup (T \times P)$ é um conjunto de arcos, \\
+         $W: F \to \{1,2,3,\ldots\} $ é uma função de pesos, \\
+         $M_0: P \to \{0,1,2,3,\ldots\}$ é a marcação inicial, \\
+         $P \cap T = \emptyset$ e $P \cup T \neq \emptyset$ \\
+         Uma rede de Petri sem qualquer marcações iniciais é denominada por $N$ \\
+         \hline
+    \end{tabular}
+    \caption{Definição formal de uma rede de Petri. Adaptada de \citeonline{murata:1989}.}
+    \label{tab:petri_form}
+\end{table}
+
+As mudanças pelas quais o sistema passa durante seu funcionamento são simuladas em uma rede de Petri seguindo regras de transição, exemplificado na \autoref{fig:petri}, onde na letra $(a)$, a transição $t$ pode ser ativada quando os lugares $H_2$ e $O_2$ conterem marcações chamadas de \textit{tokens}, representados por círculos pretos, suficientes para ultrapassar o peso $w$ correspondente à um arco $f$ que liga $H_2$ e $O_2$ até $t$. Após a ativação da transição $t$, apresentada na letra $(b)$, são removidos a quantidade de \textit{tokens} dos lugares $H_2$ e $O_2$ iguais ao peso $w$ que incide em $t$, e então são adicionados a quantidade de \textit{tokens} correspondentes ao peso $w$ do arco que liga $t$ à $H_2O$. \cite{murata:1989}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth, keepaspectratio]{resources/petri.png}
+    \caption{Regra de transição. \cite{murata:1989}}
+    \label{fig:petri}
+\end{figure}
+
+Um exemplo de uma rede de Petri modelando um sistema real pode ser apresentado na \autoref{fig:petri_ex}, onde o funcionamento de uma máquina de doce simples está descrito em detalhes.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth, keepaspectratio]{resources/petriexemplo.png}
+    \caption{Modelagem de uma máquina de doce utilizando rede de Petri. \cite{murata:1989}}
+    \label{fig:petri_ex}
+\end{figure}
+
+\label{def:petri_prop}
+
+Segundo \citeonline{peterson:1981} existem algumas propriedades que uma rede de Petri devem ser atendidas para que não ocorram eventuais problemas durante o funcionamento do sistema modelado. Seguem elas listadas a baixo:
+
+
+\begin{itemize}
+    \item \textbf{Segurança:} uma rede de Petri é tida como segura quando em nenhum momento existem mais de um \textit{token} por lugar. 
+    \item \textbf{Limitação:} uma rede de Petri atende as propriedades de limitação quando o numero de \textit{tokens} não excede um limite $k$ definido pelo desenvolvedor.
+    \item \textbf{Conservação:} uma rede de Petri atende as propriedades de conservação quando existe uma quantidade fixa de \textit{tokens} em todos os momentos do seu funcionamento.
+    \item \textbf{Vivacidade:} uma rede de Petri cumpri as propriedades de vivacidade quando não ocorrem travas durante o seu funcionamento devido à má utilização de \textit{tokens}.
+\end{itemize}
+
+
+
+
+
+%\todo[inline]{Definir formalmente, e apresentar um exemplo prático.}
 
 
 
@@ -163,7 +226,7 @@ Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a v
 \begin{figure}
     \centering
     \includegraphics{}
-    \caption{Caption}
+    \caption{Sensores e atuadores em IoT}
     \label{fig:my_label}
 \end{figure}
 

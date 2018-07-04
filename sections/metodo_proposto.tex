@@ -43,7 +43,7 @@ e quadrados com barras laterais representam os processos predefinidos do sistema
 
 A ideia principal da luva Hand.io é que o usuário controle seu ambiente utilizando gestos da maneira mais natural possível, para isso os movimentos do usuário são capturados constantemente e enviados para a central em tempo real até que seja identificado um gesto correspondente a um dispositivo cadastrado, como pode ser observado na~\autoref{fig:fluxograma}.
 
-A luva Hand.io utilizará dois sensores para realizar a captura dos movimentos da mão do usuário, um acelerômetro e um giroscópio. Estes dois sensores foram escolhidos visando evitar problemas os encontrados no trabalho de \citeonline{uwave:2009} encontrado na Seção~\ref{cor:uwave} que sofre problemas de precisão devido a presença de apenas um sensor acelerômetro.
+A luva Hand.io utilizará dois sensores para realizar a captura dos movimentos da mão do usuário, um acelerômetro e um giroscópio. Estes dois sensores foram escolhidos visando evitar problemas os encontrados no trabalho de \citeonline{uwave:2009} encontrado na \autoref{cor:uwave} que sofre problemas de precisão devido a presença de apenas um sensor acelerômetro.
 % 
 Os sensores escolhidos realizam diversas amostras nas mudanças na aceleração e no giro realizados na luva\todo{Apresentar exemplos de dados gerados pelos sensores}. 
 
@@ -54,21 +54,32 @@ Os sensores escolhidos realizam diversas amostras nas mudanças na aceleração 
 A central de processamento (semelhante ao um pequeno aparelho de TV a cabo) inicia a sua operação esperando o recebimento de algum sinal da luva e até que a conexão tenha sido confirmada.
 % , não realiza qualquer ação
 % 
-A conexão entre a luva e a central será realizada utilizando o protocolo de redes sem fio IEEE $802$.$11$~\cite{802.11:1997}, conhecida popularmente como Wi-Fi, através de uma rede LAN, teste protocolo foi escolhido por permitir que a luva tenha uma movimentação
-\todo{Descrever pq este protocolo foi escolhido, suas vantagens}. 
+A conexão entre a luva e a central será realizada utilizando o protocolo de redes sem fio IEEE $802$.$11$~\cite{802.11:1997}, conhecida popularmente como Wi-Fi, através de uma rede LAN. Este protocolo foi escolhido por ter uma boa relação custo benefício de implementação levando também em consideração velocidade de transmissão de dados e alcance. A necessidade de permitir que o usuário se movimente livremente em um ambiente requer que a conexão sem fio tenha um alcance amplo.
+%\todo{Descrever pq este protocolo foi escolhido, suas vantagens}. 
 
 % Os sinais 
 
 \section{Reconhecimento de Padrões Baseado em Movimentos e Ações}
 
-Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina\todo{Apresentar exemplos com referência de usados em trabalhos correlatos} que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema\todo{Apresentar ferramentas que pretende usar com Machine Learning}. 
+Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina, como ocorre no trabalho de \citeonline{uwave:2009} encontrado na \autoref{cor:uwave}, que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema. 
 
-Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de implementação e contarão com a ajuda de um grupo de voluntários que servirão de referência para o desenvolvimento de gestos simples e coesos. O trabalho de \citeonline{imhome:2011} encontrado na Seção~\ref{cor:home} demonstra que um grande grupo de voluntários é fundamental para a criação de um vocabulário de gestos eficiente\todo{Apresentar um figura com possíveis gestos para mostrar a vantagem de usar uma luva}. 
+%\todo{Apresentar ferramentas que pretende usar com Machine Learning}. 
+
+Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de implementação e contarão com a ajuda de um grupo de voluntários que servirão de referência para o desenvolvimento de gestos simples e coesos, como os apresentados na \autoref{fig:gestos}. O trabalho de \citeonline{imhome:2011} encontrado na Seção~\ref{cor:home} demonstra que um grande grupo de voluntários é fundamental para a criação de um vocabulário de gestos eficiente.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth, keepaspectratio]{resources/gestos.png}
+    \caption{Exemplos de gestos. \cite{accelerometer:2006}}
+    \label{fig:gestos}
+\end{figure}
+
+%\todo{Apresentar um figura com possíveis gestos para mostrar a vantagem de usar uma luva}. 
 
 Gestos pré definidos e gestos criados pelos usuários são a abordagem mais efetiva para controlar um ambiente.
 No entanto uma quantidade muito grande de gestos e gestos muito complexos não são a melhor escolha, pois existe uma quantidade limitada de gestos que podem ser lembrados com precisão sem que haja confusão durante a realização de um determinado gesto.
 
-Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina que irão reconhecer os gestos realizados pelo usuário. 
+Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina que irão reconhecer os gestos realizados pelo usuário. Serão realizados testes utilizando os \textit{frameworks} \textit{Python} Scikit-learn \cite{scikit-learn} e TensorFlow \cite{tensorflow:2016}, seu desempenho será medido para definir qual método de reconhecimento de padrões será mais eficaz na detecção de gestos, levando em consideração o tamanho do \textit{training set} e a capacidade computacional da central de processamento. 
 
 Existem dois momentos durante o fluxo de execução da Hand.io onde estes algoritmos são utilizados, quando o sistema aguarda que o usuário selecione o dispositivo que ele deseja controlar e quando o sistema aguarda um comando que será realizado no dispositivo selecionado, ambos os momentos podem ser vistos respectivamente na \autoref{fig:fluxograma} na letra B. A cada vez que os algoritmos finalizam a classificação dos sinais tidos como entrada, o sistema retorna para o usuário um sinal sonoro de confirmação. 
 
@@ -77,7 +88,7 @@ Existem dois momentos durante o fluxo de execução da Hand.io onde estes algori
 
 \section{Modelo de Conexão Entre Dispositivos Eletrônicos}
 
-O controle dos dispositivos se dará utilizando um LED infravermelho, seguindo um padrão de controle remoto bem estabelecido pela industria de eletrônicos de consumo. Cada fabricante define um protocolo de códigos infravermelhos específicos para cada dispositivo como o protocolo Sony12 que é utilizado pela Sony em suas TVs \todo{referecia} e o protocolo RC5 que é utilizado pela Philips \cite{rc5}. Protocolos diferentes foram criados visando impedir a interferência entre controles e dispositivos de fabricantes diferentes, como por exemplo o usuário tentar ligar o ar condicionado e acabar ligando a TV por acidente.
+O controle dos dispositivos se dará utilizando um LED infravermelho, seguindo um padrão de controle remoto bem estabelecido pela industria de eletrônicos de consumo. Cada fabricante define um protocolo de códigos infravermelhos específicos para cada dispositivo como o protocolo SIRC que é utilizado pela Sony em suas TVs \cite{sirc} e o protocolo RC5 que é utilizado pela Philips \cite{rc5}. Protocolos diferentes foram criados visando impedir a interferência entre controles e dispositivos de fabricantes diferentes, como por exemplo o usuário tentar ligar o ar condicionado e acabar ligando a TV por acidente.
 
 Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarão armazenados em um banco de dados localizado na central de processamento. Cada código estará relacionado à um gesto específico que quando classificado pelo sistema será executado. Durante o cadastro de dispositivos, exibido na \autoref{fig:fluxograma} letra A, o sistema pedirá ao usuário que pressione os botões do controle remoto do dispositivo a ser controlado correspondentes às ações que ele deseja realizar por gestos. A intenção é que a base de dados dos sinais de infravermelho seja populada ao ponto de que sejam criados perfis pré definidos para cada dispositivo, para que quando um dispositivo já presente na base de dados seja cadastrado, não seja necessário realizar o cadastro dos sinais manualmente. 
 
@@ -87,7 +98,9 @@ Os códigos de controle remoto de cada dispositivo cadastrado no sistema ficarã
 
 \section{Modelo de Prototipação}
 
-Os componentes utilizados para a confecção do protótipo da luva e da central buscam ter o menor custo possível, sem comprometer a qualidade do sistema. Componentes produzidos em massa que já tem sua utilização testada extensivamente pela comunidade foram selecionados\todo{Apresentar exemplos}. 
+Os componentes utilizados para a confecção do protótipo da luva e da central buscam ter o menor custo possível, sem comprometer os recursos computacionais necessários para o funcionamento nominal do sistema, uma relação de preços do projeto pode ser vista na \autoref{tab:custos}. 
+
+%Componentes produzidos em massa que já tem sua utilização testada extensivamente pela comunidade foram selecionados\todo{Apresentar exemplos}. 
 
 \begin{table}[ht]
     \centering
@@ -124,7 +137,7 @@ A comunicação com a central de processamento ocorrerá utilizando uma placa Wi
     \label{fig:esq_luva}
 \end{figure}
 
-Os componentes da central de processamento apresentados na \autoref{fig:esq_central}, será composta por um Raspberry pi que ficará conectado à internet esperando os sinais da luva e realizará o reconhecimento dos sinais, um receptor infravermelho TSOP4838 que servirá para a realização do cadastro de novos dispositivos e um LED emissor de sinais infravermelhos que podem ser reconhecidos por dispositivo que utilizam este protocolo como meio de controle.
+Os componentes da central de processamento apresentados na \autoref{fig:esq_central}, será composta por um Raspberry pi 3 \cite{raspberry:pi3} que ficará conectado à internet esperando os sinais da luva e realizará o reconhecimento dos sinais, um receptor infravermelho TSOP4838 que servirá para a realização do cadastro de novos dispositivos e um LED emissor de sinais infravermelhos que podem ser reconhecidos por dispositivo que utilizam este protocolo como meio de controle.
 
 \begin{figure}[ht]
     \centering
@@ -133,11 +146,13 @@ Os componentes da central de processamento apresentados na \autoref{fig:esq_cent
     \label{fig:esq_central}
 \end{figure}
 
-O Raspberry pi foi escolhido devido ao seu tamanho compacto e sua alta capacidade de processamento. Por se tratar de um computador completo em uma placa é possível instalar uma distribuição de Linux com capacidade de se conectar à internet com certa facilidade. Graças à sua unidade de processamento gráfico (GPU, em inglês) integrada, o Raspberry pi consegue executar algoritmos de aprendizado de máquina de maneira eficaz, frameworks como o TensorFlow conseguem tirar todo proveito destes componentes através de paralelismo.
+O Raspberry pi 3 \cite{raspberry:pi3} foi escolhido devido ao seu tamanho compacto e sua alta capacidade de processamento. Por se tratar de um computador completo em uma placa é possível instalar uma distribuição de Linux com capacidade de se conectar à internet com certa facilidade. Graças à sua unidade de processamento gráfico (GPU, em inglês) integrada, o Raspberry pi consegue executar algoritmos de aprendizado de máquina de maneira eficaz, frameworks como o TensorFlow conseguem tirar todo proveito destes componentes através de paralelismo.
 
 \section{Modelagem e verificação formal da Hand.io}
 
-Serão desenvolvidos modelos formais para descrever os comportamentos da Hand.io, que serão
+Durante a fase de modelagem do sistema, serão desenvolvidos diagramas utilizando UML que servirão de guia para a implementação do protótipo da Hand.io. 
+
+Será construída uma rede de Petri que irá modelar o comportamento do sistema de maneira assíncrona, tendo em vista que a luva e a central de processamento de sinais funcionam de maneira independente uma da outra. A rede de Petri será testada extensivamente utilizando ferramentas de verificação automatizadas, para detectar se ocorrerão problemas como os detectados por \citeonline{peterson:1981} na \autoref{def:petri_prop}.
 
 \todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
 
