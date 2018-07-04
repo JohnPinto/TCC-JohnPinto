@@ -85,7 +85,7 @@ Microprocessadores são conhecidos popularmente como Unidades Centrais de Proces
 Nos microprocessadores o hardware destes componentes é desenvolvido de tal maneira a permitir o desenvolvimento de sistemas grandes ou pequenos dependendo da demanda da aplicação. O projeto do microprocessador é desenvolvido de modo a atender as suas expectativas no mercado de consumo em massa.  
 %\cite{ayala:1991}\todo{Apresentar um exemplo de microprocessador}.
 
-Um exemplo de microprocessador seria o Broadcom BCM2837 \cite{raspberry_bcm}, que conta com quatro cores ARM que funcionam em uma frequência de 1.2ghz. Este processador é encontrado no Raspberry Pi 3 \cite{raspberry:pi3}, exibido na \autoref{fig:raspberry}, que é um computador de placa única (SBC, em inglês). Por se tratar de um microprocessador, o Broadcom BCM2837 necessita de diversos outros componentes para funcionar como um computador completo.
+Um exemplo de microprocessador seria o Broadcom BCM2837 \cite{raspberry_bcm}, que conta com quatro cores ARM que funcionam em uma frequência de $1.2$GHz. Este processador é encontrado no Raspberry Pi 3 \cite{raspberry:pi3}, exibido na \autoref{fig:raspberry}, que é um computador de placa única (SBC, em inglês). Por se tratar de um microprocessador, o Broadcom BCM2837 necessita de diversos outros componentes para funcionar como um computador completo.
 
 \begin{figure}[ht]
     \centering
@@ -108,6 +108,8 @@ Um exemplo de microcontrolador seria o ATmega328P~\cite{atmel}, apresentado na \
     \caption{Pinagem do microcontrolador ATmega328P. \cite{atmel}}
     \label{fig:atmega}
 \end{figure}
+
+\todo[inline]{Sugiro explicar de forma curta a pinagem da \autoref{fig:atmega}}
 
 %----------------------------------
 % VSS
@@ -153,6 +155,8 @@ Os diagramas UML, em especial o diagrama de sequência, podem descrever com prec
 
 %\todo[inline]{Apresentar os diagramas com exemplo}
 
+\todo[inline]{Apresentar um exemplo usando FOREVER \cite{forever}}
+
 %\todo[inline]{Descrever um exemplo com diagrama de sequência e apresentar como será usado no seu TCC}
 
 % \subsection{Modelos Formais}
@@ -175,7 +179,7 @@ De acordo com \citeonline{hopcroft:2001}, formalmente uma máquina de estados fi
 
 Existem duas grande categorias de máquinas de estados, as determinísticas, onde apenas um estado é atingido por vez, e não determinísticas, que permite que vários estados podem estar sendo acessados ao mesmo tempo. \cite{hopcroft:2001}
 
-Um exemplo de modelagem de sistemas com máquinas de estados finitos seria a modelagem de uma máquina de doces com troco automático apresentada por \cite{snack} na \autoref{fig:snack}.
+Um exemplo de modelagem de sistemas com máquinas de estados finitos seria a modelagem de uma máquina de doces com troco automático apresentada por \cite{snack} na \autoref{fig:snack}\todo{Adicionar um breve explicação da figura}.
 
 \begin{figure}[ht]
     \centering
@@ -216,7 +220,7 @@ Um exemplo de modelagem de sistemas com máquinas de estados finitos seria a mod
     \label{tab:petri_form}
 \end{table}
 
-As mudanças pelas quais o sistema passa durante seu funcionamento são simuladas em uma rede de Petri seguindo regras de transição, exemplificado na \autoref{fig:petri}, onde na letra $(a)$, a transição $t$ pode ser ativada quando os lugares $H_2$ e $O_2$ conterem marcações chamadas de \textit{tokens}, representados por círculos pretos, suficientes para ultrapassar o peso $w$ correspondente à um arco $f$ que liga $H_2$ e $O_2$ até $t$. Após a ativação da transição $t$, apresentada na letra $(b)$, são removidos a quantidade de \textit{tokens} dos lugares $H_2$ e $O_2$ iguais ao peso $w$ que incide em $t$, e então são adicionados a quantidade de \textit{tokens} correspondentes ao peso $w$ do arco que liga $t$ à $H_2O$. \cite{murata:1989}
+As mudanças pelas quais o sistema passa durante seu funcionamento são simuladas em uma rede de Petri seguindo regras de transição, exemplificado na \autoref{fig:petri}, onde na letra $(a)$, a transição $t$ pode ser ativada quando os lugares $H_2$ e $O_2$ conterem marcações chamadas de \textit{tokens}, representados por círculos pretos, suficientes para ultrapassar o peso $w$ correspondente à um arco $f$ que liga $H_2$ e $O_2$ até $t$. Após a ativação da transição $t$, apresentada na letra $(b)$, são removidos a quantidade de \textit{tokens} dos lugares $H_2$ e $O_2$ iguais ao peso $w$ que incide em $t$, e então são adicionados a quantidade de \textit{tokens} correspondentes ao peso $w$ do arco que liga $t$ à $H_2O$ \cite{murata:1989}.
 
 \begin{figure}[ht]
     \centering
@@ -225,7 +229,7 @@ As mudanças pelas quais o sistema passa durante seu funcionamento são simulada
     \label{fig:petri}
 \end{figure}
 
-Um exemplo de uma rede de Petri modelando um sistema real pode ser apresentado na \autoref{fig:petri_ex}, onde o funcionamento de uma máquina de doce simples está descrito em detalhes.
+Um exemplo de uma rede de Petri modelando um sistema real pode ser apresentado na \autoref{fig:petri_ex}, onde o funcionamento de uma máquina de doce simples está descrito em detalhes\todo{Apresentar um breve explicação}.
 
 \begin{figure}[ht]
     \centering
@@ -261,16 +265,17 @@ No trabalho de~\citeonline{ATZORI:2010} é demonstrado que em sua ideia fundamen
 
 Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a vida muito mais confortável e eficiente com sensores e atuadores, coletando dados sobre a preferência dos usuários e sobre o clima é possível que a temperatura seja adequada automaticamente levando em consideração o gasto de energia elétrica para uma maior economia. \cite{ATZORI:2010}
 
-\begin{comment}
-\begin{figure}
-    \centering
-    \includegraphics{}
-    \caption{Sensores e atuadores em IoT}
-    \label{fig:my_label}
-\end{figure}
+% \begin{comment}
+% \begin{figure}
+%     \centering
+%     \includegraphics{}
+%     \caption{Sensores e atuadores em IoT}
+%     \label{fig:my_label}
+% \end{figure}
+% 
+% \end{comment}
 
 \todo[inline]{Adicionar uma figura exemplificando os sensores e atuadores em IoT}
-\end{comment}
 
 %----------------------------------
 % IA
@@ -307,9 +312,11 @@ O \textit{Scikit-learn} é um módulo de código aberto para a linguagem \textit
 
 Graças à sua API simples integrada à linguagem \textit{Python}, o \textit{Scikit-learn} pode ser utilizado por diversos profissionais de diversas áreas sem conhecimentos avançados da implementação de algoritmos de aprendizado de máquina. A natureza padronizada da implementação dos algoritmos, permite que comparações de desempenho sejam facilmente realizadas. Algoritmos que são tidos como padrões na industria como a \textit{SVM} \cite{cortes:1995svm}, \textit{kNN} \cite{cover:1967knn} e \textit{k-means} \cite{macqueen:1967kmeans} estão implementados no módulo. \cite{scikit-learn}
 
-
+\todo[inline]{Adicionar exemplo}
 
 \subsubsection{Tensoflow}
 
 O TensorFlow é uma plataforma de aprendizado de máquina de código aberto desenvolvida por \citeonline{tensorflow:2016}, possibilita ao desenvolvedor realizar o treinamento de um algoritmo em uma plataforma extremamente escalável podendo ser utilizado tanto em grandes \textit{clusters} de servidores quanto em dispositivos móveis. As computações sendo realizadas no algoritmo e o estado no qual este se encontra podem ser visualizadas em tempo real através de uma interface visual em alto nível. Tal interface permite ao desenvolvedor tomar decisões rápidas sobre como otimizar o algoritmo que está sendo treinado.
+
+\todo[inline]{Ampliar descrição e Adicionar exemplo}
 
