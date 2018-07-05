@@ -109,7 +109,7 @@ Um exemplo de microcontrolador seria o ATmega328P~\cite{atmel}, apresentado na \
     \label{fig:atmega}
 \end{figure}
 
-\todo[inline]{Sugiro explicar de forma curta a pinagem da \autoref{fig:atmega}}
+%\todo[inline]{Sugiro explicar de forma curta a pinagem da \autoref{fig:atmega}}
 
 %----------------------------------
 % VSS
@@ -153,9 +153,13 @@ Diversos diagramas são utilizados para a especificação de um sistema. Cada um
 
 Os diagramas UML, em especial o diagrama de sequência, podem descrever com precisão as interações que ocorrem durante o funcionamento de um sistema embarcado \cite{uml_petri}. Existem ferramentas como o FOREVER \cite{forever} que podem gerar redes de Petri a partir de um diagrama de sequência, o que pode auxiliar grandemente a verificação automatizada do comportamento de um sistema.
 
+O FOREVER \cite{forever} utiliza uma linguagem de descrição XML representando um dado diagrama de sequência. Quando o arquivo XML de entrada é reconhecido com sucesso o FOREVER retorna um APNN ou um arquivo PNML que descrevem redes de Petri e podem ser utilizados por ferramentas de testes automatizados para verificar a propriedades do modelo. 
+
+
+
 %\todo[inline]{Apresentar os diagramas com exemplo}
 
-\todo[inline]{Apresentar um exemplo usando FOREVER \cite{forever}}
+%\todo[inline]{Apresentar um exemplo usando FOREVER \cite{forever}}
 
 %\todo[inline]{Descrever um exemplo com diagrama de sequência e apresentar como será usado no seu TCC}
 
@@ -179,12 +183,12 @@ De acordo com \citeonline{hopcroft:2001}, formalmente uma máquina de estados fi
 
 Existem duas grande categorias de máquinas de estados, as determinísticas, onde apenas um estado é atingido por vez, e não determinísticas, que permite que vários estados podem estar sendo acessados ao mesmo tempo. \cite{hopcroft:2001}
 
-Um exemplo de modelagem de sistemas com máquinas de estados finitos seria a modelagem de uma máquina de doces com troco automático apresentada por \cite{snack} na \autoref{fig:snack}\todo{Adicionar um breve explicação da figura}.
+Um exemplo simples de modelagem de sistemas com máquinas de estados finitos seria a modelagem de uma máquina de doces apresentada na \autoref{fig:snack}, onde cada moeda inserida pelo usuário realiza uma mudança de estado dependendo do valor da moeda. Quando o valor inserido excede os 25 centavos, a máquina retorna ao usuário um doce e retorna ao seu estado inicial até que sejam inseridos novos 25 centavos para a liberação de um novo doce.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth, keepaspectratio]{resources/snackmachine.png}
-    \caption{Máquina de estados finita da máquina de venda de doces. \cite{snack}}
+    \includegraphics[width=\textwidth, keepaspectratio]{resources/fsm.pdf}
+    \caption{Máquina de estados finita de uma máquina de venda de doces simples.}
     \label{fig:snack}
 \end{figure}
 
@@ -229,7 +233,7 @@ As mudanças pelas quais o sistema passa durante seu funcionamento são simulada
     \label{fig:petri}
 \end{figure}
 
-Um exemplo de uma rede de Petri modelando um sistema real pode ser apresentado na \autoref{fig:petri_ex}, onde o funcionamento de uma máquina de doce simples está descrito em detalhes\todo{Apresentar um breve explicação}.
+Um exemplo de uma rede de Petri modelando um sistema real pode ser apresentado na \autoref{fig:petri_ex}, onde o funcionamento de uma máquina de doce simples está descrito em detalhes. Onde o sistema aguarda que o usuário coloque na máquina 20 ou 15 centavos de dólar, a escolha do doce depende diretamente da quantidade de dinheiro inserida. Até que uma quantidade suficiente de dinheiro seja inserida o sistema não retornará o doce ao usuário. \cite{murata:1989}
 
 \begin{figure}[ht]
     \centering
@@ -275,7 +279,7 @@ Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a v
 % 
 % \end{comment}
 
-\todo[inline]{Adicionar uma figura exemplificando os sensores e atuadores em IoT}
+%\todo[inline]{Adicionar uma figura exemplificando os sensores e atuadores em IoT}
 
 %----------------------------------
 % IA
@@ -312,11 +316,23 @@ O \textit{Scikit-learn} é um módulo de código aberto para a linguagem \textit
 
 Graças à sua API simples integrada à linguagem \textit{Python}, o \textit{Scikit-learn} pode ser utilizado por diversos profissionais de diversas áreas sem conhecimentos avançados da implementação de algoritmos de aprendizado de máquina. A natureza padronizada da implementação dos algoritmos, permite que comparações de desempenho sejam facilmente realizadas. Algoritmos que são tidos como padrões na industria como a \textit{SVM} \cite{cortes:1995svm}, \textit{kNN} \cite{cover:1967knn} e \textit{k-means} \cite{macqueen:1967kmeans} estão implementados no módulo. \cite{scikit-learn}
 
-\todo[inline]{Adicionar exemplo}
+O algoritmo de classificação $k$ Nearest Neighbors (kNN) está implementado no \textit{Scikit-learn} e busca definir categorias baseadas em pesos definidos pelo usuário. O \textit{Scikit-learn} implementa o algoritmo kNN como KNeighborsClassifier, que define categorias aos dados se baseado na quantidade $k$ de vizinhos de cada valor definidos a partir de cada valor definido em uma base de dados. A \autoref{fig:knn} apresenta o resultado do processamento dos dados pelo algoritmo kNN, as três categorias de dados estão definidas pelas cores vermelha, verde e azul.
 
-\subsubsection{Tensoflow}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth, keepaspectratio]{resources/knn.png}
+    \caption{Resultado da classificação de pontos em uma base de dados. \cite{scikit-learn}}
+    \label{fig:knn}
+\end{figure}
 
-O TensorFlow é uma plataforma de aprendizado de máquina de código aberto desenvolvida por \citeonline{tensorflow:2016}, possibilita ao desenvolvedor realizar o treinamento de um algoritmo em uma plataforma extremamente escalável podendo ser utilizado tanto em grandes \textit{clusters} de servidores quanto em dispositivos móveis. As computações sendo realizadas no algoritmo e o estado no qual este se encontra podem ser visualizadas em tempo real através de uma interface visual em alto nível. Tal interface permite ao desenvolvedor tomar decisões rápidas sobre como otimizar o algoritmo que está sendo treinado.
+%\todo[inline]{Adicionar exemplo}
 
-\todo[inline]{Ampliar descrição e Adicionar exemplo}
+\subsubsection{TensoFlow}
+
+O TensorFlow é uma plataforma de aprendizado de máquina de código aberto desenvolvida por \citeonline{tensorflow:2016}, possibilita ao desenvolvedor realizar o treinamento de um algoritmo em uma plataforma extremamente escalável podendo ser utilizado tanto em grandes \textit{clusters} de servidores quanto em dispositivos móveis. As computações sendo realizadas no algoritmo e o estado no qual este se encontra podem ser visualizadas em tempo real através de uma interface visual em alto nível. Tal interface permite ao desenvolvedor tomar decisões rápidas sobre como otimizar o algoritmo que está sendo treinado. Diversos algoritmos de estado-da-arte estão implementados no TensorFlow como: Redes Neurais Recorrentes \cite{tensorflow_rec} e Redes Neurais Convolucionais \cite{tensorflow_cnn}.
+
+
+Durante o trabalho de \citeonline{ertram:2017}, foram utilizadas Redes Neurais Convolucionais (CNN, em inglês) e um classificador \textit{SoftMax} implementados no TensorFlow para a identificação de escrita em uma base de dados contendo 60000 imagens de caracteres escritos a mão para serem utilizados como \textit{training set} para os algoritmos. O reconhecimento de escrita foi realizado com sucesso em 98.43\% dos casos apresentados como testes.
+
+%\todo[inline]{Ampliar descrição e Adicionar exemplo}
 
