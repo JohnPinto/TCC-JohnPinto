@@ -3,7 +3,7 @@ Este capítulo apresenta as etapas do método proposto para o funcionamento do s
 
 \section{Visão geral do método da Hand.io}
 
-A Hand.io é uma luva de controle que permite que quem a use realize gestos para controlar os dispositivos eletrônicos disponíveis em um dado ambiente. O projeto conta com uma luva de pano com um dispositivo preso ao tecido, que lê os movimentos da mão do usuário e uma central de processamento posicionada em um local estratégico, que recebe os sinais dos gestos através de uma conexão sem fio e executa as ações previamente definidas correspondentes a eles.
+A Hand.io é uma luva de controle que permite que quem a use realize gestos para controlar os dispositivos eletrônicos disponíveis em um dado ambiente. O projeto conta com uma luva de pano com um dispositivo preso ao tecido, que lê os movimentos da mão do usuário e uma central de processamento posicionada em um local estratégico, que recebe os sinais dos gestos através de uma conexão sem fio e executa as ações previamente definidas correspondentes a eles, conforme \autoref{fig:bigpicture}.
 
 \begin{figure}[ht]
     \centering
@@ -44,7 +44,7 @@ e quadrados com barras laterais representam os processos predefinidos do sistema
 
 A ideia principal da luva Hand.io é que o usuário controle seu ambiente utilizando gestos da maneira mais natural possível, para isso os movimentos do usuário são capturados constantemente e enviados para a central em tempo real até que seja identificado um gesto correspondente a um dispositivo cadastrado, como pode ser observado na~\autoref{fig:fluxograma}.
 
-A luva Hand.io utilizará dois sensores para realizar a captura dos movimentos da mão do usuário, um acelerômetro e um giroscópio. Estes dois sensores foram escolhidos visando evitar problemas os encontrados no trabalho de \citeonline{uwave:2009} encontrado na \autoref{cor:uwave} que sofre problemas de precisão devido a presença de apenas um sensor acelerômetro.
+A luva Hand.io utilizará dois sensores para realizar a captura dos movimentos da mão do usuário, um acelerômetro e um giroscópio. Estes dois sensores foram escolhidos visando evitar problemas os encontrados no trabalho de \citeonline{uwave:2009} encontrado na Seção~\ref{cor:uwave} que sofre problemas de precisão devido a presença de apenas um sensor acelerômetro.
 % 
 Os sensores escolhidos realizam diversas amostras nas mudanças na aceleração e no giro realizados na luva, que serão enviados em tempo real à central de processamento.%\todo{Apresentar exemplos de dados gerados pelos sensores}. 
 
@@ -62,7 +62,7 @@ A conexão entre a luva e a central será realizada utilizando o protocolo de re
 
 \section{Reconhecimento de Padrões Baseado em Movimentos e Ações}
 
-Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina, como ocorre no trabalho de \citeonline{uwave:2009} encontrado na \autoref{cor:uwave}, que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema. 
+Os sinais recebidos pela central de processamento servem de entrada para algoritmos de aprendizado de máquina, como ocorre no trabalho de \citeonline{uwave:2009} encontrado na Seção~\ref{cor:uwave}, que ficam em constante execução tentando classificar os sinais recebidos em categorias previamente escolhidas pelo desenvolvedor do sistema. 
 
 %\todo{Apresentar ferramentas que pretende usar com Machine Learning}. 
 
@@ -80,7 +80,7 @@ Os possíveis gestos reconhecidos pela luva serão definidos durante a fase de i
 Gestos pré definidos e gestos criados pelos usuários são a abordagem mais efetiva para controlar um ambiente.
 No entanto uma quantidade muito grande de gestos e gestos muito complexos não são a melhor escolha, pois existe uma quantidade limitada de gestos que podem ser lembrados com precisão sem que haja confusão durante a realização de um determinado gesto.
 
-Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina, como os apresentados por \cite{uwave:2009} na \autoref{cor:uwave}, que irão reconhecer os gestos realizados pelo usuário. Serão realizados testes utilizando os \textit{frameworks} \textit{Python} Scikit-learn \cite{scikit-learn} e TensorFlow \cite{tensorflow:2016}, seu desempenho será medido para definir qual método de reconhecimento de padrões será mais eficaz na detecção de gestos, levando em consideração o tamanho do \textit{training set} e a capacidade computacional da central de processamento. 
+Será desenvolvido um extensivo \textit{training set} com dados recolhidos de voluntários realizando os gestos. Estes dados serão utilizados como modelo de treinamento para algoritmos de aprendizado de máquina, como os apresentados por \cite{uwave:2009} na Seção~\ref{cor:uwave}, que irão reconhecer os gestos realizados pelo usuário. Serão realizados testes utilizando os \textit{frameworks} \textit{Python} Scikit-learn \cite{scikit-learn} e TensorFlow \cite{tensorflow:2016}, seu desempenho será medido para definir qual método de reconhecimento de padrões será mais eficaz na detecção de gestos, levando em consideração o tamanho do \textit{training set} e a capacidade computacional da central de processamento. 
 
 Existem dois momentos durante o fluxo de execução da Hand.io onde estes algoritmos são utilizados, quando o sistema aguarda que o usuário selecione o dispositivo que ele deseja controlar e quando o sistema aguarda um comando que será realizado no dispositivo selecionado, ambos os momentos podem ser vistos respectivamente na \autoref{fig:fluxograma} na letra B. A cada vez que os algoritmos finalizam a classificação dos sinais tidos como entrada, o sistema retorna para o usuário um sinal sonoro de confirmação. 
 
@@ -155,7 +155,7 @@ Durante a fase de modelagem do sistema, serão desenvolvidos diagramas utilizand
 
 %\todo[inline]{Se tiver o diagram de sequência sugiro adicionar.}
 
-Será construída uma rede de Petri que irá modelar o comportamento do sistema de maneira assíncrona, tendo em vista que a luva e a central de processamento de sinais funcionam de maneira independente uma da outra. A rede de Petri será testada extensivamente utilizando ferramentas de verificação automatizadas, para detectar se ocorrerão problemas como os citados por \citeonline{peterson:1981} na \autoref{def:petri_prop}.
+Será construída uma rede de Petri que irá modelar o comportamento do sistema de maneira assíncrona, tendo em vista que a luva e a central de processamento de sinais funcionam de maneira independente uma da outra. A rede de Petri será testada extensivamente utilizando ferramentas de verificação automatizadas, para detectar se ocorrerão problemas como os citados por \citeonline{peterson:1981} na Seção~\ref{def:petri_prop}.
 
 %\todo[inline]{Falta descrever onde os modelos formais serão usados para garantir a qualidade do produto}
 
