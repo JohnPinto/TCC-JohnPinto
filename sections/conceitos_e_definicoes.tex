@@ -1,5 +1,5 @@
 \label{chapter:conceitos}
-Este capítulo tem como objetivo apresentar as principais conceitos e definições que serão utilizados para o entendimento e desenvolvimento deste trabalho. 
+Este capítulo tem como objetivo apresentar os principais conceitos e definições que serão utilizados para o entendimento e desenvolvimento deste trabalho. 
 
 
 %----------------------------------
@@ -46,7 +46,7 @@ Conforme~\citeonline{BUTTAZZO:2011}, um sistema em tempo real deve ter o tempo d
 \citeonline{BUTTAZZO:2011} realiza uma comparação entre sistemas biológicos e a velocidade das suas reações em seus habitats, um gato e uma tartaruga, por exemplo, podem ter velocidades de reação diferentes, no entanto em seus respectivos ambientes esta velocidade se mostra suficiente para a sua sobrevivência. 
 % No entanto com mudanças ambientais nas quais não há tempo suficiente para a evolução de suas reações, como a introdução de novos predadores, podem colocar em risco a sobrevivência de organismos já bem estabelecidos em um determinado bioma. 
 
-Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, sejam eles biológicos ou artificiais, mas que na verdade está relacionado com o ambiente no qual estes sistemas irão atuar como apresentado na~\autoref{fig:rt}, que demonstra um modelo básico de como um sistema em tempo real deve ser reativo em relação ao ambiente no qual ele está implantado. Captando sinais através de sensores que são processados por sistemas de controle que então realiza ações baseadas nestes dados através de atuadores.~\cite{BUTTAZZO:2011}
+Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, sejam eles biológicos ou artificiais, mas que na verdade está relacionado com o ambiente no qual estes sistemas irão atuar como apresentado na~\autoref{fig:rt}, que demonstra um modelo básico de como um sistema em tempo real deve ser reativo em relação ao ambiente no qual ele está implantado. Captando sinais através de sensores que são processados por sistemas de controle que então realiza ações baseadas nestes dados através de atuadores~\cite{BUTTAZZO:2011}.
 
 \begin{figure}[ht]
 	\includegraphics[width=0.5\textwidth, keepaspectratio]{sistemas_em_tempo_real}
@@ -56,9 +56,9 @@ Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, seja
 \end{figure}
 
 % Existe um certo consenso na comunidade de que a evolução rápida no processamento de dados irá tornar a utilização de sistemas em tempo real obsoleta, no entanto tal afirmação não poderia estar mais enganada, apesar da 
-Em termos de processamento, a computação mais rápida reduz o tempo de resposta de um sistema, entretanto ela não necessariamente garante que o tempo de resposta de tarefas individuais será atingido de maneira correta, um sistema em tempo real não deve apenas ser rápido, ele deve ser previsível. Analisando os sistemas do ponto de vista de processos, os processos de um sistema em tempo real contam com um componente ausente em processos de sistemas normais, o chamado \textit{Deadline}, que é o prazo máximo para a finalização de uma determinada tarefa.\cite{BUTTAZZO:2011}
+Em termos de processamento, a computação mais rápida reduz o tempo de resposta de um sistema, entretanto ela não necessariamente garante que o tempo de resposta de tarefas individuais será atingido de maneira correta, um sistema em tempo real não deve apenas ser rápido, ele deve ser previsível. Analisando os sistemas do ponto de vista de processos, os processos de um sistema em tempo real contam com um componente ausente em processos de sistemas normais, o chamado \textit{Deadline}, que é o prazo máximo para a finalização de uma determinada tarefa \cite{BUTTAZZO:2011}.
 
-Em aplicações críticas o retorno de operações fora do \textit{deadline} não é apenas atrasado, mas sim incorreto, o que pode ocasionar em perdas significativas dependendo da criticidade do sistema.~\cite{BUTTAZZO:2011} Em um contexto de um sistema de banco de dados de tempo real, a perda de deadlines pode acarretar em sobrecarregamentos em requisições ao banco de dados, o que tornaria o sistema inutilizável. \cite{bd:1991} A criticidade de uma aplicação depende das consequências ocasionadas devido ao atraso no tempo de resposta esperado do sistema, sendo este classificado em \textit{Hard}, \textit{Firm} e \textit{Soft}. \cite{BUTTAZZO:2011} 
+Em aplicações críticas o retorno de operações fora do \textit{deadline} não é apenas atrasado, mas sim incorreto, o que pode ocasionar em perdas significativas dependendo da criticidade do sistema~\cite{BUTTAZZO:2011}. Em um contexto de um sistema de banco de dados de tempo real, a perda de deadlines pode acarretar em sobrecarregamentos em requisições ao banco de dados, o que tornaria o sistema inutilizável \cite{bd:1991}. A criticidade de uma aplicação depende das consequências ocasionadas devido ao atraso no tempo de resposta esperado do sistema, sendo este classificado em \textit{Hard}, \textit{Firm} e \textit{Soft} \cite{BUTTAZZO:2011}.
 
 \begin{itemize}
 \item Sistemas críticos \textit{Hard} são aqueles onde caso não haja resposta no tempo definido podem ocorrer eventos devastadores, muitas vezes com perda de vidas;
@@ -67,7 +67,7 @@ Em aplicações críticas o retorno de operações fora do \textit{deadline} nã
 \end{itemize}
 
 
-Usualmente os sistemas embarcados trabalham de maneira hibrida quanto a sua criticidade, onde certas atividades podem ser consideradas como \textit{Hard} e outras podem ser \textit{Soft} ou \textit{Firm}. Atividades com criticidade \textit{Hard} incluem: coleta de dados utilizando sensores, detecção de condições críticas, filtragem de dados, etc. Atividades que contam com com uma criticidade \textit{Firm} podem ser encontradas em aplicações de redes e multimídia, por exemplo: processamento de imagem \textit{on-line}, execução de vídeos e decodificação de áudio e vídeo. Já atividades com criticidade \textit{Soft} geralmente estão relacionadas à interação com o usuário como: a exibição de mensagens em uma tela, o processamento de sinais de teclado e o armazenamento de dados de utilização. \cite{BUTTAZZO:2011}
+Usualmente os sistemas embarcados trabalham de maneira hibrida quanto a sua criticidade, onde certas atividades podem ser consideradas como \textit{Hard} e outras podem ser \textit{Soft} ou \textit{Firm}. Atividades com criticidade \textit{Hard} incluem: coleta de dados utilizando sensores, detecção de condições críticas, filtragem de dados, etc. Atividades que contam com com uma criticidade \textit{Firm} podem ser encontradas em aplicações de redes e multimídia, por exemplo: processamento de imagem \textit{on-line}, execução de vídeos e decodificação de áudio e vídeo. Já atividades com criticidade \textit{Soft} geralmente estão relacionadas à interação com o usuário como: a exibição de mensagens em uma tela, o processamento de sinais de teclado e o armazenamento de dados de utilização \cite{BUTTAZZO:2011}.
 
 % A luva Hand.io é um sistema de tempo real que trabalha com atividades com criticidade \textit{Firm}, pois a falha no reconhecimento de um gesto e a realização da ação correspondente a este, não gera perdas de vidas ou perdas financeiras significativos, apenas tornam o sistema inútil.
 
@@ -126,7 +126,7 @@ A utilização de um ou mais modelos formais para descrever os comportamentos do
 Estes modelos permitem que as propriedades do sistema sejam validadas de maneira simples, ainda durante as fases inciais do desenvolvimento, através de ferramentas de simulação e verificação automatizadas, evitando eventuais entraves que podem comprometer a eficiência do sistema \cite{edwards:1997}.
 
 % =============================
-\subsection{United Modeling Language}
+\subsection{Unified Modeling Language}
 % =============================
 
 De acordo com \citeonline{UML:2006} a Linguagem de Modelagem Unificada (UML, em Inglês) é um padrão amplamente utilizado por desenvolvedores para modelagem de software e hardware de sistemas em geral. A UML é uma ferramenta muito útil durante o desenvolvimento de um sistema, pois permite aos desenvolvedores manter um certo controle sobre a complexidade do sistema, permitindo que as partes mais importantes do sistema se sobressaiam em relação às outras, evitando eventuais confusões durante a implementação.
