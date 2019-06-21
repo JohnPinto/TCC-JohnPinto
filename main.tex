@@ -1,11 +1,11 @@
-\title{Monografia TCC}
+\title{Trabalho de Conclusão de Curso}
 
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
 	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
 	%twoside,			% para impressão em verso e anverso. Oposto a oneside
-  oneside,
+    oneside,
 	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
 	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -43,8 +43,9 @@
 \renewcommand{\tabularxcolumn}[1]{m{#1}}
 \usepackage{xcolor}
 \usepackage{url}
-
 \usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
 \definecolor{algColor}{RGB}{255,206,206} % rgb(255, 206, 206)
 
 %
@@ -316,11 +317,15 @@ A crescente adoção da internet das coisas, criou novos paradigmas de interaç�
 %\input{sections/consideracoes_parciais_e_trabalhos_futuros.tex}
 
 % Cronograma
-\chapter{Cronograma}
-\input{sections/cronograma.tex}
+%\chapter{Cronograma}
+%\input{sections/cronograma.tex}
 
-\chapter{Considerações parciais e trabalhos futuros}
-\input{sections/consideracoes_parciais_e_trabalhos_futuros.tex}
+% Resultados experimentais
+\chapter{Resultados Experimentais}
+\input{sections/resultados_experimentais.tex}
+
+\chapter{Conclusões e trabalhos futuros}
+\input{sections/conclusao_e_trabalhos_futuros.tex}
 
 %\todo[inline]{Falta as considerações parciais}
 
