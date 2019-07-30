@@ -1,2 +1,2 @@
 # tcc
-Trabalho de conclusão do curso de Ciência da Computação da Univesidade Federal de Roraima.
+Trabalho de conclusão do curso de Ciência da Computação da Universidade Federal de Roraima.

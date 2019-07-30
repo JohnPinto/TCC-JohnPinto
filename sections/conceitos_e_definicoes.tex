@@ -46,14 +46,17 @@ Conforme~\citeonline{BUTTAZZO:2011}, um sistema em tempo real deve ter o tempo d
 \citeonline{BUTTAZZO:2011} realiza uma comparação entre sistemas biológicos e a velocidade das suas reações em seus habitats, um gato e uma tartaruga, por exemplo, podem ter velocidades de reação diferentes, no entanto em seus respectivos ambientes esta velocidade se mostra suficiente para a sua sobrevivência. 
 % No entanto com mudanças ambientais nas quais não há tempo suficiente para a evolução de suas reações, como a introdução de novos predadores, podem colocar em risco a sobrevivência de organismos já bem estabelecidos em um determinado bioma. 
 
-Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, sejam eles biológicos ou artificiais, mas que na verdade está relacionado com o ambiente no qual estes sistemas irão atuar como apresentado na~\autoref{fig:rt}, que demonstra um modelo básico de como um sistema em tempo real deve ser reativo em relação ao ambiente no qual ele está implantado. Captando sinais através de sensores que são processados por sistemas de controle que então realiza ações baseadas nestes dados através de atuadores~\cite{BUTTAZZO:2011}.
-
 \begin{figure}[ht]
+    \caption{Diagrama de um sistema em tempo real genérico.}
 	\includegraphics[width=0.5\textwidth, keepaspectratio]{sistemas_em_tempo_real}
     \centering
-    \caption{Diagrama de um sistema em tempo real genérico. Adaptado de~\citeonline{BUTTAZZO:2011}}
+    \legend{Fonte: Adaptado de~\citeonline{BUTTAZZO:2011}.}
     \label{fig:rt}
 \end{figure}
+
+Tal exemplo demonstra que o conceito de tempo não é natural aos sistemas, sejam eles biológicos ou artificiais, mas que na verdade está relacionado com o ambiente no qual estes sistemas irão atuar como apresentado na~\autoref{fig:rt}, que demonstra um modelo básico de como um sistema em tempo real deve ser reativo em relação ao ambiente no qual ele está implantado. Captando sinais através de sensores que são processados por sistemas de controle que então realiza ações baseadas nestes dados através de atuadores~\cite{BUTTAZZO:2011}.
+
+
 
 % Existe um certo consenso na comunidade de que a evolução rápida no processamento de dados irá tornar a utilização de sistemas em tempo real obsoleta, no entanto tal afirmação não poderia estar mais enganada, apesar da 
 Em termos de processamento, a computação mais rápida reduz o tempo de resposta de um sistema, entretanto ela não necessariamente garante que o tempo de resposta de tarefas individuais será atingido de maneira correta, um sistema em tempo real não deve apenas ser rápido, ele deve ser previsível. Analisando os sistemas do ponto de vista de processos, os processos de um sistema em tempo real contam com um componente ausente em processos de sistemas normais, o chamado \textit{Deadline}, que é o prazo máximo para a finalização de uma determinada tarefa \cite{BUTTAZZO:2011}.
@@ -89,8 +92,9 @@ Um exemplo de microprocessador seria o Broadcom BCM2837 \cite{raspberry_bcm}, qu
 
 \begin{figure}[ht]
     \centering
+    \caption{Raspberry Pi 3.}
     \includegraphics[width=0.5\textwidth, keepaspectratio]{resources/rasp.jpg}
-    \caption{Raspberry Pi 3. \cite{raspberry:pi3}}
+    \legend{Fonte: \citeonline{raspberry:pi3}.}
     \label{fig:raspberry}
 \end{figure}
 
@@ -104,8 +108,9 @@ Um exemplo de microcontrolador seria o ATmega328P~\cite{atmel}, apresentado na \
 
 \begin{figure}[ht]
     \centering
+     \caption{Pinagem do microcontrolador ATmega328P.}
     \includegraphics[width=0.7\textwidth, keepaspectratio]{resources/ATMega328P-Pinout.png}
-    \caption{Pinagem do microcontrolador ATmega328P. \cite{atmel}}
+    \legend{Fonte: \citeonline{atmel}.}
     \label{fig:atmega}
 \end{figure}
 
@@ -131,7 +136,8 @@ Estes modelos permitem que as propriedades do sistema sejam validadas de maneira
 
 De acordo com \citeonline{UML:2006} a Linguagem de Modelagem Unificada (UML, em Inglês) é um padrão amplamente utilizado por desenvolvedores para modelagem de software e hardware de sistemas em geral. A UML é uma ferramenta muito útil durante o desenvolvimento de um sistema, pois permite aos desenvolvedores manter um certo controle sobre a complexidade do sistema, permitindo que as partes mais importantes do sistema se sobressaiam em relação às outras, evitando eventuais confusões durante a implementação.
 
-Por se tratar de uma linguagem formal, a UML permite a utilização de ferramentas de engenharia de sistemas auxiliada por computador (CASE, em inglês) que geram código executável a partir dos diagramas de modelagem do sistema. Existem diferentes maneiras de utiliza a UML, alguns desenvolvedores a utilizam como um esboço do sistema frisando os componentes mais importantes para a implementação, alguns utilizam como planta baixa do sistema mantendo qualquer mudança realizada no código sincronizada com os modelos e outros utilizam como linguagem de programação, graças à natureza orientada a objetos da UML a conversão de diagramas em código de máquina passa a ser uma realidade no cotidiano de alguns desenvolvedores. \cite{UML:2006}
+%Por se tratar de uma linguagem formal, a UML permite a utilização de ferramentas de engenharia de sistemas auxiliada por computador (CASE, em inglês) que geram código executável a partir dos diagramas de modelagem do sistema. 
+Existem diferentes maneiras de utiliza a UML, alguns desenvolvedores a utilizam como um esboço do sistema frisando os componentes mais importantes para a implementação, alguns utilizam como planta baixa do sistema mantendo qualquer mudança realizada no código sincronizada com os modelos e outros utilizam como linguagem de programação, graças à natureza orientada a objetos da UML a conversão de diagramas em código de máquina passa a ser uma realidade no cotidiano de alguns desenvolvedores. \cite{UML:2006}
 
 Diversos diagramas são utilizados para a especificação de um sistema. Cada um deles sendo utilizado para descrever alguma parte do modelo, sem conter informações demais relacionadas à outras partes do projeto o que poderia causar confusão durante a implementação do sistema. Abaixo estão listados os diagramas UML e suas respectivas funções. \cite{UML:2006}.
 
@@ -151,9 +157,11 @@ Diversos diagramas são utilizados para a especificação de um sistema. Cada um
     \item \textbf{Diagrama de implantação:} utilizado para descrever como um sistema pode ser implantado em uma situação real.
 \end{itemize}
 
+\begin{comment}
 Os diagramas UML, em especial o diagrama de sequência, podem descrever com precisão as interações que ocorrem durante o funcionamento de um sistema embarcado \cite{uml_petri}. Existem ferramentas como o FOREVER \cite{forever} que podem gerar redes de Petri a partir de um diagrama de sequência, o que pode auxiliar grandemente a verificação automatizada do comportamento de um sistema.
 
 O FOREVER \cite{forever} utiliza uma linguagem de descrição XML representando um dado diagrama de sequência. Quando o arquivo XML de entrada é reconhecido com sucesso o FOREVER retorna um APNN ou um arquivo PNML que descrevem redes de Petri e podem ser utilizados por ferramentas de testes automatizados para verificar a propriedades do modelo. 
+\end{comment}
 
 
 
@@ -187,8 +195,9 @@ Um exemplo simples de modelagem de sistemas com máquinas de estados finitos ser
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth, keepaspectratio]{resources/fsm.pdf}
     \caption{Máquina de estados finita de uma máquina de venda de doces simples.}
+    \includegraphics[width=\textwidth, keepaspectratio]{resources/fsm.pdf}
+    \legend{Fonte: Adaptado de~\citeonline{hopcroft:2001}.}
     \label{fig:snack}
 \end{figure}
 
@@ -199,6 +208,8 @@ Um exemplo simples de modelagem de sistemas com máquinas de estados finitos ser
 
 % O propósito do estados é que o sistema tenha noção do seu histórico, se lembrando apenas das partes relevantes.
 
+
+\begin{comment}
 
 
 \subsection{Rede de Petri}
@@ -254,7 +265,7 @@ Segundo \citeonline{peterson:1981} existem algumas propriedades que uma rede de 
 
 
 
-
+\end{comment}
 
 %\todo[inline]{Definir formalmente, e apresentar um exemplo prático.}
 
@@ -267,7 +278,7 @@ Segundo \citeonline{peterson:1981} existem algumas propriedades que uma rede de 
 
 No trabalho de~\citeonline{ATZORI:2010} é demonstrado que em sua ideia fundamental a internet das coisas é um ambiente de computadores pervasivos que interagem um com os outros de maneira cooperativa para atingir metas em comum, este conceito permite a idealização de ambientes inteligentes onde todos os objetos estão em constante comunicação: para auxiliar o usuário a atingir uma qualidade de vida maior.
 
-Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a vida muito mais confortável e eficiente com sensores e atuadores, coletando dados sobre a preferência dos usuários e sobre o clima é possível que a temperatura seja adequada automaticamente levando em consideração o gasto de energia elétrica para uma maior economia. \cite{ATZORI:2010}
+Nos ambientes residenciais e empresariais, a internet das coisas pode tornar a vida muito mais confortável e eficiente com sensores e atuadores, por exemplo, coletando dados sobre a preferência dos usuários e sobre o clima é possível que a temperatura seja adequada automaticamente levando em consideração o gasto de energia elétrica para uma maior economia. \cite{ATZORI:2010}
 
 % \begin{comment}
 % \begin{figure}
@@ -318,10 +329,11 @@ Graças à sua API simples integrada à linguagem \textit{Python}, o \textit{Sci
 
 O algoritmo de classificação $k$ Nearest Neighbors (kNN) está implementado no \textit{Scikit-learn} e busca definir categorias baseadas em pesos definidos pelo usuário. O \textit{Scikit-learn} implementa o algoritmo kNN como KNeighborsClassifier, que define categorias aos dados se baseado na quantidade $k$ de vizinhos de cada valor definidos a partir de cada valor definido em uma base de dados. A \autoref{fig:knn} apresenta o resultado do processamento dos dados pelo algoritmo kNN, as três categorias de dados estão definidas pelas cores vermelha, verde e azul.
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
+    \caption{Resultado da classificação de pontos em uma base de dados.}
     \includegraphics[width=0.7\textwidth, keepaspectratio]{resources/knn.png}
-    \caption{Resultado da classificação de pontos em uma base de dados. \cite{scikit-learn}}
+    \legend{Fonte: \citeonline{scikit-learn}.}
     \label{fig:knn}
 \end{figure}
 

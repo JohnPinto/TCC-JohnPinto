@@ -44,9 +44,11 @@
 \usepackage{url}
 \usepackage{listings}
 \usepackage{caption}
-\usepackage{subcaption}
 \usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{float}
 \usepackage[flushleft]{threeparttable}
+\usepackage{pdfpages}
 \definecolor{algColor}{RGB}{255,206,206} % rgb(255, 206, 206)
 
 %
@@ -99,11 +101,13 @@
 \autor{JOÃO PAULO VERÇOSA PINTO}
 \local{Boa Vista - RR}
 \data{2019}
-\orientador{Dr. Herbert Oliveira Rocha}
+\orientador{Prof. DSc. Herbert Oliveira Rocha}
 
 \tipotrabalho{Monografia}
 
-\preambulo{Trabalho de conclusão de curso  na área de Controle e Automação desenvolvido na UFRR com o objetivo de facilitar o controle de dispositivos através de gestos}
+\preambulo{Monografia de Graduação apresentada ao Departamento de Ciência da
+  Computação da Universidade Federal de Roraima como requisito para a
+  obtenção do grau de Bacharel em Ciência da Computação. }
 % ---
 
 %-- Informações de dado para a FOLHA DE APROVAÇÃO
@@ -178,7 +182,7 @@
 % ---
 \imprimirfolhaderosto
 % ---
-
+\includepdf[]{ficha.pdf}
 % ---
 % Inserir folha de aprovação
 % ---
@@ -201,9 +205,17 @@
 % ---
 \begin{agradecimentos}[agradecimentos]
 
-Agradeço à minha família, meus amigos e minha namorada que sempre me apoiaram, acreditaram no meus esforços e na minha capacidade de superar meus obstáculos.
-\\
-Agradeço 
+Agradeço à minha família, em especial meus pais, Raul e Cleire, que me deram condições de chegar à graduação e finalmente estar finalizando esta etapa da minha vida, que não é o fim, mas o começo das grandes coisas que estão por vir.
+
+Agradeço à minha digníssima namorada Joana Harana, que esteve comigo durante os meus momentos de fraqueza e sempre me mostrou a luz nos momentos em que eu estava perdido nos meus pensamentos e na minha ansiedade.
+
+Agradeço aos meus amigos e que sempre estiveram comigo durante esta jornada, em especial meus amigos de laboratório que passaram comigo momentos de incerteza e me ajudaram a supera-los juntos.
+
+Agradeço ao meu orientador, Herbert Rocha, que me guiou durante os momentos finais, e me permitiu desenvolver um excelente trabalho depois de muito esforço e dedicação.
+
+E finalmente, agradeço aos meus professores, que me apontaram o caminho do conhecimento, que eu irei utilizar para resolver problemas no mundo real e trazer frutos que vão engrandecer a sociedade como um todo.
+
+À todos o meu mais sincero obrigado.
 \end{agradecimentos}
 
 % ---
@@ -226,9 +238,22 @@ Agradeço
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}[Resumo]
-A crescente adoção da internet das coisas, criou novos paradigmas de interação entre usuário e sistemas. Interações mais naturais e personalizadas como comando por voz e por gestos parecem ser mais viáveis do que apenas a utilização de telas sensíveis ao toque. A Hand.io é um sistema vestível (composto por sensores de movimentos, como acelerômetro e giroscópio) de reconhecimento de gestos manuais que utiliza algoritmos de aprendizado de máquina para classificar sinais enviados pelo usuário, de maneira mais natural possível com o mínimo de dificuldade por parte do usuário, a fim de enviar comandos para manipulação de dispositivos eletrônicos em dado ambiente interconectado.
+    A crescente adoção da internet das coisas, criou novos paradigmas de interação entre usuário e sistemas. Interações mais naturais e personalizadas como comando por voz e por gestos parecem ser mais viáveis do que apenas a utilização de telas sensíveis ao toque. A Hand.io é um sistema vestível (composto por sensores de movimentos, como acelerômetro e giroscópio) de reconhecimento de gestos manuais que utiliza algoritmos de aprendizado de máquina para classificar sinais enviados pelo usuário, de maneira mais natural possível com o mínimo de dificuldade por parte do usuário, a fim de enviar comandos para manipulação de dispositivos eletrônicos em dado ambiente interconectado. Para o desenvolvimento do protótipo do sistema proposto, optou-se pelo classificador \textit{Gaussian Naive Bayes} (NB), por apresentar uma taxa de acurácia de 81.1\%, a maior dentre os testados, e possibilitou através de experimentos, que o protótipo atingisse uma taxa máxima de sucesso de 93.3\% nos testes realizados.
+    \vspace{\onelineskip}
+ 
+    \noindent 
+    \textbf{Palavra-chaves}: controle de dispositivos, acelerômetro, giroscópio, ambientes inteligentes, vestíveis, luva inteligente.
+\end{resumo}
 
-\textbf{Palavras-chaves}: controle de dispositivos, acelerômetro, giroscópio, ambientes inteligentes, vestíveis, luva inteligente.
+\setlength{\absparsep}{18pt}
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+    The increasing adoption of the internet of things has created new paradigms of interaction between users and systems. More natural and personalized interactions like voice commands and gestures seem to be more viable than just the use of touch screens. Hand.io is a wearable system (composed of motion sensors, such as accelerometer and gyroscope) of manual gesture recognition that uses machine learning algorithms to classify signals sent by the user, in a more natural way with minimal user effort in order to send commands for manipulation of electronic devices in a given interconnected environment. For the development of the prototype of the proposed system, the \textit{Gaussian Naive Bayes} (NB) was chosen, as it had a rate of acuracy of 81.1\%, the best among all the tested, and it allowed through experimentation, that the prototype achieved the highest rate of success of 93.3\% in the tests performed.
+    \vspace{\onelineskip}
+ 
+    \noindent 
+    \textbf{Keywords}: device control, accelerometer, gyroscope, smart environments, wearables, smart glove.
+\end{otherlanguage*}
 \end{resumo}
 
 % ---

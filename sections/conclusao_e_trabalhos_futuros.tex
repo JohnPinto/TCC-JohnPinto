@@ -1,1 +1,21 @@
 \label{chapter:conclusao}
+
+Durante este trabalho foi apresentada uma nova abordagem de controle de dispositivos eletro-eletrônicos, mais natural e ergonômica que as apresentadas pelas grandes empresas fabricantes de eletrônicos de consumo. Esta abordagem foi detalhada através de um método proposto, que teve a sua efetividade validada através de experimentos em um cenário muito próximo ao que um eventual usuário encontraria em sua casa. 
+
+O método em questão desenhou um conjunto de passos que permitiram à este trabalho atingir todos os seus objetivos propostos. Definindo a identificação de métodos de modelagem do fluxo do sistema; a definição de um algoritmo ótimo para a classificação dos movimentos; particularidades físicas, e de protocolos de comunicação; e os componentes necessários para a construção do protótipo.
+
+A utilização de sensores de movimento, como acelerômetros e giroscópios, presos à mão do utilizador, permitiu a geração de um grande volume de dados que foram utilizados em algoritmos de aprendizado de máquina, para a classificação de padrões nos movimentos. Este tipo de algoritmo reduziu consideravelmente a complexidade do desenvolvimento, já que uma abordagem algorítmica que levasse em consideração todas as possibilidades possíveis de um movimento não conta com uma implementação trivial.
+
+%\todo[inline]{Finalizar a descrição do método}
+
+%\todo[inline]{Escrever resumo dos resultados}
+
+A fase experimental do trabalho coletou resultados positivos em relação ao funcionamento do protótipo. Usuários com graus de familiaridade diferentes em relação ao sistema, obtiveram taxas de sucesso e satisfação igualmente altas. Estes resultados comprovam que o método desenvolvido por este trabalho é viável, e indica que existe muito espaço para estudos desenvolvidos na área de dispositivos vestíveis, ainda muito recente e pouco explorada, dentro das áreas de sistemas embarcados e ambientes inteligentes.
+
+%\todo[inline]{Escrever trabalhos futuros}
+
+Para que um eventual produto final proveniente deste trabalho se torne viável, é necessária a implementação de alguns aprimoramentos, a fim de garantir uma experiência de uso boa o suficiente de modo que o sistema se equipare aos os meios de controle de dispositivos encontrados no mercado. A miniaturização e integração dos componentes à vestimenta dos usuários, e a utilização de conexões sem fio, são pontos essenciais a serem implementados, pois sem estas funcionalidades, nenhum usuário utilizaria um sistema desse tipo sem que fosse algo natural e imperceptível, o grau interesse por parte dos usuários seria reduzido consideravelmente.
+
+Outro ponto a ser melhorado é a classificação dos movimentos, o sistema atualmente classifica apenas um único momento do movimento, o ideal seria que o gesto como um todo fosse considerado, no entanto com a biblioteca de classificação atual isso não é possível. Seria necessária a migração para uma biblioteca que permitisse que séries temporais fossem classificadas, como é o caso do \textit{TensorFlow}, no entanto, esta biblioteca tem um grau dificuldade de implementação consideravelmente mais elevado que a usada atualmente, o que inviabilizou a sua utilização durante o desenvolvimento com tempo limitado deste trabalho.
+
+Após a realização do questionário com voluntários que não conheciam o sistema, detalhado na seção experimental, vários outros ajustes de usabilidade podem ser aprimorados como: a realização da captura dos movimentos de maneira contínua, a possibilidade da inserção de novos gestos, um fluxo de execução com mais opções para o usuário, e a criação de uma interface que permita a personalização do sistema. 
